@@ -13,6 +13,10 @@
 		FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */; settings = {ASSET_TAGS = (); }; };
 		FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */; settings = {ASSET_TAGS = (); }; };
 		FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */; settings = {ASSET_TAGS = (); }; };
+		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; settings = {ASSET_TAGS = (); }; };
+		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
+		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; settings = {ASSET_TAGS = (); }; };
 		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		FA9269771BD2E0270055FDE9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA9269741BD2E0270055FDE9 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		FA9269781BD2E0270055FDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269751BD2E0270055FDE9 /* main.m */; settings = {ASSET_TAGS = (); }; };
@@ -23,6 +27,9 @@
 		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9269941BD2E1000055FDE9 /* Security.framework */; };
+		FAE66B5B1BD53F1C00066B36 /* 30.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B591BD53F1C00066B36 /* 30.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B5C1BD53F1C00066B36 /* autumn-in-wild-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		FA20A89D1BD3002400C9FFB2 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		FA20A8A41BD3198B00C9FFB2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
+		FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+UICollectionView.m"; sourceTree = "<group>"; };
+		FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
 		FA9269721BD2E0270055FDE9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA9269731BD2E0270055FDE9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA9269741BD2E0270055FDE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +69,10 @@
 		FA9269961BD2EACC0055FDE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FA92699A1BD2ECC10055FDE9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FA92699D1BD2EF980055FDE9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		FAE66B591BD53F1C00066B36 /* 30.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30.jpg; sourceTree = "<group>"; };
+		FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "autumn-in-wild-nature.jpg"; sourceTree = "<group>"; };
+		FAE66B5E1BD5540400066B36 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		FAF823DC1BD061C400973EF8 /* lorescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lorescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +117,8 @@
 		FA20A8951BD2FFE700C9FFB2 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				FAE66B5D1BD5540400066B36 /* UIImageEffects */,
+				FA20A8AA1BD3243C00C9FFB2 /* KeychainWrapper */,
 				FA9269941BD2E1000055FDE9 /* Security.framework */,
 			);
 			path = System;
@@ -119,6 +139,26 @@
 			path = AESCrypt;
 			sourceTree = "<group>";
 		};
+		FA20A8A31BD3197300C9FFB2 /* Main controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA20A8A41BD3198B00C9FFB2 /* MainViewController.h */,
+				FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */,
+				FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */,
+				FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */,
+			);
+			path = "Main controller";
+			sourceTree = "<group>";
+		};
+		FA20A8AA1BD3243C00C9FFB2 /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */,
+				FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */,
+			);
+			path = KeychainWrapper;
+			sourceTree = "<group>";
+		};
 		FA9269711BD2E0270055FDE9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +174,7 @@
 		FA9269791BD2E0360055FDE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA20A8A31BD3197300C9FFB2 /* Main controller */,
 				FA92697A1BD2E0360055FDE9 /* Login controller */,
 				FA92697D1BD2E0360055FDE9 /* SignUp controller */,
 			);
@@ -180,6 +221,8 @@
 		FA9269871BD2E0530055FDE9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAE66B581BD53F1C00066B36 /* Images_bg */,
+				FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */,
 				FA9269881BD2E0530055FDE9 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -225,6 +268,24 @@
 				FA92699D1BD2EF980055FDE9 /* Utilities.h */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		FAE66B581BD53F1C00066B36 /* Images_bg */ = {
+			isa = PBXGroup;
+			children = (
+				FAE66B591BD53F1C00066B36 /* 30.jpg */,
+				FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */,
+			);
+			path = Images_bg;
+			sourceTree = "<group>";
+		};
+		FAE66B5D1BD5540400066B36 /* UIImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				FAE66B5E1BD5540400066B36 /* UIImage+ImageEffects.h */,
+				FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */,
+			);
+			path = UIImageEffects;
 			sourceTree = "<group>";
 		};
 		FAF823D31BD061C400973EF8 = {
@@ -294,6 +355,11 @@
 					FAF823DB1BD061C400973EF8 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = FFASSW2393;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -320,10 +386,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE66B5B1BD53F1C00066B36 /* 30.jpg in Resources */,
+				FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */,
 				FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */,
 				FA9269891BD2E0530055FDE9 /* Assets.xcassets in Resources */,
 				FA9269771BD2E0270055FDE9 /* Info.plist in Resources */,
 				FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */,
+				FAE66B5C1BD53F1C00066B36 /* autumn-in-wild-nature.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,12 +451,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
+				FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
+				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
 				FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */,
 				FA9269861BD2E0490055FDE9 /* lorescope.xcdatamodeld in Sources */,
+				FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */,
 				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
 				FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */,
 				FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */,
@@ -505,6 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/PSKuznetsov/Documents/Projects/Client-Server/lorescope/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
@@ -512,6 +586,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -521,6 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/PSKuznetsov/Documents/Projects/Client-Server/lorescope/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
@@ -528,6 +605,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

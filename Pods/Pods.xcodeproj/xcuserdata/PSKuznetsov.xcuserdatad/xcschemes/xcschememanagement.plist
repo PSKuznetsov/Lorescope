@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AFOAuth2Manager.xcscheme</key>
+		<key>JBKenBurnsView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05C6C0F1F01B02C36F92D38DFEFC7718</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E102868DC71CA847FF1A5D7F9A1D0F39</key>
+		<key>B6BAD66E730792409459A8901CF17630</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE84CC96D835F0BF12312A55E7A6C5C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

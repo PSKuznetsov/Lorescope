@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "LSServerManager.h"
 
 @interface SignUpViewController ()
 
@@ -33,5 +34,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Actions
+
+- (IBAction)signupButton:(id)sender {
+    
+    [[LSServerManager sharedManager] userSignUpRequestWithUsername:self.usernameField.text
+                                                          password:self.passwordField.text
+                                                             email:self.emailField.text
+                                                         onSuccess:^(NSArray *response) {
+                                                             
+                                                         }
+                                                         onFailure:^(NSError *error) {
+                                                             
+                                                         }];
+}
 
 @end
