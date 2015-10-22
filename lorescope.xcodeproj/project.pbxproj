@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A6CA753E7C3532C48F2AA33 /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C820B84C01558EEA6F43A298 /* libPods-lorescope.a */; };
+		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; settings = {ASSET_TAGS = (); }; };
 		FA20A8931BD2FEF500C9FFB2 /* LSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8921BD2FEF500C9FFB2 /* LSServerManager.m */; settings = {ASSET_TAGS = (); }; };
 		FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8981BD3002400C9FFB2 /* AESCrypt.m */; settings = {ASSET_TAGS = (); }; };
 		FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */; settings = {ASSET_TAGS = (); }; };
@@ -27,15 +28,21 @@
 		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9269941BD2E1000055FDE9 /* Security.framework */; };
-		FAE66B5B1BD53F1C00066B36 /* 30.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B591BD53F1C00066B36 /* 30.jpg */; settings = {ASSET_TAGS = (); }; };
-		FAE66B5C1BD53F1C00066B36 /* autumn-in-wild-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B5B1BD53F1C00066B36 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B591BD53F1C00066B36 /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B5C1BD53F1C00066B36 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B5A1BD53F1C00066B36 /* 2.jpg */; settings = {ASSET_TAGS = (); }; };
 		FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
+		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; settings = {ASSET_TAGS = (); }; };
+		FAE66B671BD583BA00066B36 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B651BD583BA00066B36 /* 3.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B681BD583BA00066B36 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B661BD583BA00066B36 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
+		FAE66B6A1BD5980E00066B36 /* KellsFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B691BD5980E00066B36 /* KellsFLF.ttf */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C7826C084496ED5F6264A11E /* Pods-lorescope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.release.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.release.xcconfig"; sourceTree = "<group>"; };
 		C820B84C01558EEA6F43A298 /* libPods-lorescope.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lorescope.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E61119B618D2C5E6E4EB2B /* Pods-lorescope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUILabel.h; path = Classes/LSUILabel.h; sourceTree = "<group>"; };
+		FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUILabel.m; path = Classes/LSUILabel.m; sourceTree = "<group>"; };
 		FA20A8911BD2FEF500C9FFB2 /* LSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSServerManager.h; sourceTree = "<group>"; };
 		FA20A8921BD2FEF500C9FFB2 /* LSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSServerManager.m; sourceTree = "<group>"; };
 		FA20A8971BD3002400C9FFB2 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
@@ -69,10 +76,16 @@
 		FA9269961BD2EACC0055FDE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FA92699A1BD2ECC10055FDE9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FA92699D1BD2EF980055FDE9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		FAE66B591BD53F1C00066B36 /* 30.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30.jpg; sourceTree = "<group>"; };
-		FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "autumn-in-wild-nature.jpg"; sourceTree = "<group>"; };
+		FAE66B591BD53F1C00066B36 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		FAE66B5A1BD53F1C00066B36 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		FAE66B5E1BD5540400066B36 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LSPalette.h"; path = "Extensions/UIColor+LSPalette.h"; sourceTree = "<group>"; };
+		FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LSPalette.m"; path = "Extensions/UIColor+LSPalette.m"; sourceTree = "<group>"; };
+		FAE66B651BD583BA00066B36 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		FAE66B661BD583BA00066B36 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		FAE66B691BD5980E00066B36 /* KellsFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KellsFLF.ttf; sourceTree = "<group>"; };
+		FAE8E1031BD7118F00153001 /* LSBackgroundAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSBackgroundAnimationProtocol.h; path = Protocols/LSBackgroundAnimationProtocol.h; sourceTree = "<group>"; };
 		FAF823DC1BD061C400973EF8 /* lorescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lorescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +117,15 @@
 				C7826C084496ED5F6264A11E /* Pods-lorescope.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA0AB3581BD65C1400F91A38 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */,
+				FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		FA20A8941BD2FFC600C9FFB2 /* Vendors */ = {
@@ -203,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9269981BD2EAFF0055FDE9 /* API */,
+				FAE66B611BD57F8100066B36 /* Extensions */,
 				FA20A8951BD2FFE700C9FFB2 /* System */,
 				FA20A8941BD2FFC600C9FFB2 /* Vendors */,
 				FA9269971BD2EAE50055FDE9 /* Helpers */,
@@ -223,6 +246,7 @@
 			children = (
 				FAE66B581BD53F1C00066B36 /* Images_bg */,
 				FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */,
+				FAE66B691BD5980E00066B36 /* KellsFLF.ttf */,
 				FA9269881BD2E0530055FDE9 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -247,6 +271,8 @@
 		FA9269971BD2EAE50055FDE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FAE8E1021BD7114600153001 /* Protocols */,
+				FA0AB3581BD65C1400F91A38 /* Classes */,
 				FA9269991BD2EC7E0055FDE9 /* Constants */,
 			);
 			path = Helpers;
@@ -273,8 +299,10 @@
 		FAE66B581BD53F1C00066B36 /* Images_bg */ = {
 			isa = PBXGroup;
 			children = (
-				FAE66B591BD53F1C00066B36 /* 30.jpg */,
-				FAE66B5A1BD53F1C00066B36 /* autumn-in-wild-nature.jpg */,
+				FAE66B591BD53F1C00066B36 /* 1.jpg */,
+				FAE66B5A1BD53F1C00066B36 /* 2.jpg */,
+				FAE66B651BD583BA00066B36 /* 3.jpg */,
+				FAE66B661BD583BA00066B36 /* 4.jpg */,
 			);
 			path = Images_bg;
 			sourceTree = "<group>";
@@ -286,6 +314,23 @@
 				FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */,
 			);
 			path = UIImageEffects;
+			sourceTree = "<group>";
+		};
+		FAE66B611BD57F8100066B36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */,
+				FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FAE8E1021BD7114600153001 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8E1031BD7118F00153001 /* LSBackgroundAnimationProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		FAF823D31BD061C400973EF8 = {
@@ -386,13 +431,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE66B5B1BD53F1C00066B36 /* 30.jpg in Resources */,
+				FAE66B5B1BD53F1C00066B36 /* 1.jpg in Resources */,
 				FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */,
 				FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */,
 				FA9269891BD2E0530055FDE9 /* Assets.xcassets in Resources */,
 				FA9269771BD2E0270055FDE9 /* Info.plist in Resources */,
 				FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */,
-				FAE66B5C1BD53F1C00066B36 /* autumn-in-wild-nature.jpg in Resources */,
+				FAE66B681BD583BA00066B36 /* 4.jpg in Resources */,
+				FAE66B6A1BD5980E00066B36 /* KellsFLF.ttf in Resources */,
+				FAE66B5C1BD53F1C00066B36 /* 2.jpg in Resources */,
+				FAE66B671BD583BA00066B36 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +502,7 @@
 				FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
 				FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */,
+				FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
@@ -461,6 +510,7 @@
 				FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */,
 				FA9269861BD2E0490055FDE9 /* lorescope.xcdatamodeld in Sources */,
 				FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */,
+				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
 				FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */,
 				FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */,
@@ -526,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -564,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

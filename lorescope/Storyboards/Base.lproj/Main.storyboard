@@ -4,6 +4,22 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TsukushiBMaruGothic.ttc">
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -99,34 +115,162 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorescope" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5v-2Z-0hD">
-                                <rect key="frame" x="0.0" y="100" width="600" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88b-Sp-xxt">
+                                <rect key="frame" x="8" y="504" width="584" height="52"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Nw9-Ya-kGj"/>
+                                    <constraint firstAttribute="height" constant="52" id="W0n-sW-MR8">
+                                        <variation key="widthClass=compact" constant="52"/>
+                                    </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="70"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <state key="normal" title="Login" backgroundImage="button_background_outline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="8" y="701" width="384" height="52"/>
+                                </variation>
+                                <connections>
+                                    <action selector="loginButton:" destination="uEA-NN-By8" eventType="touchUpInside" id="KCM-aD-n5p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOb-5v-RUh">
+                                <rect key="frame" x="8" y="564" width="584" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <state key="normal" title="Don't have an account?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="8" y="761" width="384" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="newAccountButton:" destination="uEA-NN-By8" eventType="touchUpInside" id="89I-OW-h4K"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="field_background_outline" translatesAutoresizingMaskIntoConstraints="NO" id="RaP-Y8-kPt">
+                                <rect key="frame" x="8" y="383" width="584" height="47"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="4an-yY-YdN">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorescope" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5v-2Z-0hD" customClass="LSUILabel">
+                                <rect key="frame" x="0.0" y="124" width="600" height="84"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Nw9-Ya-kGj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="field_background_outline" translatesAutoresizingMaskIntoConstraints="NO" id="caa-yO-vmh">
+                                <rect key="frame" x="8" y="312" width="584" height="47"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="WLo-oa-fJh">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="58"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc1-5N-CTd">
+                                <rect key="frame" x="20" y="402" width="123" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="6Dc-uJ-wrK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="302" width="123" height="19"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYc-2u-16T">
+                                <rect key="frame" x="20" y="331" width="74" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="TC8-u7-tgQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="231" width="74" height="19"/>
                                 </variation>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SOb-5v-RUh" secondAttribute="trailing" constant="8" id="4W3-Pu-zuu"/>
+                            <constraint firstAttribute="trailing" secondItem="caa-yO-vmh" secondAttribute="trailing" constant="8" id="8xg-dJ-2O5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="88b-Sp-xxt" secondAttribute="trailing" constant="8" id="Au2-1E-7Y8">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
+                            <constraint firstItem="RaP-Y8-kPt" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" constant="8" id="EOJ-gF-ZBv">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
                             <constraint firstItem="BDM-Om-J7R" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" id="EvL-AI-sl7"/>
+                            <constraint firstAttribute="bottom" secondItem="SOb-5v-RUh" secondAttribute="bottom" constant="8" id="GMW-2B-Ktg"/>
+                            <constraint firstItem="RaP-Y8-kPt" firstAttribute="leading" secondItem="Dc1-5N-CTd" secondAttribute="trailing" constant="-135" id="LKA-bp-CKa"/>
+                            <constraint firstItem="88b-Sp-xxt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RaP-Y8-kPt" secondAttribute="bottom" constant="24" id="Lfq-1F-4E8"/>
                             <constraint firstAttribute="trailing" secondItem="p5v-2Z-0hD" secondAttribute="trailing" id="NDp-uE-vLe"/>
                             <constraint firstItem="p5v-2Z-0hD" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" id="Q80-hY-v0e"/>
-                            <constraint firstItem="p5v-2Z-0hD" firstAttribute="top" secondItem="s7U-mE-e8A" secondAttribute="bottom" constant="80" id="fRf-Q3-jka"/>
+                            <constraint firstItem="caa-yO-vmh" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" constant="8" id="ZCv-iz-ze2">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
+                            <constraint firstItem="88b-Sp-xxt" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" constant="8" id="aCl-X8-1Vv">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
+                            <constraint firstItem="RaP-Y8-kPt" firstAttribute="top" secondItem="Dc1-5N-CTd" secondAttribute="bottom" constant="-35" id="bMI-uW-kxS">
+                                <variation key="widthClass=compact" constant="-30"/>
+                            </constraint>
+                            <constraint firstItem="p5v-2Z-0hD" firstAttribute="top" secondItem="s7U-mE-e8A" secondAttribute="bottom" constant="104" id="fRf-Q3-jka">
+                                <variation key="widthClass=compact" constant="32"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="RaP-Y8-kPt" secondAttribute="trailing" constant="8" id="hlo-mF-gNW">
+                                <variation key="heightClass=regular-widthClass=regular" constant="104"/>
+                            </constraint>
+                            <constraint firstItem="caa-yO-vmh" firstAttribute="leading" secondItem="JYc-2u-16T" secondAttribute="trailing" constant="-86" id="kac-nO-bPW"/>
                             <constraint firstItem="H76-kq-N7w" firstAttribute="top" secondItem="BDM-Om-J7R" secondAttribute="bottom" id="qVt-pv-d3K"/>
+                            <constraint firstItem="caa-yO-vmh" firstAttribute="top" secondItem="p5v-2Z-0hD" secondAttribute="bottom" constant="104" id="qlI-0d-ds1">
+                                <variation key="widthClass=compact" constant="32"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="210"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="BDM-Om-J7R" secondAttribute="trailing" id="vgn-Ol-hHi"/>
+                            <constraint firstItem="SOb-5v-RUh" firstAttribute="top" secondItem="88b-Sp-xxt" secondAttribute="bottom" constant="8" id="vxW-GZ-mGy"/>
                             <constraint firstItem="BDM-Om-J7R" firstAttribute="top" secondItem="xnQ-gH-oV4" secondAttribute="top" id="yV2-aW-jTN"/>
+                            <constraint firstItem="RaP-Y8-kPt" firstAttribute="top" secondItem="caa-yO-vmh" secondAttribute="bottom" constant="24" id="yaC-PE-GU6"/>
+                            <constraint firstItem="caa-yO-vmh" firstAttribute="top" secondItem="JYc-2u-16T" secondAttribute="bottom" constant="-35" id="z0y-Yz-zeU">
+                                <variation key="widthClass=compact" constant="-30"/>
+                            </constraint>
+                            <constraint firstItem="SOb-5v-RUh" firstAttribute="leading" secondItem="xnQ-gH-oV4" secondAttribute="leading" constant="8" id="zNS-BL-nL6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="BDM-Om-J7R" id="HNO-WT-QCm"/>
+                        <outlet property="loginEmailField" destination="caa-yO-vmh" id="ZHp-ZT-M3w"/>
+                        <outlet property="passwordField" destination="RaP-Y8-kPt" id="9ds-Tn-aeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBb-xf-EOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,47 +289,138 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Tg-jn-0Ch">
-                                <rect key="frame" x="120" y="60" width="360" height="480"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xny-V0-k6k">
-                                        <rect key="frame" x="8" y="161" width="344" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kn0-5i-Y4H">
-                                        <rect key="frame" x="8" y="207" width="344" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-9G-tO8">
-                                        <rect key="frame" x="0.0" y="303" width="360" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="Sign Up"/>
-                                        <connections>
-                                            <action selector="signupButton:" destination="nKu-qt-mRR" eventType="touchUpInside" id="Kf6-mr-Hfe"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-jC-jw6">
-                                        <rect key="frame" x="8" y="252" width="344" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvN-dU-yN1" customClass="JBKenBurnsView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorescope" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHS-UP-qIo" customClass="LSUILabel">
+                                <rect key="frame" x="0.0" y="124" width="600" height="84"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="3TD-zf-EDb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6w-WH-NMA">
+                                <rect key="frame" x="8" y="532" width="584" height="52"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="kvx-mP-yxc"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up" backgroundImage="button_background_outline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupButton:" destination="nKu-qt-mRR" eventType="touchUpInside" id="bwM-gj-gJl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="field_background_outline" translatesAutoresizingMaskIntoConstraints="NO" id="7UP-gf-Jkd">
+                                <rect key="frame" x="8" y="312" width="584" height="47"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="d7o-qk-D9f"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="field_background_outline" translatesAutoresizingMaskIntoConstraints="NO" id="DPl-eH-OoG">
+                                <rect key="frame" x="8" y="383" width="584" height="47"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="cNT-Re-e6s"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="field_background_outline" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-9d-hHg">
+                                <rect key="frame" x="8" y="454" width="584" height="47"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="SiQ-rM-9gq"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2R-XT-0sa">
+                                <rect key="frame" x="20" y="399" width="40" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="RJM-mw-gss"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px7-lb-EyF">
+                                <rect key="frame" x="20" y="328" width="74" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="otV-oS-cmb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-P1-E1C">
+                                <rect key="frame" x="20" y="470" width="69" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="GTL-6f-hNe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7UP-gf-Jkd" secondAttribute="trailing" constant="8" id="02C-MQ-jny"/>
+                            <constraint firstItem="sVr-9d-hHg" firstAttribute="top" secondItem="DPl-eH-OoG" secondAttribute="bottom" constant="24" id="3pr-9A-KnK"/>
+                            <constraint firstItem="qeg-k4-2yx" firstAttribute="top" secondItem="U6w-WH-NMA" secondAttribute="bottom" constant="16" id="A51-af-Cxr"/>
+                            <constraint firstItem="UHS-UP-qIo" firstAttribute="top" secondItem="pZL-Od-C0I" secondAttribute="bottom" constant="104" id="EUW-a9-jle">
+                                <variation key="widthClass=compact" constant="32"/>
+                            </constraint>
+                            <constraint firstItem="U2R-XT-0sa" firstAttribute="top" secondItem="DPl-eH-OoG" secondAttribute="bottom" constant="-31" id="EXi-zA-cjs"/>
+                            <constraint firstItem="DPl-eH-OoG" firstAttribute="leading" secondItem="U2R-XT-0sa" secondAttribute="trailing" constant="-52" id="EkB-TK-rDt"/>
+                            <constraint firstItem="Px7-lb-EyF" firstAttribute="top" secondItem="7UP-gf-Jkd" secondAttribute="bottom" constant="-31" id="IyS-Lg-LM3"/>
+                            <constraint firstAttribute="trailing" secondItem="UHS-UP-qIo" secondAttribute="trailing" id="Oq4-9j-mKP"/>
+                            <constraint firstItem="U6w-WH-NMA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sVr-9d-hHg" secondAttribute="bottom" constant="24" id="P8X-hl-ocw"/>
+                            <constraint firstItem="tvN-dU-yN1" firstAttribute="top" secondItem="Fhe-pE-nMw" secondAttribute="top" id="Q6X-E3-hII"/>
+                            <constraint firstItem="U6w-WH-NMA" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" constant="8" id="bqn-Pe-Pab"/>
+                            <constraint firstItem="7UP-gf-Jkd" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" constant="8" id="cfF-Bn-VB7"/>
+                            <constraint firstAttribute="trailing" secondItem="U6w-WH-NMA" secondAttribute="trailing" constant="8" id="dM7-Ce-NaL"/>
+                            <constraint firstItem="DPl-eH-OoG" firstAttribute="top" secondItem="7UP-gf-Jkd" secondAttribute="bottom" constant="24" id="i7z-Xb-d9G"/>
+                            <constraint firstItem="7UP-gf-Jkd" firstAttribute="leading" secondItem="Px7-lb-EyF" secondAttribute="trailing" constant="-86" id="mKu-JE-RAY"/>
+                            <constraint firstItem="tvN-dU-yN1" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" id="mR8-ah-9dR"/>
+                            <constraint firstAttribute="trailing" secondItem="tvN-dU-yN1" secondAttribute="trailing" id="pNs-wO-IVx"/>
+                            <constraint firstAttribute="trailing" secondItem="DPl-eH-OoG" secondAttribute="trailing" constant="8" id="rEk-dp-UBg"/>
+                            <constraint firstItem="DPl-eH-OoG" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" constant="8" id="rfX-fR-i7z"/>
+                            <constraint firstItem="7UP-gf-Jkd" firstAttribute="top" secondItem="UHS-UP-qIo" secondAttribute="bottom" constant="104" id="srO-U5-bFc">
+                                <variation key="widthClass=compact" constant="32"/>
+                            </constraint>
+                            <constraint firstItem="sVr-9d-hHg" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" constant="8" id="t0J-BN-zmU"/>
+                            <constraint firstItem="jFW-P1-E1C" firstAttribute="top" secondItem="sVr-9d-hHg" secondAttribute="bottom" constant="-31" id="t2H-gL-dQu"/>
+                            <constraint firstItem="sVr-9d-hHg" firstAttribute="leading" secondItem="jFW-P1-E1C" secondAttribute="trailing" constant="-81" id="tS4-mq-eHT"/>
+                            <constraint firstItem="qeg-k4-2yx" firstAttribute="top" secondItem="tvN-dU-yN1" secondAttribute="bottom" id="vD8-d9-Kmo"/>
+                            <constraint firstItem="UHS-UP-qIo" firstAttribute="leading" secondItem="Fhe-pE-nMw" secondAttribute="leading" id="xrR-eu-nA1"/>
+                            <constraint firstAttribute="trailing" secondItem="sVr-9d-hHg" secondAttribute="trailing" constant="8" id="ySj-zP-KfB"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="Kn0-5i-Y4H" id="Jei-bh-kxn"/>
-                        <outlet property="passwordField" destination="i1v-jC-jw6" id="5q9-Wg-zga"/>
-                        <outlet property="usernameField" destination="Xny-V0-k6k" id="bxt-TV-mBL"/>
+                        <outlet property="backgroundView" destination="tvN-dU-yN1" id="y7n-H0-pmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilK-U7-RNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,4 +447,8 @@
             <point key="canvasLocation" x="420" y="362"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_background_outline" width="272" height="52"/>
+        <image name="field_background_outline" width="272" height="47"/>
+    </resources>
 </document>

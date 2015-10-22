@@ -7,11 +7,11 @@
 //
 
 #import "LoginViewController.h"
-#import "LSServerManager.h"
-#import "UIImage+ImageEffects.h"
-#import <JBKenBurnsView.h>
+#import "SignUpViewController.h"
 
 @interface LoginViewController ()
+
+@property (nonatomic, strong) NSMutableArray* backgroundImages;
 
 @end
 
@@ -20,27 +20,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage* image_one = [UIImage imageNamed:@"autumn-in-wild-nature.jpg"];
+    [self prepareBackgroundImagesWithCompletion:^{
+        [self applyBlurEffectToImages:self.backgroundImages];
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     
-    image_one = [image_one applyBlurWithRadius:8.f
-                                     tintColor:[UIColor colorWithRed:0
-                                                               green:0
-                                                                blue:0
-                                                               alpha:0.6]
-                         saturationDeltaFactor:1
-                                     maskImage:nil];
+    [self startAnimationBackgroundWithImages:self.backgroundImages];
+}
+
+#pragma mark - Animations
+
+- (void)prepareBackgroundImagesWithCompletion:(void(^)())completion {
     
+    self.backgroundImages = [NSMutableArray array];
     
-    NSArray* imagesArray = [NSArray arrayWithObject:image_one];
+    for (int i = 1; i <= 4; i++) {
+        
+        UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", i]];
+        
+        [self.backgroundImages addObject:image];
+    }
     
-    [self.backgroundView animateWithImages:imagesArray
+    if (completion) {
+        completion();
+    }
+    
+}
+
+- (void)startAnimationBackgroundWithImages:(NSArray *)images {
+    
+    [self.backgroundView animateWithImages:images
                         transitionDuration:35.f
                               initialDelay:0.f
                                       loop:YES
                                isLandscape:YES];
+     
     
 }
 
+- (void)applyBlurEffectToImages:(NSMutableArray *)images {
+    
+    for (NSInteger i = 0; i < images.count; i++) {
+        
+        UIImage* curImage = images[i];
+        
+        curImage = [curImage applyBlurWithRadius:8.f
+                                 tintColor:[UIColor blurDefaultColor]
+                     saturationDeltaFactor:1
+                                 maskImage:nil];
+        images[i] = curImage;
+    }
+}
 
 
 #pragma mark - Actions
@@ -59,7 +91,9 @@
 
 - (IBAction)newAccountButton:(id)sender {
     
-    [self performSegueWithIdentifier:@"newAccountSegue" sender:self];
+    SignUpViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 @end

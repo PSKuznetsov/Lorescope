@@ -94,7 +94,7 @@
                              password:(NSString *)password
                             onSuccess:(void (^)(NSArray* response)) success
                             onFailure:(void (^)(NSError * error)) failure {
-    
+    //TODO: if fields are nil
     //AES encrypt password for request
     NSString* encryptedPassword = [AESCrypt encrypt:password password:API_AUTH_PASSWORD];
     
