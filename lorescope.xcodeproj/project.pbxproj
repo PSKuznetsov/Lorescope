@@ -8,33 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		1A6CA753E7C3532C48F2AA33 /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C820B84C01558EEA6F43A298 /* libPods-lorescope.a */; };
-		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8931BD2FEF500C9FFB2 /* LSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8921BD2FEF500C9FFB2 /* LSServerManager.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8981BD3002400C9FFB2 /* AESCrypt.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; settings = {ASSET_TAGS = (); }; };
-		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
-		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; settings = {ASSET_TAGS = (); }; };
-		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		FA9269771BD2E0270055FDE9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA9269741BD2E0270055FDE9 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
-		FA9269781BD2E0270055FDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269751BD2E0270055FDE9 /* main.m */; settings = {ASSET_TAGS = (); }; };
-		FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697C1BD2E0360055FDE9 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FA9269861BD2E0490055FDE9 /* lorescope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA9269841BD2E0490055FDE9 /* lorescope.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		FA9269891BD2E0530055FDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9269881BD2E0530055FDE9 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; };
+		FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8981BD3002400C9FFB2 /* AESCrypt.m */; };
+		FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */; };
+		FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */; };
+		FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */; };
+		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
+		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
+		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; };
+		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
+		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
+		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
+		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; };
+		FA9269771BD2E0270055FDE9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA9269741BD2E0270055FDE9 /* Info.plist */; };
+		FA9269781BD2E0270055FDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269751BD2E0270055FDE9 /* main.m */; };
+		FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697C1BD2E0360055FDE9 /* LoginViewController.m */; };
+		FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */; };
+		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; };
+		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; };
 		FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9269941BD2E1000055FDE9 /* Security.framework */; };
-		FAE66B5B1BD53F1C00066B36 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B591BD53F1C00066B36 /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
-		FAE66B5C1BD53F1C00066B36 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B5A1BD53F1C00066B36 /* 2.jpg */; settings = {ASSET_TAGS = (); }; };
-		FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
-		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; settings = {ASSET_TAGS = (); }; };
-		FAE66B671BD583BA00066B36 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B651BD583BA00066B36 /* 3.jpg */; settings = {ASSET_TAGS = (); }; };
-		FAE66B681BD583BA00066B36 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B661BD583BA00066B36 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
-		FAE66B6A1BD5980E00066B36 /* KellsFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAE66B691BD5980E00066B36 /* KellsFLF.ttf */; settings = {ASSET_TAGS = (); }; };
+		FA94661C1BE28FE300DE9984 /* LSSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94661B1BE28FE300DE9984 /* LSSessionManager.m */; };
+		FA9466301BE295F400DE9984 /* UserAuthResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */; };
+		FA9466341BE2A41700DE9984 /* UserSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */; };
+		FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */; };
+		FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */; };
+		FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */; };
+		FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */; };
+		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,6 @@
 		F0E61119B618D2C5E6E4EB2B /* Pods-lorescope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUILabel.h; path = Classes/LSUILabel.h; sourceTree = "<group>"; };
 		FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUILabel.m; path = Classes/LSUILabel.m; sourceTree = "<group>"; };
-		FA20A8911BD2FEF500C9FFB2 /* LSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSServerManager.h; sourceTree = "<group>"; };
-		FA20A8921BD2FEF500C9FFB2 /* LSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSServerManager.m; sourceTree = "<group>"; };
 		FA20A8971BD3002400C9FFB2 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		FA20A8981BD3002400C9FFB2 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		FA20A8991BD3002400C9FFB2 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -60,6 +58,9 @@
 		FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		FA8997B11BE3B39600DA11CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8997B51BE3B72500DA11CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FA8997B61BE3B72500DA11CB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FA9269721BD2E0270055FDE9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA9269731BD2E0270055FDE9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA9269741BD2E0270055FDE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,24 +69,28 @@
 		FA92697C1BD2E0360055FDE9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA92697E1BD2E0360055FDE9 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		FA9269851BD2E0490055FDE9 /* lorescope.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lorescope.xcdatamodel; sourceTree = "<group>"; };
-		FA9269881BD2E0530055FDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA92698C1BD2E05B0055FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA92698E1BD2E05B0055FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA9269941BD2E1000055FDE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA9269961BD2EACC0055FDE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FA92699A1BD2ECC10055FDE9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FA92699D1BD2EF980055FDE9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		FAE66B591BD53F1C00066B36 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		FAE66B5A1BD53F1C00066B36 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		FAE66B5E1BD5540400066B36 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		FA94661A1BE28FE300DE9984 /* LSSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSessionManager.h; sourceTree = "<group>"; };
+		FA94661B1BE28FE300DE9984 /* LSSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSessionManager.m; sourceTree = "<group>"; };
+		FA94662E1BE295F400DE9984 /* UserAuthResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAuthResponseModel.h; sourceTree = "<group>"; };
+		FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAuthResponseModel.m; sourceTree = "<group>"; };
+		FA9466321BE2A41700DE9984 /* UserSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSignInRequestModel.h; path = "Sign In Request/UserSignInRequestModel.h"; sourceTree = "<group>"; };
+		FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSignInRequestModel.m; path = "Sign In Request/UserSignInRequestModel.m"; sourceTree = "<group>"; };
+		FA9466361BE2A56900DE9984 /* UserSignUpRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSignUpRequestModel.h; sourceTree = "<group>"; };
+		FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSignUpRequestModel.m; sourceTree = "<group>"; };
+		FA94663A1BE2AE8700DE9984 /* LSSecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSecureStore.h; sourceTree = "<group>"; };
+		FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSecureStore.m; sourceTree = "<group>"; };
+		FAAB67951BD8DF7D00484FC2 /* JBKenBurnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBKenBurnsView.h; sourceTree = "<group>"; };
+		FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBKenBurnsView.m; sourceTree = "<group>"; };
+		FAAB679A1BD8E66C00484FC2 /* LSAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSAnimationManager.h; path = Classes/LSBlurManager/LSAnimationManager.h; sourceTree = "<group>"; };
+		FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSAnimationManager.h.m; path = Classes/LSBlurManager/LSAnimationManager.h.m; sourceTree = "<group>"; };
 		FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LSPalette.h"; path = "Extensions/UIColor+LSPalette.h"; sourceTree = "<group>"; };
 		FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LSPalette.m"; path = "Extensions/UIColor+LSPalette.m"; sourceTree = "<group>"; };
-		FAE66B651BD583BA00066B36 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		FAE66B661BD583BA00066B36 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
-		FAE66B691BD5980E00066B36 /* KellsFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KellsFLF.ttf; sourceTree = "<group>"; };
-		FAE8E1031BD7118F00153001 /* LSBackgroundAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSBackgroundAnimationProtocol.h; path = Protocols/LSBackgroundAnimationProtocol.h; sourceTree = "<group>"; };
 		FAF823DC1BD061C400973EF8 /* lorescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lorescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,8 +127,9 @@
 		FA0AB3581BD65C1400F91A38 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */,
-				FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */,
+				FA9466391BE2AE7300DE9984 /* LSSecureStore */,
+				FAAB67991BD8E5EE00484FC2 /* LSAnimationManager */,
+				FAAB67981BD8E5A800484FC2 /* LSUILabel */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 		FA20A8941BD2FFC600C9FFB2 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				FAAB67941BD8DF7D00484FC2 /* KenBurns */,
 				FA20A8961BD3002400C9FFB2 /* AESCrypt */,
 			);
 			path = Vendors;
@@ -139,7 +146,6 @@
 		FA20A8951BD2FFE700C9FFB2 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				FAE66B5D1BD5540400066B36 /* UIImageEffects */,
 				FA20A8AA1BD3243C00C9FFB2 /* KeychainWrapper */,
 				FA9269941BD2E1000055FDE9 /* Security.framework */,
 			);
@@ -181,6 +187,15 @@
 			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
+		FA8997B41BE3B70300DA11CB /* Settings controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA8997B51BE3B72500DA11CB /* SettingsViewController.h */,
+				FA8997B61BE3B72500DA11CB /* SettingsViewController.m */,
+			);
+			path = "Settings controller";
+			sourceTree = "<group>";
+		};
 		FA9269711BD2E0270055FDE9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +211,7 @@
 		FA9269791BD2E0360055FDE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA8997B41BE3B70300DA11CB /* Settings controller */,
 				FA20A8A31BD3197300C9FFB2 /* Main controller */,
 				FA92697A1BD2E0360055FDE9 /* Login controller */,
 				FA92697D1BD2E0360055FDE9 /* SignUp controller */,
@@ -236,7 +252,8 @@
 		FA9269831BD2E0490055FDE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA9269841BD2E0490055FDE9 /* lorescope.xcdatamodeld */,
+				FA9466231BE292D700DE9984 /* Local Models */,
+				FA9466221BE292B500DE9984 /* Server Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,10 +261,8 @@
 		FA9269871BD2E0530055FDE9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAE66B581BD53F1C00066B36 /* Images_bg */,
+				FA8997B11BE3B39600DA11CB /* Assets.xcassets */,
 				FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */,
-				FAE66B691BD5980E00066B36 /* KellsFLF.ttf */,
-				FA9269881BD2E0530055FDE9 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -271,7 +286,6 @@
 		FA9269971BD2EAE50055FDE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FAE8E1021BD7114600153001 /* Protocols */,
 				FA0AB3581BD65C1400F91A38 /* Classes */,
 				FA9269991BD2EC7E0055FDE9 /* Constants */,
 			);
@@ -281,8 +295,7 @@
 		FA9269981BD2EAFF0055FDE9 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FA20A8911BD2FEF500C9FFB2 /* LSServerManager.h */,
-				FA20A8921BD2FEF500C9FFB2 /* LSServerManager.m */,
+				FA94661D1BE2916A00DE9984 /* Session Manager */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -296,24 +309,103 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		FAE66B581BD53F1C00066B36 /* Images_bg */ = {
+		FA94661D1BE2916A00DE9984 /* Session Manager */ = {
 			isa = PBXGroup;
 			children = (
-				FAE66B591BD53F1C00066B36 /* 1.jpg */,
-				FAE66B5A1BD53F1C00066B36 /* 2.jpg */,
-				FAE66B651BD583BA00066B36 /* 3.jpg */,
-				FAE66B661BD583BA00066B36 /* 4.jpg */,
+				FA94661A1BE28FE300DE9984 /* LSSessionManager.h */,
+				FA94661B1BE28FE300DE9984 /* LSSessionManager.m */,
 			);
-			path = Images_bg;
+			name = "Session Manager";
 			sourceTree = "<group>";
 		};
-		FAE66B5D1BD5540400066B36 /* UIImageEffects */ = {
+		FA9466221BE292B500DE9984 /* Server Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAE66B5E1BD5540400066B36 /* UIImage+ImageEffects.h */,
-				FAE66B5F1BD5540400066B36 /* UIImage+ImageEffects.m */,
+				FA9466241BE2933D00DE9984 /* User */,
 			);
-			path = UIImageEffects;
+			name = "Server Models";
+			sourceTree = "<group>";
+		};
+		FA9466231BE292D700DE9984 /* Local Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Local Models";
+			sourceTree = "<group>";
+		};
+		FA9466241BE2933D00DE9984 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FA9466351BE2A55400DE9984 /* Sign Up Request */,
+				FA9466311BE2A3D800DE9984 /* Sign In Request */,
+				FA94662D1BE295CA00DE9984 /* Response */,
+			);
+			name = User;
+			path = "Server Models/User";
+			sourceTree = "<group>";
+		};
+		FA94662D1BE295CA00DE9984 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FA94662E1BE295F400DE9984 /* UserAuthResponseModel.h */,
+				FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		FA9466311BE2A3D800DE9984 /* Sign In Request */ = {
+			isa = PBXGroup;
+			children = (
+				FA9466321BE2A41700DE9984 /* UserSignInRequestModel.h */,
+				FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */,
+			);
+			name = "Sign In Request";
+			sourceTree = "<group>";
+		};
+		FA9466351BE2A55400DE9984 /* Sign Up Request */ = {
+			isa = PBXGroup;
+			children = (
+				FA9466361BE2A56900DE9984 /* UserSignUpRequestModel.h */,
+				FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */,
+			);
+			path = "Sign Up Request";
+			sourceTree = "<group>";
+		};
+		FA9466391BE2AE7300DE9984 /* LSSecureStore */ = {
+			isa = PBXGroup;
+			children = (
+				FA94663A1BE2AE8700DE9984 /* LSSecureStore.h */,
+				FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */,
+			);
+			name = LSSecureStore;
+			path = Classes/LSUILabel/LSSecureStore;
+			sourceTree = "<group>";
+		};
+		FAAB67941BD8DF7D00484FC2 /* KenBurns */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB67951BD8DF7D00484FC2 /* JBKenBurnsView.h */,
+				FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */,
+			);
+			path = KenBurns;
+			sourceTree = "<group>";
+		};
+		FAAB67981BD8E5A800484FC2 /* LSUILabel */ = {
+			isa = PBXGroup;
+			children = (
+				FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */,
+				FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */,
+			);
+			name = LSUILabel;
+			sourceTree = "<group>";
+		};
+		FAAB67991BD8E5EE00484FC2 /* LSAnimationManager */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB679A1BD8E66C00484FC2 /* LSAnimationManager.h */,
+				FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */,
+			);
+			name = LSAnimationManager;
 			sourceTree = "<group>";
 		};
 		FAE66B611BD57F8100066B36 /* Extensions */ = {
@@ -323,14 +415,6 @@
 				FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		FAE8E1021BD7114600153001 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FAE8E1031BD7118F00153001 /* LSBackgroundAnimationProtocol.h */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		FAF823D31BD061C400973EF8 = {
@@ -402,7 +486,7 @@
 						DevelopmentTeam = FFASSW2393;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -431,16 +515,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE66B5B1BD53F1C00066B36 /* 1.jpg in Resources */,
 				FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */,
 				FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */,
-				FA9269891BD2E0530055FDE9 /* Assets.xcassets in Resources */,
 				FA9269771BD2E0270055FDE9 /* Info.plist in Resources */,
 				FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */,
-				FAE66B681BD583BA00066B36 /* 4.jpg in Resources */,
-				FAE66B6A1BD5980E00066B36 /* KellsFLF.ttf in Resources */,
-				FAE66B5C1BD53F1C00066B36 /* 2.jpg in Resources */,
-				FAE66B671BD583BA00066B36 /* 3.jpg in Resources */,
+				FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,21 +579,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */,
+				FA94661C1BE28FE300DE9984 /* LSSessionManager.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
-				FAE66B601BD5540400066B36 /* UIImage+ImageEffects.m in Sources */,
+				FA9466301BE295F400DE9984 /* UserAuthResponseModel.m in Sources */,
 				FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
+				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
+				FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
 				FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */,
-				FA9269861BD2E0490055FDE9 /* lorescope.xcdatamodeld in Sources */,
 				FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */,
+				FA9466341BE2A41700DE9984 /* UserSignInRequestModel.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
+				FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */,
+				FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */,
 				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
 				FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */,
+				FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */,
 				FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */,
-				FA20A8931BD2FEF500C9FFB2 /* LSServerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,19 +766,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FA9269841BD2E0490055FDE9 /* lorescope.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FA9269851BD2E0490055FDE9 /* lorescope.xcdatamodel */,
-			);
-			currentVersion = FA9269851BD2E0490055FDE9 /* lorescope.xcdatamodel */;
-			path = lorescope.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FAF823D41BD061C400973EF8 /* Project object */;
 }

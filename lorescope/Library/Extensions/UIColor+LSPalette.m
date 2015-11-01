@@ -13,6 +13,7 @@
 + (UIColor *)blurDefaultColor {
     
     return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+    
 }
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class JBKenBurnsView;
+
 @interface LoginViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UITextField* loginEmailField;
@@ -16,6 +18,5 @@
 
 - (IBAction)loginButton:(id)sender;
 - (IBAction)newAccountButton:(id)sender;
-
 
 @end

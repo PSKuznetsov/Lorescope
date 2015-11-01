@@ -8,10 +8,13 @@
 
 #import "LoginViewController.h"
 #import "SignUpViewController.h"
+#import "MainViewController.h"
+#import "LSAnimationManager.h"
+#import "LSSecureStore.h"
+#import "LSSessionManager.h"
 
-@interface LoginViewController ()
 
-@property (nonatomic, strong) NSMutableArray* backgroundImages;
+@interface LoginViewController() <UITextFieldDelegate>
 
 @end
 
@@ -20,80 +23,87 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self prepareBackgroundImagesWithCompletion:^{
-        [self applyBlurEffectToImages:self.backgroundImages];
-    }];
+    self.loginEmailField.delegate = self;
+    self.passwordField.delegate   = self;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    [self startAnimationBackgroundWithImages:self.backgroundImages];
+    [[LSAnimationManager sharedManager] startAnimationForView:self.backgroundView];
 }
-
-#pragma mark - Animations
-
-- (void)prepareBackgroundImagesWithCompletion:(void(^)())completion {
-    
-    self.backgroundImages = [NSMutableArray array];
-    
-    for (int i = 1; i <= 4; i++) {
-        
-        UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", i]];
-        
-        [self.backgroundImages addObject:image];
-    }
-    
-    if (completion) {
-        completion();
-    }
-    
-}
-
-- (void)startAnimationBackgroundWithImages:(NSArray *)images {
-    
-    [self.backgroundView animateWithImages:images
-                        transitionDuration:35.f
-                              initialDelay:0.f
-                                      loop:YES
-                               isLandscape:YES];
-     
-    
-}
-
-- (void)applyBlurEffectToImages:(NSMutableArray *)images {
-    
-    for (NSInteger i = 0; i < images.count; i++) {
-        
-        UIImage* curImage = images[i];
-        
-        curImage = [curImage applyBlurWithRadius:8.f
-                                 tintColor:[UIColor blurDefaultColor]
-                     saturationDeltaFactor:1
-                                 maskImage:nil];
-        images[i] = curImage;
-    }
-}
-
 
 #pragma mark - Actions
 
 - (IBAction)loginButton:(id)sender {
     
-    [[LSServerManager sharedManager] userSignInRequestWithEmail:self.loginEmailField.text
-                                                       password:self.passwordField.text
-                                                      onSuccess:^(NSArray *response) {
+    if (self.loginEmailField.text != nil && self.passwordField.text != nil) {
         
-                                                      }
-                                                      onFailure:^(NSError *error) {
+        //AES encrypt password for request
+        NSString* encryptedPassword = [AESCrypt encrypt:self.passwordField.text password:API_AUTH_PASSWORD];
         
-                                                      }];
+        UserSignInRequestModel* requestModel = [UserSignInRequestModel new];
+        
+        requestModel.email    = self.loginEmailField.text;
+        requestModel.password = encryptedPassword;
+        
+        
+        [[LSSessionManager sharedManager] postUserSignInWithRequestModel:requestModel success:^(UserAuthResponseModel *responseModel) {
+            
+            //Save user's sensitive data to keychain
+            [[LSSecureStore sharedStore] saveUserDataToKeychain:responseModel];
+            //
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserDidAuth"];
+            //
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            
+            MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+            
+            [self presentViewController:navController animated:NO completion:nil];
+            
+        } failure:^(NSError *error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }];
+    }
+    
 }
 
 - (IBAction)newAccountButton:(id)sender {
     
     SignUpViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
-    [self presentViewController:vc animated:YES completion:nil];
+   
+    [self presentViewController:vc animated:YES completion:^{
+       
+        [self.backgroundView stopAnimation];
+    }];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
+    if ([textField isEqual:self.loginEmailField]) {
+        
+        [self.passwordField becomeFirstResponder];
+    }
+    else {
+        
+        [textField resignFirstResponder];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"] invertedSet];
+    
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    
+    return [string isEqualToString:filtered];
 }
 
 @end

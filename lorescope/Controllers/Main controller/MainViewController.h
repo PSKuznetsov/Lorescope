@@ -10,4 +10,7 @@
 
 @interface MainViewController : UIViewController
 
+- (IBAction)settingsButton:(id)sender;
+- (IBAction)newPostButton:(id)sender;
+
 @end

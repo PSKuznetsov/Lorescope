@@ -9,13 +9,10 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "UIImage+ImageEffects.h"
 #import "UIColor+LSPalette.h"
 #import "Constants.h"
 #import "KeychainWrapper.h"
-#import "LSServerManager.h"
 #import "AESCrypt.h"
-#import "LSServerManager.h"
-#import <JBKenBurnsView.h>
+#import "JBKenBurnsView.h"
 
 #endif /* PrefixHeader_pch */

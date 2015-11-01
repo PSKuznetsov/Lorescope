@@ -7,11 +7,12 @@
 //
 
 #import "SignUpViewController.h"
+#import "LSAnimationManager.h"
+#import "LSSecureStore.h"
+#import "LSSessionManager.h"
 
+@interface SignUpViewController () <UITextFieldDelegate>
 
-
-@interface SignUpViewController ()
-@property (nonatomic, strong) NSMutableArray* backgroundImages;
 @end
 
 @implementation SignUpViewController
@@ -19,74 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.emailField.delegate    = self;
+    self.passwordField.delegate = self;
+    self.usernameField.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    
-    [self prepareBackgroundImagesWithCompletion:^{
-        [self applyBlurEffectToImages:self.backgroundImages];
-        [self startAnimationBackgroundWithImages:self.backgroundImages];
-    }];
-}
-
-- (void)dealloc {
-    NSLog(@"VC Dealloceted");
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - Animations
-
-- (void)prepareBackgroundImagesWithCompletion:(void(^)())completion {
-    
-    self.backgroundImages = [NSMutableArray array];
-    
-    for (int i = 1; i <= 4; i++) {
-        
-        UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", i]];
-        
-        [self.backgroundImages addObject:image];
-    }
-    
-    if (completion) {
-        completion();
-    }
-    
-}
-
-- (void)startAnimationBackgroundWithImages:(NSArray *)images {
-    
-    [self.backgroundView animateWithImages:images
-                        transitionDuration:35.f
-                              initialDelay:0.f
-                                      loop:YES
-                               isLandscape:YES];
-    
-    
-}
-
-- (void)applyBlurEffectToImages:(NSMutableArray *)images {
-    
-    for (NSInteger i = 0; i < images.count; i++) {
-        
-        UIImage* curImage = images[i];
-        
-        curImage = [curImage applyBlurWithRadius:8.f
-                                       tintColor:[UIColor blurDefaultColor]
-                           saturationDeltaFactor:1
-                                       maskImage:nil];
-        images[i] = curImage;
-    }
+    [[LSAnimationManager sharedManager] startAnimationForView:self.backgroundView];
 }
 
 
@@ -94,16 +36,68 @@
 
 - (IBAction)signupButton:(id)sender {
     
-//    [[LSServerManager sharedManager] userSignUpRequestWithUsername:self.usernameField.text
-//                                                          password:self.passwordField.text
-//                                                             email:self.emailField.text
-//                                                         onSuccess:^(NSArray *response) {
-//                                                             
-//                                                         }
-//                                                         onFailure:^(NSError *error) {
-//                                                             
-//                                                         }];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.usernameField.text > 0 && self.emailField.text > 0 && self.passwordField.text > 0) {
+        
+        //AES encrypt password for request
+        NSString* encryptedPassword = [AESCrypt encrypt:self.passwordField.text password:API_AUTH_PASSWORD];
+        
+        UserSignUpRequestModel* request = [UserSignUpRequestModel new];
+        
+        request.full_name = self.usernameField.text;
+        request.password  = encryptedPassword;
+        request.email     = self.emailField.text;
+        
+        __weak typeof(self) weakSelf = self;
+        
+        [[LSSessionManager sharedManager] postUserSignUpWithRequestModel:request success:^(UserAuthResponseModel *responseModel) {
+            
+            //TODO: Action View: SUCCESS!
+            
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+            
+        } failure:^(NSError *error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }];
+    }
+    
+}
+
+- (IBAction)closeControllerButton:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        [self.backgroundView stopAnimation];
+    }];
+
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if ([textField isEqual:self.usernameField]) {
+        
+        [self.emailField becomeFirstResponder];
+    }
+    else if ([textField isEqual:self.emailField]) {
+        
+        [self.passwordField becomeFirstResponder];
+    }
+    else {
+        
+        [textField resignFirstResponder];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@" ._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"] invertedSet];
+    
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    
+    return [string isEqualToString:filtered];
 }
 
 @end

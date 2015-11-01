@@ -9,7 +9,9 @@
 #import "MainViewController+UICollectionView.h"
 
 @implementation MainViewController (UICollectionView)
+
 - (void)test {
     NSLog(@"TEST!");
 }
+
 @end
