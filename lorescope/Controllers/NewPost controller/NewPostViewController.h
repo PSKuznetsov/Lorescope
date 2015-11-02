@@ -15,8 +15,10 @@
 @property (nonatomic, weak) IBOutlet LSUILabel* titleInfoLabel;
 @property (nonatomic, weak) IBOutlet UISegmentedControl* pickerModControl;
 @property (nonatomic, weak) IBOutlet UIView* containerView;
+@property (nonatomic, weak) IBOutlet UIButton* doneButton;
 
 - (IBAction)backButton:(id)sender;
 - (IBAction)doneButton:(id)sender;
+- (IBAction)segmentedControlIndexChangedAction:(UISegmentedControl *)sender;
 
 @end

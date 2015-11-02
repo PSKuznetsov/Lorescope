@@ -35,6 +35,7 @@
 		FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */; };
 		FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */; };
 		FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */; };
+		FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */; };
 		FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */; };
 		FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */; };
 		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
@@ -94,6 +95,8 @@
 		FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
 		FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
 		FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		FA9A57201BE81FAB0076986B /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
+		FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
 		FAAB67951BD8DF7D00484FC2 /* JBKenBurnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBKenBurnsView.h; sourceTree = "<group>"; };
 		FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBKenBurnsView.m; sourceTree = "<group>"; };
 		FAAB679A1BD8E66C00484FC2 /* LSAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSAnimationManager.h; path = Classes/LSBlurManager/LSAnimationManager.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 		FA71954B1BE6E839004475B4 /* TakePhoto controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA9A57201BE81FAB0076986B /* TakePhotoViewController.h */,
+				FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */,
 			);
 			path = "TakePhoto controller";
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
+				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
