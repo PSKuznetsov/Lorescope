@@ -17,6 +17,7 @@
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
 		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; };
 		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
+		FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7195481BE6DC56004475B4 /* NewPostViewController.m */; };
 		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
 		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
 		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; };
@@ -32,6 +33,8 @@
 		FA9466341BE2A41700DE9984 /* UserSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */; };
 		FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */; };
 		FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */; };
+		FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */; };
+		FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */; };
 		FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */; };
 		FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */; };
 		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
@@ -58,6 +61,8 @@
 		FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		FA7195471BE6DC56004475B4 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		FA7195481BE6DC56004475B4 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		FA8997B11BE3B39600DA11CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8997B51BE3B72500DA11CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FA8997B61BE3B72500DA11CB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -85,6 +90,10 @@
 		FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSignUpRequestModel.m; sourceTree = "<group>"; };
 		FA94663A1BE2AE8700DE9984 /* LSSecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSecureStore.h; sourceTree = "<group>"; };
 		FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSecureStore.m; sourceTree = "<group>"; };
+		FA9A571A1BE819DA0076986B /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
+		FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
+		FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
+		FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
 		FAAB67951BD8DF7D00484FC2 /* JBKenBurnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBKenBurnsView.h; sourceTree = "<group>"; };
 		FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBKenBurnsView.m; sourceTree = "<group>"; };
 		FAAB679A1BD8E66C00484FC2 /* LSAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSAnimationManager.h; path = Classes/LSBlurManager/LSAnimationManager.h; sourceTree = "<group>"; };
@@ -187,6 +196,33 @@
 			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
+		FA7195461BE6DC3E004475B4 /* NewPost controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA7195471BE6DC56004475B4 /* NewPostViewController.h */,
+				FA7195481BE6DC56004475B4 /* NewPostViewController.m */,
+			);
+			path = "NewPost controller";
+			sourceTree = "<group>";
+		};
+		FA71954A1BE6E839004475B4 /* PhotoPicker controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A571A1BE819DA0076986B /* PhotoPickerViewController.h */,
+				FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */,
+				FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */,
+				FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */,
+			);
+			path = "PhotoPicker controller";
+			sourceTree = "<group>";
+		};
+		FA71954B1BE6E839004475B4 /* TakePhoto controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TakePhoto controller";
+			sourceTree = "<group>";
+		};
 		FA8997B41BE3B70300DA11CB /* Settings controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +247,9 @@
 		FA9269791BD2E0360055FDE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA71954A1BE6E839004475B4 /* PhotoPicker controller */,
+				FA71954B1BE6E839004475B4 /* TakePhoto controller */,
+				FA7195461BE6DC3E004475B4 /* NewPost controller */,
 				FA8997B41BE3B70300DA11CB /* Settings controller */,
 				FA20A8A31BD3197300C9FFB2 /* Main controller */,
 				FA92697A1BD2E0360055FDE9 /* Login controller */,
@@ -579,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */,
+				FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */,
 				FA94661C1BE28FE300DE9984 /* LSSessionManager.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
 				FA9466301BE295F400DE9984 /* UserAuthResponseModel.m in Sources */,
@@ -586,6 +626,7 @@
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
+				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
 				FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
@@ -595,6 +636,7 @@
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */,
 				FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */,
+				FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */,
 				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
 				FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */,
 				FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */,

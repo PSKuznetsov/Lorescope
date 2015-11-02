@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SettingsViewController.h"
+#import "NewPostViewController.h"
 #import "MainViewController+UICollectionView.h"
 
 @interface MainViewController()
@@ -26,6 +27,8 @@
 
 - (IBAction)newPostButton:(id)sender {
     
+    NewPostViewController* newPostController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewPostViewController"];
+    [self.navigationController pushViewController:newPostController animated:YES];
 }
 
 - (IBAction)settingsButton:(id)sender {
