@@ -15,11 +15,28 @@
 
 @implementation CreatePostViewController
 
+#pragma mark - Root
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.backgroundImageView.image = self.postImage;
+    self.postImageView.image             = self.postImage;
+    self.postImageView.contentMode       = UIViewContentModeScaleAspectFill;
+   
+    self.backgroundImageView.image       = self.postImage;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+}
+
+#pragma mark - Actions
+
+- (IBAction)doneButtonAction:(id)sender {
+    
+    
+}
+
+- (IBAction)backButtonAction:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

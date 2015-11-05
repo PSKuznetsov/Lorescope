@@ -23,6 +23,6 @@
 @required
 
 - (void)userDidSelectImage:(UIImage *)image;
-- (void)userDidDiselectImage;
+- (void)userDidDeselectImage;
 
 @end

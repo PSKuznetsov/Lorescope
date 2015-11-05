@@ -69,10 +69,10 @@
 - (void)userDidSelectImage:(UIImage *)image {
     
     self.doneButton.enabled = YES;
-    self.selectedImage = image;
+    self.selectedImage      = image;
 }
 
-- (void)userDidDiselectImage {
+- (void)userDidDeselectImage {
     
     self.doneButton.enabled = NO;
 }

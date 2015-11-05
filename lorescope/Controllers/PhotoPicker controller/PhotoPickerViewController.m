@@ -14,6 +14,7 @@
 @interface PhotoPickerViewController() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) PHFetchResult* fetchResult;
+@property (nonatomic, strong) NSIndexPath *selectedItemIndexPath;
 
 @end
 
@@ -24,12 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //self.collectionView.allowsSelection = YES;
     [self.collectionView reloadData];
+    
     //TODO: load all images to collection view after user permission request
 }
 - (void)loadView {
     [super loadView];
     
+    [self.delegate userDidDeselectImage];
     //Fetching all user's photos
     self.fetchResult = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
 }
@@ -65,42 +69,55 @@
     return [self.fetchResult count];
 }
 
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     PhotoPickerCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCellID"
                                                                                     forIndexPath:indexPath];
     
-    //cell.imageCell.image = [UIImage imageNamed:@"1.png"];
-    
-    PHAsset* asset = (PHAsset *)self.fetchResult[indexPath.row];
+    PHAsset* asset    = (PHAsset *)self.fetchResult[indexPath.row];
     CGSize tergetSize = CGSizeMake(74, 74);
     
-    [[PHImageManager defaultManager] requestImageForAsset:asset  targetSize:tergetSize
-                                              contentMode:PHImageContentModeDefault
+    [[PHImageManager defaultManager] requestImageForAsset:asset
+                                               targetSize:tergetSize
+                                              contentMode:PHImageContentModeAspectFit
                                                   options:nil
                                             resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                 
                                                 cell.imageCell.image = result;
                                                 
                                             }];
-    
+    //TODO: Fix scrolling begavior
     return cell;
 }
+
+
 
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Cell did select at path: %ld", (long)indexPath.row);
+    PhotoPickerCollectionViewCell* cell = (PhotoPickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    cell.imageCell.layer.borderColor = [[UIColor blueColor] CGColor];
+    cell.imageCell.layer.borderWidth = 2.0;
+    
+    [cell setSelected:YES];
+    [self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     [self didSelectImageAtIndexPath:indexPath];
-    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self.delegate userDidDiselectImage];
+    PhotoPickerCollectionViewCell* cell = (PhotoPickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //
+    cell.imageCell.layer.borderColor = nil;
+    cell.imageCell.layer.borderWidth = 0.0;
+    
+    [self.delegate userDidDeselectImage];
 }
+
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
