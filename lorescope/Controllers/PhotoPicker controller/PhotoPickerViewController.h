@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PhotoPickerViewControllerDelegate;
+
 @interface PhotoPickerViewController : UIViewController
+
 @property (nonatomic, weak) IBOutlet UICollectionView* collectionView;
+
+@property (nonatomic, weak) id <PhotoPickerViewControllerDelegate> delegate;
+
+@end
+
+@protocol PhotoPickerViewControllerDelegate <NSObject>
+
+@required
+
+- (void)userDidSelectImage:(UIImage *)image;
+- (void)userDidDiselectImage;
+
 @end

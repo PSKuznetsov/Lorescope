@@ -7,11 +7,14 @@
 //
 
 #import "NewPostViewController.h"
+#import "PhotoPickerViewController.h"
 #import "CreatePostViewController.h"
+#import "LSUILabel.h"
 
-@interface NewPostViewController ()
+@interface NewPostViewController () <PhotoPickerViewControllerDelegate>
 
 @property (nonatomic, strong) UIViewController* currentViewController;
+@property (nonatomic, strong) UIImage* selectedImage;
 
 @end
 
@@ -25,11 +28,17 @@
     UIViewController *vc = [self viewControllerForSegmentedControlIndex:self.pickerModControl.selectedSegmentIndex];
     
     [self addChildViewController:vc];
+    
     vc.view.frame = self.containerView.bounds;
+    
     [self.containerView addSubview:vc.view];
     
     self.currentViewController = vc;
+    
+    self.doneButton.enabled = NO;
 }
+
+#pragma mark - User Interaction Methods
 
 //This method return proper VC for segment index
 - (UIViewController *)viewControllerForSegmentedControlIndex:(NSInteger)index {
@@ -38,15 +47,36 @@
     
     switch (index) {
         case 0: vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PhotoPickerViewController"];
+            
+            ((PhotoPickerViewController *)vc).delegate = self;
+            
+            [self.titleInfoLabel setText:@"Choose photo"];
             self.doneButton.hidden = NO;
             break;
+        
         case 1: vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TakePhotoViewController"];
+            
+            [self.titleInfoLabel setText:@"Take photo"];
             self.doneButton.hidden = YES;
             break;
     }
     
     return vc;
 }
+
+#pragma mark - PhotoPickerViewControllerDelegate
+
+- (void)userDidSelectImage:(UIImage *)image {
+    
+    self.doneButton.enabled = YES;
+    self.selectedImage = image;
+}
+
+- (void)userDidDiselectImage {
+    
+    self.doneButton.enabled = NO;
+}
+
 
 #pragma mark - Actions
 
@@ -58,8 +88,10 @@
 
 - (IBAction)doneButton:(id)sender {
     
-    UIImage* postImage = [self.delegate viewController:self didTappedDoneButton:self.doneButton];
+    CreatePostViewController* createPost = [self.storyboard instantiateViewControllerWithIdentifier:@"CreatePostViewController"];
+    createPost.postImage = self.selectedImage;
     
+    [self.navigationController showViewController:createPost sender:self];
 }
 
 //This method load new child VC with the UISegmentedControl actions
@@ -91,12 +123,7 @@
     
 }
 
-#pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    
-}
 
 @end
 

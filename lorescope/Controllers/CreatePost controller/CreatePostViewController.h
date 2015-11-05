@@ -10,10 +10,10 @@
 
 @interface CreatePostViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UIImage *       backgroundImage;
 @property (nonatomic, weak) IBOutlet UIView  *       contentView;
 @property (nonatomic, weak) IBOutlet UILabel *       titleTextLabel;
 @property (nonatomic, weak) IBOutlet UITextField *   textfield;
+@property (nonatomic, weak) IBOutlet UIImageView *   backgroundImageView;
 
 @property (nonatomic, strong) UIImage* postImage;
 

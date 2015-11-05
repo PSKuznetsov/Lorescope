@@ -17,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.backgroundImageView.image = self.postImage;
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 @end

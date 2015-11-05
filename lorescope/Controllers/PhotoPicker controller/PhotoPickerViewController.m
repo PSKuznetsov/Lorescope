@@ -11,10 +11,9 @@
 
 @import Photos;
 
-@interface PhotoPickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface PhotoPickerViewController() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) PHFetchResult* fetchResult;
-@property (nonatomic, strong) UIImage* selectedImage;
 
 @end
 
@@ -28,12 +27,6 @@
     [self.collectionView reloadData];
     //TODO: load all images to collection view after user permission request
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-}
-
 - (void)loadView {
     [super loadView];
     
@@ -45,7 +38,7 @@
 
 - (void)didSelectImageAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([self.fetchResult count] < indexPath.row) {
+    if (self.fetchResult) {
         
         __weak typeof(self) weakSelf = self;
         
@@ -57,13 +50,13 @@
                                                   contentMode:PHImageContentModeAspectFill
                                                       options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                           
-                                                          weakSelf.selectedImage = result;
+                                                         [weakSelf.delegate userDidSelectImage:result];
                                                           
                                                       }];
+        
     }
     
 }
-
 
 #pragma mark - UICollectionViewDataSource
 
@@ -75,7 +68,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     PhotoPickerCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCellID"
-                                                                           forIndexPath:indexPath];
+                                                                                    forIndexPath:indexPath];
     
     //cell.imageCell.image = [UIImage imageNamed:@"1.png"];
     
@@ -86,7 +79,7 @@
                                               contentMode:PHImageContentModeDefault
                                                   options:nil
                                             resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-        
+                                                
                                                 cell.imageCell.image = result;
                                                 
                                             }];
@@ -104,6 +97,12 @@
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.delegate userDidDiselectImage];
+}
+
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,5 +112,6 @@
     
     return cellSize;
 }
+
 
 @end
