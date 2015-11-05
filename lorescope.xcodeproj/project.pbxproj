@@ -39,6 +39,7 @@
 		FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB67961BD8DF7D00484FC2 /* JBKenBurnsView.m */; };
 		FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */; };
 		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
+		FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,8 @@
 		FAAB679B1BD8E66C00484FC2 /* LSAnimationManager.h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSAnimationManager.h.m; path = Classes/LSBlurManager/LSAnimationManager.h.m; sourceTree = "<group>"; };
 		FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LSPalette.h"; path = "Extensions/UIColor+LSPalette.h"; sourceTree = "<group>"; };
 		FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LSPalette.m"; path = "Extensions/UIColor+LSPalette.m"; sourceTree = "<group>"; };
+		FAEF78C91BEB838600FF4996 /* CreatePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
+		FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
 		FAF823DC1BD061C400973EF8 /* lorescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lorescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -252,6 +255,7 @@
 		FA9269791BD2E0360055FDE9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAEF78C81BEB837100FF4996 /* CreatePost controller */,
 				FA71954A1BE6E839004475B4 /* PhotoPicker controller */,
 				FA71954B1BE6E839004475B4 /* TakePhoto controller */,
 				FA7195461BE6DC3E004475B4 /* NewPost controller */,
@@ -461,6 +465,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		FAEF78C81BEB837100FF4996 /* CreatePost controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF78C91BEB838600FF4996 /* CreatePostViewController.h */,
+				FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */,
+			);
+			path = "CreatePost controller";
+			sourceTree = "<group>";
+		};
 		FAF823D31BD061C400973EF8 = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +645,7 @@
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
+				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,

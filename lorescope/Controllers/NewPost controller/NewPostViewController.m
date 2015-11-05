@@ -7,6 +7,7 @@
 //
 
 #import "NewPostViewController.h"
+#import "CreatePostViewController.h"
 
 @interface NewPostViewController ()
 
@@ -57,6 +58,8 @@
 
 - (IBAction)doneButton:(id)sender {
     
+    UIImage* postImage = [self.delegate viewController:self didTappedDoneButton:self.doneButton];
+    
 }
 
 //This method load new child VC with the UISegmentedControl actions
@@ -85,6 +88,13 @@
                                 weakSelf.currentViewController = vc;
                             }];
     //TODO: set title here
+    
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     
 }
 

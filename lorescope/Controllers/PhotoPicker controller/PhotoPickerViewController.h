@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoPickerViewController : UIViewController
-
+@property (nonatomic, weak) IBOutlet UICollectionView* collectionView;
 @end
