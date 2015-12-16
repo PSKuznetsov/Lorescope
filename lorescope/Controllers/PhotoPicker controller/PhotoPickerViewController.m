@@ -35,6 +35,7 @@
     
     [self.delegate userDidDeselectImage];
     //Fetching all user's photos
+    //TODO: fetching only offline available photos
     self.fetchResult = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
 }
 
@@ -47,6 +48,7 @@
         __weak typeof(self) weakSelf = self;
         
         PHAsset* asset = (PHAsset *)self.fetchResult[indexPath.row];
+        //TODO: dynamic change content sizeß
         CGSize targetSize = CGSizeMake(800.f, 800.f);
         
         [[PHImageManager defaultManager] requestImageForAsset:asset
@@ -87,7 +89,18 @@
                                                 cell.imageCell.image = result;
                                                 
                                             }];
-    //TODO: Fix scrolling begavior
+    
+    if (cell.selected) {
+        
+        cell.imageCell.layer.borderColor = [[UIColor blackColor] CGColor];
+        cell.imageCell.layer.borderWidth = 2.0;
+    }
+    else {
+        
+        cell.imageCell.layer.borderColor = nil;
+        cell.imageCell.layer.borderWidth = 0.0;
+    }
+    
     return cell;
 }
 
@@ -99,7 +112,7 @@
     
     PhotoPickerCollectionViewCell* cell = (PhotoPickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
-    cell.imageCell.layer.borderColor = [[UIColor blueColor] CGColor];
+    cell.imageCell.layer.borderColor = [[UIColor blackColor] CGColor];
     cell.imageCell.layer.borderWidth = 2.0;
     
     [cell setSelected:YES];
@@ -125,7 +138,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CGSize cellSize = CGSizeMake(74, 74);
-    
     
     return cellSize;
 }

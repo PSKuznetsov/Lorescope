@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y16-Ok-Wmu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y16-Ok-Wmu">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="TsukushiBMaruGothic.ttc">
+            <string>TsukuBRdGothic-Regular</string>
+            <string>TsukuBRdGothic-Regular</string>
             <string>TsukuBRdGothic-Regular</string>
             <string>TsukuBRdGothic-Regular</string>
             <string>TsukuBRdGothic-Regular</string>
@@ -97,7 +99,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorescope" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ1-Th-6ub" customClass="LSUILabel">
-                                        <rect key="frame" x="191" y="26.5" width="218" height="58"/>
+                                        <rect key="frame" x="191" y="27" width="218" height="58"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="218" id="2sc-VG-OWw">
@@ -238,22 +240,58 @@
                                 <rect key="frame" x="0.0" y="80" width="600" height="520"/>
                                 <animations/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-5K-Q2X">
-                                <rect key="frame" x="20" y="96" width="560" height="496"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-5K-Q2X">
+                                <rect key="frame" x="20" y="108" width="560" height="484"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cv4-i1-53i">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="248"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cv4-i1-53i">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="242"/>
                                         <animations/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title goes here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YM6-8d-vbI">
+                                        <rect key="frame" x="8" y="250" width="544" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9tz-qa-XI7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="wIy-bB-wGX" id="XSL-bW-aH3"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b4a-AV-Lvy">
+                                        <rect key="frame" x="8" y="288" width="544" height="188"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" name="TsukuBRdGothic-Regular" family="Tsukushi B Round Gothic" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="wIy-bB-wGX" id="2Sc-Yx-5Ty"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="b4a-AV-Lvy" firstAttribute="top" secondItem="YM6-8d-vbI" secondAttribute="bottom" constant="8" id="BiK-Nr-Kqm"/>
+                                    <constraint firstItem="YM6-8d-vbI" firstAttribute="leading" secondItem="UcN-5K-Q2X" secondAttribute="leading" constant="8" id="CV7-bG-tN1"/>
+                                    <constraint firstAttribute="bottom" secondItem="b4a-AV-Lvy" secondAttribute="bottom" constant="8" id="FbC-fX-AlC"/>
+                                    <constraint firstAttribute="trailing" secondItem="b4a-AV-Lvy" secondAttribute="trailing" constant="8" id="G59-RC-PQB"/>
                                     <constraint firstItem="Cv4-i1-53i" firstAttribute="top" secondItem="UcN-5K-Q2X" secondAttribute="top" id="JYy-Wi-mtn"/>
+                                    <constraint firstItem="b4a-AV-Lvy" firstAttribute="leading" secondItem="UcN-5K-Q2X" secondAttribute="leading" constant="8" id="Mob-03-JiD"/>
+                                    <constraint firstItem="Cv4-i1-53i" firstAttribute="height" secondItem="UcN-5K-Q2X" secondAttribute="height" multiplier="0.5" id="NPg-Ji-RkY"/>
+                                    <constraint firstItem="b4a-AV-Lvy" firstAttribute="top" secondItem="YM6-8d-vbI" secondAttribute="bottom" constant="8" id="QIB-Xn-oDa"/>
                                     <constraint firstItem="Cv4-i1-53i" firstAttribute="leading" secondItem="UcN-5K-Q2X" secondAttribute="leading" id="Xsr-8a-WFA"/>
-                                    <constraint firstItem="Cv4-i1-53i" firstAttribute="height" secondItem="UcN-5K-Q2X" secondAttribute="height" multiplier="0.5" id="nYz-m6-WAu"/>
+                                    <constraint firstItem="YM6-8d-vbI" firstAttribute="top" secondItem="Cv4-i1-53i" secondAttribute="bottom" constant="8" id="gL7-ZO-ipF"/>
+                                    <constraint firstAttribute="trailing" secondItem="YM6-8d-vbI" secondAttribute="trailing" constant="8" id="gzG-lO-tEM"/>
                                     <constraint firstAttribute="trailing" secondItem="Cv4-i1-53i" secondAttribute="trailing" id="qIO-rq-vFj"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <animations/>
@@ -268,13 +306,18 @@
                             <constraint firstItem="beK-gp-RpV" firstAttribute="top" secondItem="UcN-5K-Q2X" secondAttribute="bottom" constant="8" id="O0B-qi-6Ku"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UcN-5K-Q2X" secondAttribute="trailing" id="UBm-CU-0C9"/>
                             <constraint firstItem="beK-gp-RpV" firstAttribute="top" secondItem="Uez-S1-aTC" secondAttribute="bottom" id="ZNK-d1-Ric"/>
-                            <constraint firstItem="UcN-5K-Q2X" firstAttribute="top" secondItem="ZqM-zL-UYq" secondAttribute="bottom" constant="16" id="kwp-Jn-2SG"/>
                             <constraint firstItem="Uez-S1-aTC" firstAttribute="leading" secondItem="4CV-nR-XmG" secondAttribute="leading" id="lXZ-ga-a5A"/>
+                            <constraint firstItem="UcN-5K-Q2X" firstAttribute="top" secondItem="7Sr-ui-vyT" secondAttribute="bottom" constant="88" id="wZb-Qo-vxr">
+                                <variation key="widthClass=compact" constant="80"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="Uez-S1-aTC" id="Jlq-5J-kXl"/>
                         <outlet property="contentView" destination="UcN-5K-Q2X" id="Ufq-ge-bmj"/>
+                        <outlet property="postImageView" destination="Cv4-i1-53i" id="7w3-gA-DzO"/>
+                        <outlet property="postTextView" destination="b4a-AV-Lvy" id="qHa-9Z-Z60"/>
+                        <outlet property="titleTextField" destination="YM6-8d-vbI" id="ysi-IV-yjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lc5-aS-QNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -411,7 +454,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiO-h5-Wab" customClass="LSUILabel">
-                                        <rect key="frame" x="164" y="11" width="273.5" height="58"/>
+                                        <rect key="frame" x="164" y="11" width="274" height="58"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="dfl-i2-ell"/>
@@ -923,7 +966,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-Sa-Eot">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-Sa-Eot">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <animations/>
                                                 </imageView>

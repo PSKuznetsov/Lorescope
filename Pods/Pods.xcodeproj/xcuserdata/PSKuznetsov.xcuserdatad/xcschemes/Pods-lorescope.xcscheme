@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D40DD6FD8810EDD1AC608666'
+               BlueprintIdentifier = 'D51866A9B9AD907B9AE8CFFB'
                BlueprintName = 'Pods-lorescope'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-lorescope.a'>

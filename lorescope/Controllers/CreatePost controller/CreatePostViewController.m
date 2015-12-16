@@ -21,10 +21,20 @@
     [super viewDidLoad];
     
     self.postImageView.image             = self.postImage;
-    self.postImageView.contentMode       = UIViewContentModeScaleAspectFill;
-   
+
     self.backgroundImageView.image       = self.postImage;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds
+                                                   byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
+                                                         cornerRadii:CGSizeMake(7.0, 7.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    
+    maskLayer.frame = self.postImageView.bounds;
+    maskLayer.path  = maskPath.CGPath;
+    
+    self.postImageView.layer.mask = maskLayer;
 }
 
 #pragma mark - Actions
