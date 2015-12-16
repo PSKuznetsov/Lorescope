@@ -38,26 +38,6 @@
     
     if (self.usernameField.text > 0 && self.emailField.text > 0 && self.passwordField.text > 0) {
         
-        //AES encrypt password for request
-        NSString* encryptedPassword = [AESCrypt encrypt:self.passwordField.text password:API_AUTH_PASSWORD];
-        
-        UserSignUpRequestModel* request = [UserSignUpRequestModel new];
-        
-        request.full_name = self.usernameField.text;
-        request.password  = encryptedPassword;
-        request.email     = self.emailField.text;
-        
-        __weak typeof(self) weakSelf = self;
-        
-        [[LSSessionManager sharedManager] postUserSignUpWithRequestModel:request success:^(UserAuthResponseModel *responseModel) {
-            
-            //TODO: Action View: SUCCESS!
-            
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }];
     }
     
 }

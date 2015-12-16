@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A6CA753E7C3532C48F2AA33 /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C820B84C01558EEA6F43A298 /* libPods-lorescope.a */; };
 		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; };
-		FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8981BD3002400C9FFB2 /* AESCrypt.m */; };
-		FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */; };
-		FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */; };
-		FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */; };
 		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
 		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; };
@@ -29,9 +25,6 @@
 		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; };
 		FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9269941BD2E1000055FDE9 /* Security.framework */; };
 		FA94661C1BE28FE300DE9984 /* LSSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94661B1BE28FE300DE9984 /* LSSessionManager.m */; };
-		FA9466301BE295F400DE9984 /* UserAuthResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */; };
-		FA9466341BE2A41700DE9984 /* UserSignInRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */; };
-		FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */; };
 		FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */; };
 		FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */; };
 		FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */; };
@@ -48,14 +41,6 @@
 		F0E61119B618D2C5E6E4EB2B /* Pods-lorescope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUILabel.h; path = Classes/LSUILabel.h; sourceTree = "<group>"; };
 		FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUILabel.m; path = Classes/LSUILabel.m; sourceTree = "<group>"; };
-		FA20A8971BD3002400C9FFB2 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
-		FA20A8981BD3002400C9FFB2 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
-		FA20A8991BD3002400C9FFB2 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		FA20A89B1BD3002400C9FFB2 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
-		FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
-		FA20A89D1BD3002400C9FFB2 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		FA20A8A41BD3198B00C9FFB2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
@@ -80,16 +65,9 @@
 		FA92698E1BD2E05B0055FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA9269941BD2E1000055FDE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA9269961BD2EACC0055FDE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		FA92699A1BD2ECC10055FDE9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FA92699D1BD2EF980055FDE9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		FA94661A1BE28FE300DE9984 /* LSSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSessionManager.h; sourceTree = "<group>"; };
 		FA94661B1BE28FE300DE9984 /* LSSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSessionManager.m; sourceTree = "<group>"; };
-		FA94662E1BE295F400DE9984 /* UserAuthResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAuthResponseModel.h; sourceTree = "<group>"; };
-		FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAuthResponseModel.m; sourceTree = "<group>"; };
-		FA9466321BE2A41700DE9984 /* UserSignInRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSignInRequestModel.h; path = "Sign In Request/UserSignInRequestModel.h"; sourceTree = "<group>"; };
-		FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSignInRequestModel.m; path = "Sign In Request/UserSignInRequestModel.m"; sourceTree = "<group>"; };
-		FA9466361BE2A56900DE9984 /* UserSignUpRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSignUpRequestModel.h; sourceTree = "<group>"; };
-		FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSignUpRequestModel.m; sourceTree = "<group>"; };
 		FA94663A1BE2AE8700DE9984 /* LSSecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSecureStore.h; sourceTree = "<group>"; };
 		FA94663B1BE2AE8700DE9984 /* LSSecureStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSecureStore.m; sourceTree = "<group>"; };
 		FA9A571A1BE819DA0076986B /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
@@ -153,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				FAAB67941BD8DF7D00484FC2 /* KenBurns */,
-				FA20A8961BD3002400C9FFB2 /* AESCrypt */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -165,21 +142,6 @@
 				FA9269941BD2E1000055FDE9 /* Security.framework */,
 			);
 			path = System;
-			sourceTree = "<group>";
-		};
-		FA20A8961BD3002400C9FFB2 /* AESCrypt */ = {
-			isa = PBXGroup;
-			children = (
-				FA20A8971BD3002400C9FFB2 /* AESCrypt.h */,
-				FA20A8981BD3002400C9FFB2 /* AESCrypt.m */,
-				FA20A8991BD3002400C9FFB2 /* NSData+Base64.h */,
-				FA20A89A1BD3002400C9FFB2 /* NSData+Base64.m */,
-				FA20A89B1BD3002400C9FFB2 /* NSData+CommonCrypto.h */,
-				FA20A89C1BD3002400C9FFB2 /* NSData+CommonCrypto.m */,
-				FA20A89D1BD3002400C9FFB2 /* NSString+Base64.h */,
-				FA20A89E1BD3002400C9FFB2 /* NSString+Base64.m */,
-			);
-			path = AESCrypt;
 			sourceTree = "<group>";
 		};
 		FA20A8A31BD3197300C9FFB2 /* Main controller */ = {
@@ -351,7 +313,6 @@
 		FA9269991BD2EC7E0055FDE9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				FA92699A1BD2ECC10055FDE9 /* Constants.h */,
 				FA92699D1BD2EF980055FDE9 /* Utilities.h */,
 			);
 			path = Constants;
@@ -369,7 +330,6 @@
 		FA9466221BE292B500DE9984 /* Server Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA9466241BE2933D00DE9984 /* User */,
 			);
 			name = "Server Models";
 			sourceTree = "<group>";
@@ -379,44 +339,6 @@
 			children = (
 			);
 			name = "Local Models";
-			sourceTree = "<group>";
-		};
-		FA9466241BE2933D00DE9984 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				FA9466351BE2A55400DE9984 /* Sign Up Request */,
-				FA9466311BE2A3D800DE9984 /* Sign In Request */,
-				FA94662D1BE295CA00DE9984 /* Response */,
-			);
-			name = User;
-			path = "Server Models/User";
-			sourceTree = "<group>";
-		};
-		FA94662D1BE295CA00DE9984 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				FA94662E1BE295F400DE9984 /* UserAuthResponseModel.h */,
-				FA94662F1BE295F400DE9984 /* UserAuthResponseModel.m */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		FA9466311BE2A3D800DE9984 /* Sign In Request */ = {
-			isa = PBXGroup;
-			children = (
-				FA9466321BE2A41700DE9984 /* UserSignInRequestModel.h */,
-				FA9466331BE2A41700DE9984 /* UserSignInRequestModel.m */,
-			);
-			name = "Sign In Request";
-			sourceTree = "<group>";
-		};
-		FA9466351BE2A55400DE9984 /* Sign Up Request */ = {
-			isa = PBXGroup;
-			children = (
-				FA9466361BE2A56900DE9984 /* UserSignUpRequestModel.h */,
-				FA9466371BE2A56900DE9984 /* UserSignUpRequestModel.m */,
-			);
-			path = "Sign Up Request";
 			sourceTree = "<group>";
 		};
 		FA9466391BE2AE7300DE9984 /* LSSecureStore */ = {
@@ -639,28 +561,21 @@
 				FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */,
 				FA94661C1BE28FE300DE9984 /* LSSessionManager.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
-				FA9466301BE295F400DE9984 /* UserAuthResponseModel.m in Sources */,
 				FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
-				FA20A8A11BD3002400C9FFB2 /* NSData+CommonCrypto.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
 				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FAAB67971BD8DF7D00484FC2 /* JBKenBurnsView.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
-				FA20A8A21BD3002400C9FFB2 /* NSString+Base64.m in Sources */,
 				FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */,
-				FA9466341BE2A41700DE9984 /* UserSignInRequestModel.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FAAB679C1BD8E66C00484FC2 /* LSAnimationManager.h.m in Sources */,
 				FA94663C1BE2AE8700DE9984 /* LSSecureStore.m in Sources */,
 				FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */,
 				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
-				FA20A8A01BD3002400C9FFB2 /* NSData+Base64.m in Sources */,
-				FA9466381BE2A56900DE9984 /* UserSignUpRequestModel.m in Sources */,
-				FA20A89F1BD3002400C9FFB2 /* AESCrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

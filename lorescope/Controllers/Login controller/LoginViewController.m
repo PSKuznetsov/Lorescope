@@ -41,34 +41,7 @@
     
     if (self.loginEmailField.text != nil && self.passwordField.text != nil) {
         
-        //AES encrypt password for request
-        NSString* encryptedPassword = [AESCrypt encrypt:self.passwordField.text password:API_AUTH_PASSWORD];
-        
-        UserSignInRequestModel* requestModel = [UserSignInRequestModel new];
-        
-        requestModel.email    = self.loginEmailField.text;
-        requestModel.password = encryptedPassword;
-        
-        
-        [[LSSessionManager sharedManager] postUserSignInWithRequestModel:requestModel success:^(UserAuthResponseModel *responseModel) {
-            
-            //Save user's sensitive data to keychain
-            [[LSSecureStore sharedStore] saveUserDataToKeychain:responseModel];
-            //
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UserDidAuth"];
-            //
-            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            
-            MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-            
-            [self presentViewController:navController animated:NO completion:nil];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }];
     }
-    
 }
 
 - (IBAction)newAccountButton:(id)sender {
