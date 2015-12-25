@@ -7,8 +7,10 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
+@class Parse;
 
 @interface LSSessionManager : AFHTTPSessionManager
 
 + (instancetype)sharedManager;
+
 @end

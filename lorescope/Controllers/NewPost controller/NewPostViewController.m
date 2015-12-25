@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //Setting up first child view controller
     UIViewController *vc = [self viewControllerForSegmentedControlIndex:self.pickerModControl.selectedSegmentIndex];
     
     [self addChildViewController:vc];
@@ -34,7 +34,6 @@
     [self.containerView addSubview:vc.view];
     
     self.currentViewController = vc;
-    
     self.doneButton.enabled = NO;
 }
 

@@ -263,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				FA9466231BE292D700DE9984 /* Local Models */,
-				FA9466221BE292B500DE9984 /* Server Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,13 +324,6 @@
 				FA94661B1BE28FE300DE9984 /* LSSessionManager.m */,
 			);
 			name = "Session Manager";
-			sourceTree = "<group>";
-		};
-		FA9466221BE292B500DE9984 /* Server Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Server Models";
 			sourceTree = "<group>";
 		};
 		FA9466231BE292D700DE9984 /* Local Models */ = {
