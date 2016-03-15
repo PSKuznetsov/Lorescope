@@ -10,8 +10,10 @@
 
 @interface SettingsViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UITableView* tableView;
+@property (nonatomic, weak) IBOutlet UIImageView* userAvatar;
+@property (nonatomic, weak) IBOutlet UILabel* usernameLabel;
 
 - (IBAction)backButton:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -336,8 +337,8 @@
                                             <action selector="backButton:" destination="iUi-OK-03d" eventType="touchUpInside" id="wU4-sP-3R2"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-cH-bvB" customClass="LSUILabel">
-                                        <rect key="frame" x="221" y="7" width="159" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-cH-bvB" customClass="LSUILabel">
+                                        <rect key="frame" x="240" y="7" width="121" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="GeO-t6-Qgd"/>
                                         </constraints>
@@ -358,29 +359,63 @@
                                     <constraint firstAttribute="height" constant="72" id="vG3-ma-xet"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0pF-nG-Tqa">
-                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iUi-OK-03d" id="GTv-nn-rvW"/>
-                                    <outlet property="delegate" destination="iUi-OK-03d" id="z1w-1z-EEK"/>
-                                </connections>
-                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="GSS-od-sD7">
+                                <rect key="frame" x="200" y="80" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="L7W-Jt-M6N"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZOv-Ne-wPR"/>
+                                    <constraint firstAttribute="width" secondItem="GSS-od-sD7" secondAttribute="height" multiplier="1:1" id="cOS-XC-7P9"/>
+                                    <constraint firstAttribute="width" constant="300" id="g2f-EG-khD"/>
+                                    <constraint firstAttribute="width" secondItem="GSS-od-sD7" secondAttribute="height" multiplier="15:8" id="k8C-Oq-vP3"/>
+                                    <constraint firstAttribute="width" constant="200" id="r3D-7O-xEI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="L7W-Jt-M6N"/>
+                                        <exclude reference="g2f-EG-khD"/>
+                                        <exclude reference="k8C-Oq-vP3"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-cN-hLT">
+                                <rect key="frame" x="20" y="288" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tv-Fh-uJb">
+                                <rect key="frame" x="20" y="532" width="560" height="48"/>
+                                <state key="normal" title="Log Out" backgroundImage="button_background_outline">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GSS-od-sD7" firstAttribute="leading" secondItem="fiZ-fI-aES" secondAttribute="leadingMargin" constant="160" id="01e-L8-zrG"/>
                             <constraint firstAttribute="trailing" secondItem="krK-Dz-Z0N" secondAttribute="trailing" id="7ro-tb-Y8w"/>
-                            <constraint firstAttribute="trailing" secondItem="0pF-nG-Tqa" secondAttribute="trailing" id="FUY-t9-76c"/>
-                            <constraint firstItem="AvU-v5-XaZ" firstAttribute="top" secondItem="0pF-nG-Tqa" secondAttribute="bottom" id="Frk-hW-oTq"/>
-                            <constraint firstItem="0pF-nG-Tqa" firstAttribute="leading" secondItem="fiZ-fI-aES" secondAttribute="leading" id="STw-AT-Yp3"/>
-                            <constraint firstItem="0pF-nG-Tqa" firstAttribute="top" secondItem="krK-Dz-Z0N" secondAttribute="bottom" id="bwf-jf-cB8"/>
+                            <constraint firstItem="aQK-cN-hLT" firstAttribute="leading" secondItem="fiZ-fI-aES" secondAttribute="leadingMargin" id="8Yl-Cv-ZRo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GSS-od-sD7" secondAttribute="trailing" constant="160" id="I1E-yE-s69"/>
+                            <constraint firstItem="GSS-od-sD7" firstAttribute="top" secondItem="krK-Dz-Z0N" secondAttribute="bottom" constant="8" id="Qjw-Zd-06k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aQK-cN-hLT" secondAttribute="trailing" id="SxR-uL-k7O"/>
+                            <constraint firstItem="GSS-od-sD7" firstAttribute="centerX" secondItem="fiZ-fI-aES" secondAttribute="centerX" id="fdR-6f-NFk"/>
                             <constraint firstItem="krK-Dz-Z0N" firstAttribute="top" secondItem="fiZ-fI-aES" secondAttribute="top" id="m9a-uk-jsw"/>
+                            <constraint firstItem="GSS-od-sD7" firstAttribute="top" secondItem="krK-Dz-Z0N" secondAttribute="bottom" constant="8" id="nj6-i3-c09"/>
                             <constraint firstItem="krK-Dz-Z0N" firstAttribute="leading" secondItem="fiZ-fI-aES" secondAttribute="leading" id="uP3-wW-4Mj"/>
+                            <constraint firstItem="aQK-cN-hLT" firstAttribute="top" secondItem="GSS-od-sD7" secondAttribute="bottom" constant="8" id="w5L-c7-1kf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="01e-L8-zrG"/>
+                                <exclude reference="I1E-yE-s69"/>
+                                <exclude reference="Qjw-Zd-06k"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gqc-pe-Qqh"/>
                     <connections>
-                        <outlet property="tableView" destination="0pF-nG-Tqa" id="blc-aW-UYy"/>
+                        <outlet property="userAvatar" destination="GSS-od-sD7" id="FZG-cg-Gqp"/>
+                        <outlet property="usernameLabel" destination="aQK-cN-hLT" id="5DW-Wv-YKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc8-Ia-gq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -960,6 +995,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2" width="1280" height="960"/>
         <image name="backButton" width="14" height="24"/>
         <image name="button_background_outline" width="272" height="52"/>
         <image name="doneButton" width="24" height="24"/>
