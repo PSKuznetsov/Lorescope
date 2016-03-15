@@ -7,9 +7,7 @@
 //
 
 #import "SignUpViewController.h"
-#import "LSAnimationManager.h"
-#import "LSSecureStore.h"
-#import "LSSessionManager.h"
+#import "Constants.h"
 
 @interface SignUpViewController () <UITextFieldDelegate>
 
@@ -25,50 +23,22 @@
     self.usernameField.delegate = self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [[LSAnimationManager sharedManager] startAnimationForView:self.backgroundView];
-}
-
 
 #pragma mark - Actions
-
+    ///Action method which handle "Sign Up" button. Maybe depricated in feature version.
 - (IBAction)signupButton:(id)sender {
     
     if (self.usernameField.text > 0 && self.emailField.text > 0 && self.passwordField.text > 0) {
         
-        //AES encrypt password for request
-        NSString* encryptedPassword = [AESCrypt encrypt:self.passwordField.text password:API_AUTH_PASSWORD];
+            //TODO:Auth goes here...
         
-        UserSignUpRequestModel* request = [UserSignUpRequestModel new];
-        
-        request.full_name = self.usernameField.text;
-        request.password  = encryptedPassword;
-        request.email     = self.emailField.text;
-        
-        __weak typeof(self) weakSelf = self;
-        
-        [[LSSessionManager sharedManager] postUserSignUpWithRequestModel:request success:^(UserAuthResponseModel *responseModel) {
-            
-            //TODO: Action View: SUCCESS!
-            
-            [weakSelf dismissViewControllerAnimated:YES completion:nil];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }];
     }
     
 }
-
+    ///Action method which handle "Close" button
 - (IBAction)closeControllerButton:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        [self.backgroundView stopAnimation];
-    }];
-
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -91,9 +61,46 @@
     return YES;
 }
 
+    // became first responder
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    if ([textField isEqual:self.usernameField]) {
+        
+        self.usernameLabel.hidden = YES;
+        
+    } else if ([textField isEqual:self.passwordField]){
+        
+        self.passwordLabel.hidden = YES;
+        
+    } else {
+        
+        self.emailLabel.hidden = YES;
+    }
+    
+}
+
+    // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    if ([textField isEqual:self.usernameField]) {
+        
+        self.usernameLabel.hidden = NO;
+        
+    } else if ([textField isEqual:self.passwordField]){
+        
+        self.passwordLabel.hidden = NO;
+        
+    } else {
+        
+        self.emailLabel.hidden = NO;
+    }
+    
+}
+
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@" ._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"] invertedSet];
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ALPHABETIC_CHARACTER] invertedSet];
     
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     

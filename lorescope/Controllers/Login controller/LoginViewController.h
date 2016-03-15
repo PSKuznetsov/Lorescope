@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class JBKenBurnsView;
-
 @interface LoginViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UITextField* loginEmailField;
 @property (nonatomic, weak) IBOutlet UITextField* passwordField;
-@property (nonatomic, weak) IBOutlet JBKenBurnsView* backgroundView;
+
+@property (nonatomic, weak) IBOutlet UILabel* loginEmailLabel;
+@property (nonatomic, weak) IBOutlet UILabel* passwordLabel;
 
 - (IBAction)loginButton:(id)sender;
 - (IBAction)newAccountButton:(id)sender;

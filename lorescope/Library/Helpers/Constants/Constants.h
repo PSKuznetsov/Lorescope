@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @import UIKit;
-    static NSString* const API_BASE_URL      = @"https://lorescope.herokuapp.com/api/";
-    static NSString* const API_AUTH_NAME     = @"PSKuznetsov";
-    static NSString* const API_AUTH_PASSWORD = @"y131Fy1CXEOcV8SImKD02u0i25JFWczgVKTTJM9Al869n4vn0sG3qd76LsjvG130";
+
+    ///NSString const instance with character allowed to use in the login & password
+    static NSString* const ALPHABETIC_CHARACTER = @" ._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
