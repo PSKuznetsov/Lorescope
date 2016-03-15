@@ -23,6 +23,7 @@
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
     ///Handle logout button
 - (IBAction)logout:(id)sender {
     
