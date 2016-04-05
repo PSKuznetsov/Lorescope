@@ -9,24 +9,27 @@
 /* Begin PBXBuildFile section */
 		7D7BFCE462F0BC5E1FB24A4D /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85ABAD8F9F5011EA8F0A1323 /* libPods-lorescope.a */; };
 		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; };
+		FA0D519E1CAE580300769EBA /* MainViewController+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D519D1CAE580300769EBA /* MainViewController+Auth.m */; };
 		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
-		FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */; };
 		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
 		FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7195481BE6DC56004475B4 /* NewPostViewController.m */; };
 		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
 		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
 		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; };
 		FA9269781BD2E0270055FDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269751BD2E0270055FDE9 /* main.m */; };
-		FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697C1BD2E0360055FDE9 /* LoginViewController.m */; };
-		FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */; };
 		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; };
 		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; };
-		FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9269941BD2E1000055FDE9 /* Security.framework */; };
-		FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */; };
 		FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */; };
 		FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */; };
+		FAB0BF411CA523C30070E3FE /* LSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0BF401CA523C30070E3FE /* LSUser.m */; };
+		FAB0BF441CA528F00070E3FE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB0BF431CA528F00070E3FE /* CloudKit.framework */; };
+		FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */; };
 		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
+		FAEA82ED1CB3F07D0046CD03 /* libRealm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEA82EC1CB3F07D0046CD03 /* libRealm.a */; };
+		FAEA82F01CB3FD1E0046CD03 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA82EF1CB3FD1E0046CD03 /* PostCollectionViewCell.m */; };
+		FAEA82F51CB3FF0F0046CD03 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA82F41CB3FF0F0046CD03 /* Post.m */; };
+		FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA82F91CB4011E0046CD03 /* NewPostViewController+UICollectionView.m */; };
 		FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,12 +39,12 @@
 		C73D9B1EC220A0F31B3C03C2 /* Pods-lorescope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUILabel.h; path = Classes/LSUILabel.h; sourceTree = "<group>"; };
 		FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUILabel.m; path = Classes/LSUILabel.m; sourceTree = "<group>"; };
+		FA0D519C1CAE580300769EBA /* MainViewController+Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+Auth.h"; sourceTree = "<group>"; };
+		FA0D519D1CAE580300769EBA /* MainViewController+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+Auth.m"; sourceTree = "<group>"; };
 		FA20A8A41BD3198B00C9FFB2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
 		FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+UICollectionView.m"; sourceTree = "<group>"; };
-		FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
-		FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
 		FA7195471BE6DC56004475B4 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		FA7195481BE6DC56004475B4 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
@@ -52,24 +55,28 @@
 		FA9269731BD2E0270055FDE9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA9269741BD2E0270055FDE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9269751BD2E0270055FDE9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA92697B1BD2E0360055FDE9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		FA92697C1BD2E0360055FDE9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		FA92697E1BD2E0360055FDE9 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		FA92698C1BD2E05B0055FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA92698E1BD2E05B0055FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA9269941BD2E1000055FDE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA9269961BD2EACC0055FDE9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		FA92699A1BD2ECC10055FDE9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		FA92699D1BD2EF980055FDE9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		FA9A571A1BE819DA0076986B /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
-		FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
-		FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
-		FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoPickerCollectionViewCell.h; path = "../PhotoPicker controller/PhotoPickerCollectionViewCell.h"; sourceTree = "<group>"; };
+		FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoPickerCollectionViewCell.m; path = "../PhotoPicker controller/PhotoPickerCollectionViewCell.m"; sourceTree = "<group>"; };
 		FA9A57201BE81FAB0076986B /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
 		FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
+		FAB0BF3F1CA523C30070E3FE /* LSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUser.h; sourceTree = "<group>"; };
+		FAB0BF401CA523C30070E3FE /* LSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUser.m; sourceTree = "<group>"; };
+		FAB0BF421CA528CF0070E3FE /* lorescope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lorescope.entitlements; sourceTree = "<group>"; };
+		FAB0BF431CA528F00070E3FE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FAB0BF4A1CA537460070E3FE /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LSPalette.h"; path = "Extensions/UIColor+LSPalette.h"; sourceTree = "<group>"; };
 		FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LSPalette.m"; path = "Extensions/UIColor+LSPalette.m"; sourceTree = "<group>"; };
+		FAEA82EC1CB3F07D0046CD03 /* libRealm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRealm.a; path = "../../../Library/Developer/Xcode/DerivedData/lorescope-dzrimluzngmgyxarvrsdoaqduqsz/Build/Products/Debug-iphonesimulator/Realm/libRealm.a"; sourceTree = "<group>"; };
+		FAEA82EE1CB3FD1E0046CD03 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		FAEA82EF1CB3FD1E0046CD03 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
+		FAEA82F31CB3FF0F0046CD03 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = "Local Models/Post Model/Post.h"; sourceTree = "<group>"; };
+		FAEA82F41CB3FF0F0046CD03 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = "Local Models/Post Model/Post.m"; sourceTree = "<group>"; };
+		FAEA82F81CB4011E0046CD03 /* NewPostViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewPostViewController+UICollectionView.h"; sourceTree = "<group>"; };
+		FAEA82F91CB4011E0046CD03 /* NewPostViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewPostViewController+UICollectionView.m"; sourceTree = "<group>"; };
 		FAEF78C91BEB838600FF4996 /* CreatePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
 		FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
 		FAF823DC1BD061C400973EF8 /* lorescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lorescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9269951BD2E1000055FDE9 /* Security.framework in Frameworks */,
+				FAEA82ED1CB3F07D0046CD03 /* libRealm.a in Frameworks */,
+				FAB0BF441CA528F00070E3FE /* CloudKit.framework in Frameworks */,
 				7D7BFCE462F0BC5E1FB24A4D /* libPods-lorescope.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +108,8 @@
 		F42307D1AC9AFE318B72EF72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAEA82EC1CB3F07D0046CD03 /* libRealm.a */,
+				FAB0BF431CA528F00070E3FE /* CloudKit.framework */,
 				85ABAD8F9F5011EA8F0A1323 /* libPods-lorescope.a */,
 			);
 			name = Frameworks;
@@ -123,8 +133,7 @@
 		FA20A8951BD2FFE700C9FFB2 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				FA20A8AA1BD3243C00C9FFB2 /* KeychainWrapper */,
-				FA9269941BD2E1000055FDE9 /* Security.framework */,
+				FAB0BF491CA537460070E3FE /* KeychainWrapper */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -134,19 +143,10 @@
 			children = (
 				FA20A8A41BD3198B00C9FFB2 /* MainViewController.h */,
 				FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */,
-				FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */,
-				FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */,
+				FAEA82F11CB3FD290046CD03 /* Collection View */,
+				FAEA82F21CB3FD350046CD03 /* Network */,
 			);
 			path = "Main controller";
-			sourceTree = "<group>";
-		};
-		FA20A8AA1BD3243C00C9FFB2 /* KeychainWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				FA20A8B11BD3F04C00C9FFB2 /* KeychainWrapper.h */,
-				FA20A8B21BD3F04C00C9FFB2 /* KeychainWrapper.m */,
-			);
-			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
 		FA7195461BE6DC3E004475B4 /* NewPost controller */ = {
@@ -154,19 +154,9 @@
 			children = (
 				FA7195471BE6DC56004475B4 /* NewPostViewController.h */,
 				FA7195481BE6DC56004475B4 /* NewPostViewController.m */,
+				FAEA82FB1CB4018A0046CD03 /* Collection View */,
 			);
 			path = "NewPost controller";
-			sourceTree = "<group>";
-		};
-		FA71954A1BE6E839004475B4 /* PhotoPicker controller */ = {
-			isa = PBXGroup;
-			children = (
-				FA9A571A1BE819DA0076986B /* PhotoPickerViewController.h */,
-				FA9A571B1BE819DA0076986B /* PhotoPickerViewController.m */,
-				FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */,
-				FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */,
-			);
-			path = "PhotoPicker controller";
 			sourceTree = "<group>";
 		};
 		FA71954B1BE6E839004475B4 /* TakePhoto controller */ = {
@@ -203,33 +193,12 @@
 			isa = PBXGroup;
 			children = (
 				FAEF78C81BEB837100FF4996 /* CreatePost controller */,
-				FA71954A1BE6E839004475B4 /* PhotoPicker controller */,
 				FA71954B1BE6E839004475B4 /* TakePhoto controller */,
 				FA7195461BE6DC3E004475B4 /* NewPost controller */,
 				FA8997B41BE3B70300DA11CB /* Settings controller */,
 				FA20A8A31BD3197300C9FFB2 /* Main controller */,
-				FA92697A1BD2E0360055FDE9 /* Login controller */,
-				FA92697D1BD2E0360055FDE9 /* SignUp controller */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FA92697A1BD2E0360055FDE9 /* Login controller */ = {
-			isa = PBXGroup;
-			children = (
-				FA92697B1BD2E0360055FDE9 /* LoginViewController.h */,
-				FA92697C1BD2E0360055FDE9 /* LoginViewController.m */,
-			);
-			path = "Login controller";
-			sourceTree = "<group>";
-		};
-		FA92697D1BD2E0360055FDE9 /* SignUp controller */ = {
-			isa = PBXGroup;
-			children = (
-				FA92697E1BD2E0360055FDE9 /* SignUpViewController.h */,
-				FA92697F1BD2E0360055FDE9 /* SignUpViewController.m */,
-			);
-			path = "SignUp controller";
 			sourceTree = "<group>";
 		};
 		FA9269821BD2E0410055FDE9 /* Library */ = {
@@ -247,6 +216,7 @@
 		FA9269831BD2E0490055FDE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAEA82F71CB3FF2F0046CD03 /* Local Model */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0AB3581BD65C1400F91A38 /* Classes */,
-				FA9269991BD2EC7E0055FDE9 /* Constants */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,15 +261,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		FA9269991BD2EC7E0055FDE9 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				FA92699A1BD2ECC10055FDE9 /* Constants.h */,
-				FA92699D1BD2EF980055FDE9 /* Utilities.h */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		FAAB67981BD8E5A800484FC2 /* LSUILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +268,15 @@
 				FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */,
 			);
 			name = LSUILabel;
+			sourceTree = "<group>";
+		};
+		FAB0BF491CA537460070E3FE /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0BF4A1CA537460070E3FE /* KeychainWrapper.h */,
+				FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */,
+			);
+			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
 		FAE66B611BD57F8100066B36 /* Extensions */ = {
@@ -319,6 +288,55 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		FAEA82F11CB3FD290046CD03 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */,
+				FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */,
+				FAEA82EE1CB3FD1E0046CD03 /* PostCollectionViewCell.h */,
+				FAEA82EF1CB3FD1E0046CD03 /* PostCollectionViewCell.m */,
+			);
+			name = "Collection View";
+			sourceTree = "<group>";
+		};
+		FAEA82F21CB3FD350046CD03 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA0D519C1CAE580300769EBA /* MainViewController+Auth.h */,
+				FA0D519D1CAE580300769EBA /* MainViewController+Auth.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		FAEA82F61CB3FF200046CD03 /* Post Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEA82F31CB3FF0F0046CD03 /* Post.h */,
+				FAEA82F41CB3FF0F0046CD03 /* Post.m */,
+			);
+			name = "Post Model";
+			sourceTree = "<group>";
+		};
+		FAEA82F71CB3FF2F0046CD03 /* Local Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6753C1CAE5FC700D44D52 /* LSUser */,
+				FAEA82F61CB3FF200046CD03 /* Post Model */,
+			);
+			name = "Local Model";
+			sourceTree = "<group>";
+		};
+		FAEA82FB1CB4018A0046CD03 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				FAEA82F81CB4011E0046CD03 /* NewPostViewController+UICollectionView.h */,
+				FAEA82F91CB4011E0046CD03 /* NewPostViewController+UICollectionView.m */,
+				FA9A571D1BE81ADD0076986B /* PhotoPickerCollectionViewCell.h */,
+				FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */,
+			);
+			name = "Collection View";
+			sourceTree = "<group>";
+		};
 		FAEF78C81BEB837100FF4996 /* CreatePost controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +344,15 @@
 				FAEF78CA1BEB838600FF4996 /* CreatePostViewController.m */,
 			);
 			path = "CreatePost controller";
+			sourceTree = "<group>";
+		};
+		FAF6753C1CAE5FC700D44D52 /* LSUser */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0BF3F1CA523C30070E3FE /* LSUser.h */,
+				FAB0BF401CA523C30070E3FE /* LSUser.m */,
+			);
+			name = LSUser;
 			sourceTree = "<group>";
 		};
 		FAF823D31BD061C400973EF8 = {
@@ -349,6 +376,7 @@
 		FAF823DE1BD061C400973EF8 /* lorescope */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0BF421CA528CF0070E3FE /* lorescope.entitlements */,
 				FA9269791BD2E0360055FDE9 /* Controllers */,
 				FA9269831BD2E0490055FDE9 /* Models */,
 				FA9269911BD2E0630055FDE9 /* Views */,
@@ -398,6 +426,9 @@
 						SystemCapabilities = {
 							com.apple.DataProtection = {
 								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
 							};
 						};
 					};
@@ -488,21 +519,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEA82F01CB3FD1E0046CD03 /* PostCollectionViewCell.m in Sources */,
 				FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */,
-				FA9A571C1BE819DA0076986B /* PhotoPickerViewController.m in Sources */,
+				FAB0BF411CA523C30070E3FE /* LSUser.m in Sources */,
 				FA9269781BD2E0270055FDE9 /* main.m in Sources */,
 				FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */,
+				FA0D519E1CAE580300769EBA /* MainViewController+Auth.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
+				FAEA82F51CB3FF0F0046CD03 /* Post.m in Sources */,
 				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
+				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
-				FA9269811BD2E0360055FDE9 /* SignUpViewController.m in Sources */,
-				FA20A8B31BD3F04C00C9FFB2 /* KeychainWrapper.m in Sources */,
+				FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */,
-				FA9269801BD2E0360055FDE9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +648,7 @@
 			baseConfigurationReference = C73D9B1EC220A0F31B3C03C2 /* Pods-lorescope.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = lorescope/lorescope.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -634,6 +668,7 @@
 			baseConfigurationReference = 1CED280A06F4DE3EBF86FE8E /* Pods-lorescope.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = lorescope/lorescope.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

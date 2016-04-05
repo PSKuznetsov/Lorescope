@@ -7,20 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Photos;
 
 @class LSUILabel;
 
 @interface NewPostViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet LSUILabel* titleInfoLabel;
-@property (nonatomic, weak) IBOutlet UISegmentedControl* pickerModControl;
-@property (nonatomic, weak) IBOutlet UIView* containerView;
 @property (nonatomic, weak) IBOutlet UIButton* doneButton;
+@property (nonatomic, weak) IBOutlet UICollectionView* collectionView;
 
+@property (nonatomic, strong) NSIndexPath* selectedItemIndexPath;
+@property (nonatomic, strong) PHFetchResult* fetchResult;
+@property (nonatomic, strong) UIImage* selectedImage;
 
 - (IBAction)backButton:(id)sender;
 - (IBAction)doneButton:(id)sender;
-- (IBAction)segmentedControlIndexChangedAction:(UISegmentedControl *)sender;
 
 @end
 

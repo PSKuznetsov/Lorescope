@@ -1,67 +1,31 @@
 //
-//  PhotoPickerViewController.m
+//  NewPostViewController+UICollectionView.m
 //  lorescope
 //
-//  Created by Paul Kuznetsov on 03/11/15.
-//  Copyright © 2015 Paul Kuznetsov. All rights reserved.
+//  Created by Paul Kuznetsov on 05/04/16.
+//  Copyright © 2016 Paul Kuznetsov. All rights reserved.
 //
 
-#import "PhotoPickerViewController.h"
-#import "PhotoPickerCollectionViewCell.h"
+#import "NewPostViewController+UICollectionView.h"
 
-@import Photos;
-
-@interface PhotoPickerViewController() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-
-@property (nonatomic, strong) PHFetchResult* fetchResult;
-@property (nonatomic, strong) NSIndexPath *selectedItemIndexPath;
-
-@end
-
-@implementation PhotoPickerViewController
-
-#pragma mark - Root
+@implementation NewPostViewController (UICollectionView)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.collectionView.allowsSelection = YES;
-    [self.collectionView reloadData];
+    self.doneButton.enabled = NO;
     
-    //TODO: load all images to collection view after user permission request
+    self.collectionView.delegate   = self;
+    self.collectionView.dataSource = self;
+    
+    [self.collectionView reloadData];
 }
+
 - (void)loadView {
     [super loadView];
     
-    [self.delegate userDidDeselectImage];
-    //Fetching all user's photos
-    //TODO: fetching only offline available photos
     self.fetchResult = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:nil];
-}
-
-#pragma mark - Data
-
-- (void)didSelectImageAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (self.fetchResult) {
-        
-        __weak typeof(self) weakSelf = self;
-        
-        PHAsset* asset = (PHAsset *)self.fetchResult[indexPath.row];
-        //TODO: dynamic change content sizeß
-        CGSize targetSize = CGSizeMake(800.f, 800.f);
-        
-        [[PHImageManager defaultManager] requestImageForAsset:asset
-                                                   targetSize:targetSize
-                                                  contentMode:PHImageContentModeAspectFill
-                                                      options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                                                          
-                                                         [weakSelf.delegate userDidSelectImage:result];
-                                                          
-                                                      }];
-        
-    }
-    
+    NSLog(@"Fetched %lu items", (unsigned long)[self.fetchResult count]);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -77,13 +41,17 @@
     PhotoPickerCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCellID"
                                                                                     forIndexPath:indexPath];
     
-    PHAsset* asset    = (PHAsset *)self.fetchResult[indexPath.row];
-    CGSize tergetSize = CGSizeMake(74, 74);
+    PHAsset* asset = (PHAsset *)self.fetchResult[indexPath.row];
+    
+    PHImageRequestOptions* options = [[PHImageRequestOptions alloc] init];
+    options.version      = PHImageRequestOptionsVersionCurrent;
+    options.deliveryMode =  PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    options.resizeMode   = PHImageRequestOptionsResizeModeExact;
     
     [[PHImageManager defaultManager] requestImageForAsset:asset
-                                               targetSize:tergetSize
+                                               targetSize:CGSizeMake(800, 800)
                                               contentMode:PHImageContentModeAspectFit
-                                                  options:nil
+                                                  options:options
                                             resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                 
                                                 cell.imageCell.image = result;
@@ -117,18 +85,18 @@
     
     [cell setSelected:YES];
     [self.collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
-    
-    [self didSelectImageAtIndexPath:indexPath];
+    self.selectedImage = cell.imageCell.image;
+    self.doneButton.enabled = YES;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     PhotoPickerCollectionViewCell* cell = (PhotoPickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //
+        //
     cell.imageCell.layer.borderColor = nil;
     cell.imageCell.layer.borderWidth = 0.0;
     
-    [self.delegate userDidDeselectImage];
+    self.doneButton.enabled = NO;
 }
 
 
@@ -141,6 +109,5 @@
     
     return cellSize;
 }
-
 
 @end

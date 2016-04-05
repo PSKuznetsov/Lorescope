@@ -14,6 +14,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.userAvatar.layer.masksToBounds = YES;
+    [self.userAvatar.layer setCornerRadius:self.userAvatar.frame.size.height / 2];
 }
 
 #pragma mark - Actions
@@ -22,11 +25,6 @@
 - (IBAction)backButton:(id)sender {
     
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-    ///Handle logout button
-- (IBAction)logout:(id)sender {
-    
 }
 
 @end

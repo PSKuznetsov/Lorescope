@@ -10,6 +10,5 @@
 #define PrefixHeader_pch
 
 #import "UIColor+LSPalette.h"
-#import "Constants.h"
 
 #endif /* PrefixHeader_pch */

@@ -6,22 +6,39 @@
 //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
 //
 
+#import <CloudKit/CloudKit.h>
+#import <SVProgressHUD.h>
+
+#import "Post.h"
 #import "MainViewController.h"
 #import "SettingsViewController.h"
 #import "NewPostViewController.h"
 #import "MainViewController+UICollectionView.h"
 
+
 @interface MainViewController()
 
+@property (nonatomic, strong, readwrite) LSUser* user;
 @end
 
 @implementation MainViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+#pragma mark - Root
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
+
+    self.user = [[LSUser alloc] init];
+    
+    self.results = [Post allObjects];
+    NSLog(@"%@", self.results);
+    
+    [self.collectionView reloadData];
+    
 }
+
 
 #pragma mark - Actions
 

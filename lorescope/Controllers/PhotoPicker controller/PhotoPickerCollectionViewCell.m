@@ -8,9 +8,5 @@
 
 #import "PhotoPickerCollectionViewCell.h"
 
-
 @implementation PhotoPickerCollectionViewCell
-
-
-
 @end

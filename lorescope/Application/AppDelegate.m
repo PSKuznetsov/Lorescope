@@ -7,11 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
 #import "MainViewController.h"
+#import <CloudKit/CloudKit.h>
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -19,28 +18,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"ApplicationLaunchedOnce"]) {
-        //First Launch of the app
+        //TODO:First Launch of the app. Show user story
     }
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"UserDidAuth"]) {
-        //user is not login in
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        LoginViewController* loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        
-        self.window.rootViewController = loginViewController;
-    }
-    else {
-        
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-        UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-        navController.navigationBarHidden = YES;
-        
-        self.window.rootViewController = navController;
-        
-    }
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    navController.navigationBarHidden = YES;
+
+    self.window.rootViewController = navController;
+
+    
+//        //TODO: Fix for iCloud end user
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"UserDidAuth"]) {
+//        //user is not login in
+//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        
+//        
+//    } else {
+//        
+//        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        
+//        MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+//        UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+//        navController.navigationBarHidden = YES;
+//        
+//        self.window.rootViewController = navController;
+//        
+//    }
     
     return YES;
 }

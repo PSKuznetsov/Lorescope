@@ -14,6 +14,5 @@
 @property (nonatomic, weak) IBOutlet UILabel* usernameLabel;
 
 - (IBAction)backButton:(id)sender;
-- (IBAction)logout:(id)sender;
 
 @end

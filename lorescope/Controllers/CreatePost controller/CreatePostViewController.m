@@ -5,7 +5,8 @@
 //  Created by Paul Kuznetsov on 05/11/15.
 //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
 //
-
+#import <Realm/Realm.h>
+#import "Post.h"
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
 
@@ -19,29 +20,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.postImageView.image             = self.postImage;
-
-    self.backgroundImageView.image       = self.postImage;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds
-                                                   byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
-                                                         cornerRadii:CGSizeMake(7.0, 7.0)];
-    
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-    
-    maskLayer.frame = self.postImageView.bounds;
-    maskLayer.path  = maskPath.CGPath;
-    
-    self.postImageView.layer.mask = maskLayer;
+    self.postImageView.layer.masksToBounds = YES;
+    self.postImageView.layer.cornerRadius  = 25.f;
+    self.postImageView.image = self.postImage;
 }
 
 #pragma mark - Actions
 
 - (IBAction)doneButtonAction:(id)sender {
     
+    RLMRealm* realm = [RLMRealm defaultRealm];
     
+    [realm beginWriteTransaction];
+    
+    Post* newPost = [[Post alloc]init];
+    newPost.comment   = self.postTextView.text;
+    newPost.photoPath = @"";
+    newPost.postID    = 2;
+    newPost.publicationDate = [NSDate date];
+    
+    [realm addObject:newPost];
+    
+    [realm commitWriteTransaction];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)backButtonAction:(id)sender {
