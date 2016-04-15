@@ -13,6 +13,7 @@
 		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
 		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
+		FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */; };
 		FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7195481BE6DC56004475B4 /* NewPostViewController.m */; };
 		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
 		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
@@ -46,6 +47,8 @@
 		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
 		FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+UICollectionView.m"; sourceTree = "<group>"; };
 		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		FA56FB071CC0D10A00D921BB /* PreviewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewPostViewController.h; path = "PreviewPost controller/PreviewPostViewController.h"; sourceTree = "<group>"; };
+		FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewPostViewController.m; path = "PreviewPost controller/PreviewPostViewController.m"; sourceTree = "<group>"; };
 		FA7195471BE6DC56004475B4 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		FA7195481BE6DC56004475B4 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		FA8997B11BE3B39600DA11CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +152,15 @@
 			path = "Main controller";
 			sourceTree = "<group>";
 		};
+		FA56FB0A1CC0D11500D921BB /* PreviewPost controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA56FB071CC0D10A00D921BB /* PreviewPostViewController.h */,
+				FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */,
+			);
+			name = "PreviewPost controller";
+			sourceTree = "<group>";
+		};
 		FA7195461BE6DC3E004475B4 /* NewPost controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +209,7 @@
 				FA7195461BE6DC3E004475B4 /* NewPost controller */,
 				FA8997B41BE3B70300DA11CB /* Settings controller */,
 				FA20A8A31BD3197300C9FFB2 /* Main controller */,
+				FA56FB0A1CC0D11500D921BB /* PreviewPost controller */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -530,6 +543,7 @@
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
 				FAEA82F51CB3FF0F0046CD03 /* Post.m in Sources */,
 				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
+				FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */,
 				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,

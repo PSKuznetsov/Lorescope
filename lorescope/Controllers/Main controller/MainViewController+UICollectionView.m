@@ -7,6 +7,7 @@
 //
 #import "Post.h"
 #import "MainViewController+UICollectionView.h"
+#import "PreviewPostViewController.h"
 #import "PostCollectionViewCell.h"
 
 @implementation MainViewController (UICollectionView)
@@ -24,9 +25,48 @@
     PostCollectionViewCell *postCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCellID"
                                                                                  forIndexPath:indexPath];
     
-    postCell.postImage.image = [UIImage imageNamed:@"0.png"];
+    Post* loadedPost = [self.results objectAtIndex:indexPath.row];
+    
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:loadedPost.photoPath];
+    
+    NSData *pngData      = [NSData dataWithContentsOfFile:path];
+    UIImage *loadedImage = [UIImage imageWithData:pngData];
+    
+    postCell.postImage.image = loadedImage;
     
     return postCell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Post* loadedPost = [self.results objectAtIndex:indexPath.row];
+    
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:loadedPost.photoPath];
+    
+    NSData *pngData      = [NSData dataWithContentsOfFile:path];
+    UIImage *loadedImage = [UIImage imageWithData:pngData];
+    
+    PreviewPostViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviewPostViewController"];
+    controller.image = loadedImage;
+    controller.comment = loadedPost.comment;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger cellWigth = ([[UIScreen mainScreen] bounds]).size.width / 3 - 8;
+    CGSize cellSize     = CGSizeMake(cellWigth, cellWigth);
+    
+    return cellSize;
 }
 
 @end

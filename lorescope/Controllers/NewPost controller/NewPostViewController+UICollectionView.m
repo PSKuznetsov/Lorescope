@@ -41,12 +41,18 @@
     PhotoPickerCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCellID"
                                                                                     forIndexPath:indexPath];
     
+    cell.imageCell.image = [UIImage imageNamed:@"cell_placeholder"];
+    
     PHAsset* asset = (PHAsset *)self.fetchResult[indexPath.row];
     
     PHImageRequestOptions* options = [[PHImageRequestOptions alloc] init];
     options.version      = PHImageRequestOptionsVersionCurrent;
-    options.deliveryMode =  PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     options.resizeMode   = PHImageRequestOptionsResizeModeExact;
+    options.networkAccessAllowed = YES;
+//    options.progressHandler = ^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
+//        NSLog(@"%f", progress); //follow progress + update progress bar
+//    };
     
     [[PHImageManager defaultManager] requestImageForAsset:asset
                                                targetSize:CGSizeMake(800, 800)
@@ -54,7 +60,10 @@
                                                   options:options
                                             resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                                                 
-                                                cell.imageCell.image = result;
+                                                PhotoPickerCollectionViewCell* updatedCell = (PhotoPickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                                                    if (updatedCell) {
+                                                    updatedCell.imageCell.image = result;
+                                                    }
                                                 
                                             }];
     
@@ -105,7 +114,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CGSize cellSize = CGSizeMake(74, 74);
+    NSInteger cellWigth = ([[UIScreen mainScreen] bounds]).size.width / 3 - 8;
+    CGSize cellSize     = CGSizeMake(cellWigth, cellWigth);
     
     return cellSize;
 }

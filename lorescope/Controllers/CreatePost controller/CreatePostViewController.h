@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UITextView  *   postTextView;
 @property (nonatomic, weak) IBOutlet UIImageView *   postImageView;
+@property (nonatomic, weak) IBOutlet UIScrollView*   scrollView;
 
 @property (nonatomic, strong) UIImage* postImage;
 

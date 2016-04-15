@@ -25,12 +25,18 @@
 
 #pragma mark - Root
 
+- (void)loadView {
+    [super loadView];
+    
+    self.user = [[LSUser alloc] init];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
 
-    self.user = [[LSUser alloc] init];
+    
     
     self.results = [Post allObjects];
     NSLog(@"%@", self.results);
