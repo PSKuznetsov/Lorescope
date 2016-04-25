@@ -11,7 +11,7 @@
 #import "LSUILabel.h"
 
 
-@interface NewPostViewController ()
+@interface NewPostViewController () 
 
 @end
 

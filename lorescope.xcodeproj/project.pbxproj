@@ -23,6 +23,7 @@
 		FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698D1BD2E05B0055FDE9 /* Main.storyboard */; };
 		FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */; };
 		FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */; };
+		FAA1FB941CCA7E4200F5548C /* LSDataManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1FB931CCA7E4200F5548C /* LSDataManipulator.m */; };
 		FAB0BF411CA523C30070E3FE /* LSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0BF401CA523C30070E3FE /* LSUser.m */; };
 		FAB0BF441CA528F00070E3FE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB0BF431CA528F00070E3FE /* CloudKit.framework */; };
 		FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */; };
@@ -65,6 +66,9 @@
 		FA9A571E1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoPickerCollectionViewCell.m; path = "../PhotoPicker controller/PhotoPickerCollectionViewCell.m"; sourceTree = "<group>"; };
 		FA9A57201BE81FAB0076986B /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
 		FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
+		FAA1FB921CCA7E4200F5548C /* LSDataManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDataManipulator.h; sourceTree = "<group>"; };
+		FAA1FB931CCA7E4200F5548C /* LSDataManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDataManipulator.m; sourceTree = "<group>"; };
+		FAA1FB951CCA7E6500F5548C /* LSDataManipulatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDataManipulatorProtocol.h; sourceTree = "<group>"; };
 		FAB0BF3F1CA523C30070E3FE /* LSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUser.h; sourceTree = "<group>"; };
 		FAB0BF401CA523C30070E3FE /* LSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSUser.m; sourceTree = "<group>"; };
 		FAB0BF421CA528CF0070E3FE /* lorescope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lorescope.entitlements; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		FA9269821BD2E0410055FDE9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAA1FB911CCA7E1D00F5548C /* Classes */,
 				FA9269981BD2EAFF0055FDE9 /* API */,
 				FAE66B611BD57F8100066B36 /* Extensions */,
 				FA20A8951BD2FFE700C9FFB2 /* System */,
@@ -272,6 +277,16 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FAA1FB911CCA7E1D00F5548C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FAA1FB921CCA7E4200F5548C /* LSDataManipulator.h */,
+				FAA1FB931CCA7E4200F5548C /* LSDataManipulator.m */,
+				FAA1FB951CCA7E6500F5548C /* LSDataManipulatorProtocol.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FAAB67981BD8E5A800484FC2 /* LSUILabel */ = {
@@ -542,6 +557,7 @@
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
 				FAEA82F51CB3FF0F0046CD03 /* Post.m in Sources */,
+				FAA1FB941CCA7E4200F5548C /* LSDataManipulator.m in Sources */,
 				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
 				FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */,
 				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,

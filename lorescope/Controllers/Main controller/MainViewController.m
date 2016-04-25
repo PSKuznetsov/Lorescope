@@ -14,11 +14,13 @@
 #import "SettingsViewController.h"
 #import "NewPostViewController.h"
 #import "MainViewController+UICollectionView.h"
+#import "LSDataManipulatorProtocol.h"
 
 
 @interface MainViewController()
 
 @property (nonatomic, strong, readwrite) LSUser* user;
+@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataManipulator;
 @end
 
 @implementation MainViewController
@@ -39,7 +41,7 @@
     
     
     self.results = [Post allObjects];
-    NSLog(@"%@", self.results);
+        //NSLog(@"%@", self.results);
     
     [self.collectionView reloadData];
     

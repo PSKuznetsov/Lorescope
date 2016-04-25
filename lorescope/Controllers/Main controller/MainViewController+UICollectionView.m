@@ -15,7 +15,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"numberOfItemsInSection: %ld", (unsigned long)[self.results count]);
+        //NSLog(@"numberOfItemsInSection: %ld", (unsigned long)[self.results count]);
     return [self.results count];
 }
 
@@ -27,12 +27,7 @@
     
     Post* loadedPost = [self.results objectAtIndex:indexPath.row];
     
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:loadedPost.photoPath];
-    
-    NSData *pngData      = [NSData dataWithContentsOfFile:path];
-    UIImage *loadedImage = [UIImage imageWithData:pngData];
+    UIImage *loadedImage = [self imageFromDocumentsDirectory:loadedPost.photoPath];
     
     postCell.postImage.image = loadedImage;
     
@@ -45,12 +40,7 @@
     
     Post* loadedPost = [self.results objectAtIndex:indexPath.row];
     
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:loadedPost.photoPath];
-    
-    NSData *pngData      = [NSData dataWithContentsOfFile:path];
-    UIImage *loadedImage = [UIImage imageWithData:pngData];
+    UIImage *loadedImage = [self imageFromDocumentsDirectory:loadedPost.photoPath];
     
     PreviewPostViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviewPostViewController"];
     controller.image = loadedImage;
@@ -67,6 +57,20 @@
     CGSize cellSize     = CGSizeMake(cellWigth, cellWigth);
     
     return cellSize;
+}
+
+#pragma mark - Utils
+
+- (UIImage *)imageFromDocumentsDirectory:(NSString *)imagePath {
+    
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:imagePath];
+    
+    NSData *pngData      = [NSData dataWithContentsOfFile:path];
+    UIImage *loadedImage = [UIImage imageWithData:pngData];
+    
+    return loadedImage;
 }
 
 @end

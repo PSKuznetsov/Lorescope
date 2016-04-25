@@ -9,9 +9,10 @@
 #import "Post.h"
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
+#import "LSDataManipulatorProtocol.h"
 
-@interface CreatePostViewController ()
-
+@interface CreatePostViewController () <UITextViewDelegate>
+@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataManipulator;
 @end
 
 @implementation CreatePostViewController
@@ -21,8 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
+    
     self.postImageView.layer.masksToBounds = YES;
-    self.postImageView.layer.cornerRadius  = 25.f;
+    self.postImageView.layer.cornerRadius  = 5.f;
     self.postImageView.image = self.postImage;
 }
 
@@ -35,19 +37,13 @@
 
 - (IBAction)doneButtonAction:(id)sender {
     
-    RLMRealm* realm = [RLMRealm defaultRealm];
-    
-    [realm beginWriteTransaction];
-    
-    Post* newPost = [[Post alloc]init];
+    Post* newPost     = [[Post alloc]init];
     newPost.comment   = self.postTextView.text;
     newPost.photoPath = [self storeImageOnDisk:self.postImage];
     newPost.postID    = 2;
     newPost.publicationDate = [NSDate date];
     
-    [realm addObject:newPost];
-    
-    [realm commitWriteTransaction];
+    [self.dataManipulator savePostToDB:newPost];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -100,6 +96,26 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    
+    if ([textView.text isEqualToString:@"placeholder text here..."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"placeholder text here...";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
 
 #pragma mark - Utils
