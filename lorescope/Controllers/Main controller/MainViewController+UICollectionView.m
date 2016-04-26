@@ -5,7 +5,7 @@
 //  Created by Paul Kuznetsov on 18/10/15.
 //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
 //
-#import "Post.h"
+#import "LSLocalPost.h"
 #import "MainViewController+UICollectionView.h"
 #import "PreviewPostViewController.h"
 #import "PostCollectionViewCell.h"
@@ -15,8 +15,8 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-        //NSLog(@"numberOfItemsInSection: %ld", (unsigned long)[self.results count]);
-    return [self.results count];
+
+    return [self.dataManipulator postsCount];
 }
 
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -25,8 +25,7 @@
     PostCollectionViewCell *postCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCellID"
                                                                                  forIndexPath:indexPath];
     
-    Post* loadedPost = [self.results objectAtIndex:indexPath.row];
-    
+    LSLocalPost* loadedPost = [self.dataManipulator postForID:indexPath.row];
     UIImage *loadedImage = [self imageFromDocumentsDirectory:loadedPost.photoPath];
     
     postCell.postImage.image = loadedImage;
@@ -38,13 +37,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    Post* loadedPost = [self.results objectAtIndex:indexPath.row];
-    
+    LSLocalPost* loadedPost = [self.dataManipulator postForID:indexPath.row];
     UIImage *loadedImage = [self imageFromDocumentsDirectory:loadedPost.photoPath];
     
     PreviewPostViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviewPostViewController"];
     controller.image = loadedImage;
-    controller.comment = loadedPost.comment;
+    controller.comment = loadedPost.content;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

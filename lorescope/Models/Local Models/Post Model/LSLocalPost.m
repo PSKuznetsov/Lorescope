@@ -6,8 +6,12 @@
 //  Copyright © 2016 Paul Kuznetsov. All rights reserved.
 //
 
-#import "Post.h"
+#import "LSLocalPost.h"
 
-@implementation Post
+@implementation LSLocalPost
+
++ (NSString *)primaryKey {
+    return @"postID";
+}
 
 @end

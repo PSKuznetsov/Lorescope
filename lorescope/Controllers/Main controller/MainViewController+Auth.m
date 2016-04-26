@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    __block UIView* bluredView = [[UIView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    bluredView.opaque = 0.6f;
+    bluredView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:bluredView];
+    
     [SVProgressHUD show];
     
     CKContainer* container = [CKContainer defaultContainer];
@@ -48,6 +53,7 @@
             NSLog(@"User iCloud (saved): %@", self.user.userID);
             
             [SVProgressHUD dismiss];
+            [bluredView removeFromSuperview];
         }
         
     }];

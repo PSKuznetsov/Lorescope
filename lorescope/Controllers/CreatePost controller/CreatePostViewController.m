@@ -6,7 +6,7 @@
     //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
     //
 #import <Realm/Realm.h>
-#import "Post.h"
+#import "LSLocalPost.h"
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
 #import "LSDataManipulatorProtocol.h"
@@ -37,7 +37,7 @@
 
 - (IBAction)doneButtonAction:(id)sender {
     
-    Post* newPost     = [[Post alloc]init];
+    LSLocalPost* newPost     = [[LSLocalPost alloc]init];
     newPost.comment   = self.postTextView.text;
     newPost.photoPath = [self storeImageOnDisk:self.postImage];
     newPost.postID    = 2;

@@ -9,18 +9,18 @@
 #import <CloudKit/CloudKit.h>
 #import <SVProgressHUD.h>
 
-#import "Post.h"
+#import "LSLocalPost.h"
+
 #import "MainViewController.h"
+#import "MainViewController+UICollectionView.h"
+
 #import "SettingsViewController.h"
 #import "NewPostViewController.h"
-#import "MainViewController+UICollectionView.h"
-#import "LSDataManipulatorProtocol.h"
+
 
 
 @interface MainViewController()
-
 @property (nonatomic, strong, readwrite) LSUser* user;
-@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataManipulator;
 @end
 
 @implementation MainViewController
@@ -31,17 +31,13 @@
     [super loadView];
     
     self.user = [[LSUser alloc] init];
+    self.dataManipulator = [LSDataManipulator sharedManipulator];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
-
-    
-    
-    self.results = [Post allObjects];
-        //NSLog(@"%@", self.results);
     
     [self.collectionView reloadData];
     
