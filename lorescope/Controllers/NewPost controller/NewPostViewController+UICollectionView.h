@@ -12,5 +12,4 @@
 @import Photos;
 
 @interface NewPostViewController (UICollectionView) <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-
 @end

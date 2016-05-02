@@ -6,13 +6,14 @@
     //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
     //
 #import <Realm/Realm.h>
+#import <SVProgressHUD.h>
+
 #import "LSLocalPost.h"
+#import "LSDataSynchronizer.h"
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
-#import "LSDataManipulatorProtocol.h"
 
 @interface CreatePostViewController () <UITextViewDelegate>
-@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataManipulator;
 @end
 
 @implementation CreatePostViewController
@@ -26,6 +27,9 @@
     self.postImageView.layer.masksToBounds = YES;
     self.postImageView.layer.cornerRadius  = 5.f;
     self.postImageView.image = self.postImage;
+    
+    self.dataSynchronizer = [[LSDataSynchronizer alloc]init];
+    
 }
 
 - (void)dealloc {
@@ -37,15 +41,32 @@
 
 - (IBAction)doneButtonAction:(id)sender {
     
-    LSLocalPost* newPost     = [[LSLocalPost alloc]init];
-    newPost.comment   = self.postTextView.text;
+    
+    
+    LSLocalPost* newPost = [[LSLocalPost alloc]init];
+    newPost.content   = self.postTextView.text;
     newPost.photoPath = [self storeImageOnDisk:self.postImage];
-    newPost.postID    = 2;
-    newPost.publicationDate = [NSDate date];
     
-    [self.dataManipulator savePostToDB:newPost];
+    [SVProgressHUD show];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.dataSynchronizer shouldSaveLocalPost:newPost completionHandler:^(BOOL success) {
+        
+        
+            if (success) {
+                
+                [SVProgressHUD dismiss];
+                
+                dispatch_async(dispatch_get_main_queue(), ^(){
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                });
+            }
+            else {
+                
+                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Failed to save Photo", nil)];
+                [SVProgressHUD dismissWithDelay:25.f];
+            }
+    }];
+    
 }
 
 - (IBAction)backButtonAction:(id)sender {

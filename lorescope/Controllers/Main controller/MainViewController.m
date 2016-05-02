@@ -10,6 +10,7 @@
 #import <SVProgressHUD.h>
 
 #import "LSLocalPost.h"
+#import "LSLocalPostManager.h"
 
 #import "MainViewController.h"
 #import "MainViewController+UICollectionView.h"
@@ -31,18 +32,16 @@
     [super loadView];
     
     self.user = [[LSUser alloc] init];
-    self.dataManipulator = [LSDataManipulator sharedManipulator];
+    self.cache = [[NSMutableDictionary alloc]init];
+    self.localManager = [[LSLocalPostManager alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = YES;
-    
     [self.collectionView reloadData];
-    
 }
-
 
 #pragma mark - Actions
 

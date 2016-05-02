@@ -22,6 +22,8 @@
         //TODO:First Launch of the app. Show user story
     }
     
+        //[self deleteAllDataFromDB];
+    
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];

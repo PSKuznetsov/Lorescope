@@ -48,16 +48,18 @@
     [self.record setObject:content forKey:@"content"];
 }
 
-- (NSData *)imageData {
+- (CKAsset *)imageData {
     
-    NSData * imageData = [self.record objectForKey:@"imageData"];
+    CKAsset* imageData = [self.record objectForKey:@"imageData"];
     return imageData;
 }
 
-- (void)setImageData:(NSData *)imageData {
+- (void)setImageData:(CKAsset *)imageData {
     
     [self.record setObject:imageData forKey:@"imageData"];
 }
+
+//This properties will be auto filled after upload
 
 - (NSString *)postID {
     

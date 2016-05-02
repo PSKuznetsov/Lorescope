@@ -9,7 +9,22 @@
 #import "LSLocalPost.h"
 #import "LSLocalPostManager.h"
 
+@interface LSLocalPostManager ()
+@property (nonatomic, assign, readwrite) NSUInteger postsCount;
+@end
+
 @implementation LSLocalPostManager
+
+#pragma mark - Initialize
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.postsCount = [[LSLocalPost allObjects] count];
+    }
+    return self;
+}
 
 #pragma marj - LSLocalPostManagerProtocol
 
@@ -19,15 +34,8 @@
     
     NSError* error;
     
-    LSLocalPost* newPost = [[LSLocalPost alloc]init];
-    newPost.content = post.content;
-    newPost.photoPath = post.photoPath;
-    newPost.postID = post.postID;
-    newPost.createdAt = post.createdAt;
-    newPost.lastModifiedAt = post.lastModifiedAt;
-    
     [realm beginWriteTransaction];
-    [realm addObject:newPost];
+    [realm addObject:post];
     [realm commitWriteTransaction:&error];
     
     if (handler) {
@@ -36,11 +44,11 @@
             
             handler(NO, error);
         }
-        else {
-           
+        else {            
             handler(YES, nil);
         }
     }
+    
 }
 
 - (void)postWithIndexInDB:(NSUInteger)index completionHandler:(void(^)(id<LSLocalPostProtocol> post, NSError* error))handler {
@@ -59,7 +67,7 @@
         
     } else {
         
-        LSLocalPost* newPost = [results objectAtIndex:index];
+        id <LSLocalPostProtocol> newPost = [results objectAtIndex:index];
         
         if (handler) {
             
@@ -72,48 +80,80 @@
 - (void)deleteLocalPostFromDB:(id<LSLocalPostProtocol>)post competionHandler:(void(^)(BOOL success, NSError* error))handler {
     
     RLMRealm* realm = [RLMRealm defaultRealm];
+//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"postID = %@", post.postID];
+//    LSLocalPost* postToDelete = [[LSLocalPost objectsWithPredicate:predicate]firstObject];
     
     NSError* error;
     
-    LSLocalPost* newPost = [[LSLocalPost alloc]init];
-    newPost.content = post.content;
-    newPost.photoPath = post.photoPath;
-    newPost.postID = post.postID;
-    newPost.createdAt = post.createdAt;
-    newPost.lastModifiedAt = post.lastModifiedAt;
-    
     [realm beginWriteTransaction];
-    [realm deleteObject:newPost];
+    [realm deleteObject:post];
     [realm commitWriteTransaction:&error];
     
     if (handler) {
-        if (error) handler(NO, error);
-        else handler(YES, nil);
+        
+        if (error) {
+            
+            handler(NO, error);
+        }
+        else {
+            
+            handler(YES, nil);
+        }
     }
-
+    
 }
 
-- (void)updateLocalPostInDB:(id<LSLocalPostProtocol>)post completionHandler:(void(^)(BOOL success, NSError* error))handler {
+- (void)updateLocalPost:(id<LSLocalPostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success, NSError* error))handler {
     
     RLMRealm* realm = [RLMRealm defaultRealm];
     
     NSError* error;
     
-    LSLocalPost* newPost = [[LSLocalPost alloc]init];
-    newPost.content = post.content;
-    newPost.photoPath = post.photoPath;
-    newPost.postID = post.postID;
-    newPost.createdAt = post.createdAt;
-    newPost.lastModifiedAt = post.lastModifiedAt;
-    
     [realm beginWriteTransaction];
-    [realm addOrUpdateObject:newPost];
+    post.content = (NSString *)content;
+    [realm addOrUpdateObject:post];
     [realm commitWriteTransaction:&error];
     
     if (handler) {
-        if (error) handler(NO, error);
-        else handler(YES, nil);
+        
+        if (error) {
+            
+            handler(NO, error);
+        }
+        else {
+            handler(YES, nil);
+        }
     }
+}
+
+- (void)updateLocalPost:(id<LSLocalPostProtocol>)post withPostID:(id<NSObject>)postID completionHandler:(void(^)(BOOL success, NSError* error))handler {
+    
+    RLMRealm* realm = [RLMRealm defaultRealm];
+    
+    NSError* error;
+    
+    [realm beginWriteTransaction];
+    post.postID = (NSString *)postID;
+    [realm addOrUpdateObject:post];
+    [realm commitWriteTransaction:&error];
+    
+    if (handler) {
+        
+        if (error) {
+            
+            handler(NO, error);
+        }
+        else {
+            handler(YES, nil);
+        }
+    }
+}
+
+#pragma mark - Utils
+
+- (void)updatePostsCount {
+    NSLog(@"Count updated: %lu", (unsigned long)self.postsCount);
+    self.postsCount = [[LSLocalPost allObjects] count];
 }
 
 @end

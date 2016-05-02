@@ -7,15 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LSPopupView.h"
 
-@interface PreviewPostViewController : UIViewController
+@protocol LSDataSynchronizerProtocol;
+@protocol LSLocalPostProtocol;
+
+@interface PreviewPostViewController : UIViewController <LSPopupViewDelegate, UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView* imageView;
 @property (nonatomic, weak) IBOutlet UITextView* textView;
+@property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, weak) IBOutlet LSPopupView* popupView;
+@property (nonatomic, weak) IBOutlet UIVisualEffectView* bluredView;
+@property (nonatomic, weak) IBOutlet UIButton* deleteButton;
 
-@property (nonatomic, strong) UIImage* image;
-@property (nonatomic, copy) NSString* comment;
+@property (nonatomic, strong) id <LSLocalPostProtocol> localPost;
+@property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
 
-- (IBAction)backButtonDidPressed:(id)sender;
+- (IBAction)backButtonDidPressed:(UIButton *)sender;
+- (IBAction)editButtonDidPressed:(UIButton *)sender;
+- (IBAction)deleteButtonDidPressed:(UIButton *)sender;
 
 @end

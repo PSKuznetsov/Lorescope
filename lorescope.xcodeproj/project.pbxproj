@@ -15,10 +15,14 @@
 		FA108C541CCE6DBA002364EA /* LSRemotePostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA108C531CCE6DBA002364EA /* LSRemotePostManager.m */; };
 		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
+		FA2B4FF91CD5038500D56B33 /* LSPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B4FF81CD5038500D56B33 /* LSPopupView.m */; };
+		FA2B4FFB1CD504FE00D56B33 /* LSPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2B4FFA1CD504FE00D56B33 /* LSPopupView.xib */; };
 		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
+		FA50CAB81CCF9D6400FACD34 /* LSDataSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA50CAB71CCF9D6400FACD34 /* LSDataSynchronizer.m */; };
 		FA54099E1CCF6CA90068D40A /* LSLocalPostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA54099D1CCF6CA90068D40A /* LSLocalPostManager.m */; };
 		FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */; };
 		FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7195481BE6DC56004475B4 /* NewPostViewController.m */; };
+		FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AC3FF1CD2439000399492 /* LSModelAdapter.m */; };
 		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
 		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
 		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; };
@@ -57,7 +61,13 @@
 		FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
 		FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+UICollectionView.m"; sourceTree = "<group>"; };
+		FA2B4FF71CD5038500D56B33 /* LSPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPopupView.h; sourceTree = "<group>"; };
+		FA2B4FF81CD5038500D56B33 /* LSPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPopupView.m; sourceTree = "<group>"; };
+		FA2B4FFA1CD504FE00D56B33 /* LSPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPopupView.xib; sourceTree = "<group>"; };
 		FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiBMaruGothic.ttc; sourceTree = "<group>"; };
+		FA50CAB41CCF9D2600FACD34 /* LSDataSynchronizerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSDataSynchronizerProtocol.h; path = Synchronizer/LSDataSynchronizerProtocol.h; sourceTree = "<group>"; };
+		FA50CAB61CCF9D6400FACD34 /* LSDataSynchronizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSDataSynchronizer.h; path = Synchronizer/LSDataSynchronizer.h; sourceTree = "<group>"; };
+		FA50CAB71CCF9D6400FACD34 /* LSDataSynchronizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSDataSynchronizer.m; path = Synchronizer/LSDataSynchronizer.m; sourceTree = "<group>"; };
 		FA5409901CCF6BA20068D40A /* LSLocalPostProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocalPostProtocol.h; path = "Local Models/Post Model/LSLocalPostProtocol.h"; sourceTree = "<group>"; };
 		FA54099C1CCF6CA90068D40A /* LSLocalPostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLocalPostManager.h; sourceTree = "<group>"; };
 		FA54099D1CCF6CA90068D40A /* LSLocalPostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLocalPostManager.m; sourceTree = "<group>"; };
@@ -66,6 +76,9 @@
 		FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewPostViewController.m; path = "PreviewPost controller/PreviewPostViewController.m"; sourceTree = "<group>"; };
 		FA7195471BE6DC56004475B4 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		FA7195481BE6DC56004475B4 /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		FA7AC3FE1CD2439000399492 /* LSModelAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSModelAdapter.h; sourceTree = "<group>"; };
+		FA7AC3FF1CD2439000399492 /* LSModelAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSModelAdapter.m; sourceTree = "<group>"; };
+		FA7AC4011CD243AE00399492 /* LSModelAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSModelAdapterProtocol.h; sourceTree = "<group>"; };
 		FA8997B11BE3B39600DA11CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8997B51BE3B72500DA11CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FA8997B61BE3B72500DA11CB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -178,13 +191,6 @@
 			path = PostManager;
 			sourceTree = "<group>";
 		};
-		FA20A8941BD2FFC600C9FFB2 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
 		FA20A8951BD2FFE700C9FFB2 /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +208,45 @@
 				FAEA82F21CB3FD350046CD03 /* Network */,
 			);
 			path = "Main controller";
+			sourceTree = "<group>";
+		};
+		FA2B4FF51CD5035800D56B33 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				FA2B4FF71CD5038500D56B33 /* LSPopupView.h */,
+				FA2B4FF81CD5038500D56B33 /* LSPopupView.m */,
+				FA2B4FFA1CD504FE00D56B33 /* LSPopupView.xib */,
+			);
+			name = PopupView;
+			path = Views/PopupView;
+			sourceTree = "<group>";
+		};
+		FA2B4FF61CD5036900D56B33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA2B4FF51CD5035800D56B33 /* PopupView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FA50CAB31CCF9CF500FACD34 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FA2B4FF61CD5036900D56B33 /* Views */,
+				FA7AC3FD1CD2437B00399492 /* ModelAdapter */,
+				FA50CAB51CCF9D3C00FACD34 /* Synchronizer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FA50CAB51CCF9D3C00FACD34 /* Synchronizer */ = {
+			isa = PBXGroup;
+			children = (
+				FA50CAB41CCF9D2600FACD34 /* LSDataSynchronizerProtocol.h */,
+				FA50CAB61CCF9D6400FACD34 /* LSDataSynchronizer.h */,
+				FA50CAB71CCF9D6400FACD34 /* LSDataSynchronizer.m */,
+			);
+			name = Synchronizer;
 			sourceTree = "<group>";
 		};
 		FA54099B1CCF6C990068D40A /* LocalPost Manager */ = {
@@ -243,6 +288,16 @@
 			path = "TakePhoto controller";
 			sourceTree = "<group>";
 		};
+		FA7AC3FD1CD2437B00399492 /* ModelAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				FA7AC4011CD243AE00399492 /* LSModelAdapterProtocol.h */,
+				FA7AC3FE1CD2439000399492 /* LSModelAdapter.h */,
+				FA7AC3FF1CD2439000399492 /* LSModelAdapter.m */,
+			);
+			path = ModelAdapter;
+			sourceTree = "<group>";
+		};
 		FA8997B41BE3B70300DA11CB /* Settings controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,10 +335,9 @@
 		FA9269821BD2E0410055FDE9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				FA9269981BD2EAFF0055FDE9 /* API */,
+				FA50CAB31CCF9CF500FACD34 /* Classes */,
 				FAE66B611BD57F8100066B36 /* Extensions */,
 				FA20A8951BD2FFE700C9FFB2 /* System */,
-				FA20A8941BD2FFC600C9FFB2 /* Vendors */,
 				FA9269971BD2EAE50055FDE9 /* Helpers */,
 			);
 			path = Library;
@@ -316,26 +370,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		FA9269911BD2E0630055FDE9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		FA9269971BD2EAE50055FDE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				FA0AB3581BD65C1400F91A38 /* Classes */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		FA9269981BD2EAFF0055FDE9 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		FAAB67981BD8E5A800484FC2 /* LSUILabel */ = {
@@ -449,7 +489,6 @@
 				FAB0BF421CA528CF0070E3FE /* lorescope.entitlements */,
 				FA9269791BD2E0360055FDE9 /* Controllers */,
 				FA9269831BD2E0490055FDE9 /* Models */,
-				FA9269911BD2E0630055FDE9 /* Views */,
 				FA92698A1BD2E05B0055FDE9 /* Storyboards */,
 				FA9269821BD2E0410055FDE9 /* Library */,
 				FA9269871BD2E0530055FDE9 /* Resources */,
@@ -529,6 +568,7 @@
 			files = (
 				FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */,
 				FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */,
+				FA2B4FFB1CD504FE00D56B33 /* LSPopupView.xib in Resources */,
 				FA9269901BD2E05B0055FDE9 /* Main.storyboard in Resources */,
 				FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */,
 			);
@@ -595,6 +635,7 @@
 				FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */,
 				FA0D519E1CAE580300769EBA /* MainViewController+Auth.m in Sources */,
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
+				FA50CAB81CCF9D6400FACD34 /* LSDataSynchronizer.m in Sources */,
 				FA54099E1CCF6CA90068D40A /* LSLocalPostManager.m in Sources */,
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
@@ -605,10 +646,12 @@
 				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,
 				FA108C541CCE6DBA002364EA /* LSRemotePostManager.m in Sources */,
 				FA108C4E1CCE634C002364EA /* LSRemotePost.m in Sources */,
+				FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
+				FA2B4FF91CD5038500D56B33 /* LSPopupView.m in Sources */,
 				FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

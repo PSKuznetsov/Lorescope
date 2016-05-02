@@ -14,12 +14,17 @@
 
 - (instancetype)initWithDatabase:(CKDatabase *)database;
 
-- (void)createRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success, id<LSRemotePostProtocol>post))handler;
+- (void)createRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success, id<LSRemotePostProtocol> post))handler;
 
-- (void)postWithID:(NSString *)postID completionHandler:(void(^)(id<LSRemotePostProtocol>post))handler;
+- (void)postWithID:(NSString *)postID completionHandler:(void(^)(id<LSRemotePostProtocol> post, NSError* error))handler;
 
-- (void)updateRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success, id<LSRemotePostProtocol>post))handler;
+- (void)updateRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
+- (void)updateRemotePostWithID:(id<NSObject>)postID withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success))handler;
 
 - (void)deleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
+- (void)retrievePostsWithCompletionHandler:(void(^)(NSArray<id<LSRemotePostProtocol>> *posts))handler;
+
 
 @end

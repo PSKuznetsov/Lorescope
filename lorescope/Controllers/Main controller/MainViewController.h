@@ -9,11 +9,15 @@
 #import <Realm/Realm.h>
 
 #import "LSUser.h"
+#import "LSLocalPostManagerProtocol.h"
 
 @interface MainViewController : UIViewController
 
 @property (nonatomic, strong, readonly) LSUser* user;
-@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataManipulator;
+@property (nonatomic, strong) NSMutableDictionary* cache;
+
+@property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
+
 @property (nonatomic, weak) IBOutlet UICollectionView* collectionView;
 
 - (IBAction)settingsButton:(id)sender;
