@@ -10,6 +10,6 @@
 
 @interface PostCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView* postImage;
+@property (nonatomic, weak) IBOutlet UIImageView* imageView;
 
 @end

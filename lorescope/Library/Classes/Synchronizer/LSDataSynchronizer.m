@@ -8,10 +8,16 @@
 
 #import <CloudKit/CloudKit.h>
 #import "LSDataSynchronizer.h"
+
 #import "LSRemotePostManager.h"
 #import "LSLocalPostManager.h"
+
+#import "LSDataCacherProtocol.h"
+#import "LSDataCacher.h"
+
 #import "LSModelAdapterProtocol.h"
 #import "LSModelAdapter.h"
+
 #import "LSLocalPost.h"
 #import "LSRemotePost.h"
 
@@ -24,6 +30,7 @@
         self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:[[CKContainer defaultContainer]privateCloudDatabase]];
         self.localManager  = [[LSLocalPostManager alloc]init];
         self.adapter       = [[LSModelAdapter alloc]init];
+        self.cacher        = [[LSDataCacher alloc]init];
     }
     return self;
 }
@@ -70,6 +77,7 @@
             else {
                 NSLog(@"Manager can't save post remotely!");
                 succeeded = NO;
+                [self.cacher shouldCacheObjectMarkedForSave:post];
             }
             
             dispatch_group_leave(group);
@@ -139,6 +147,7 @@
             else {
                 NSLog(@"Remote post doesn't deleted!");
                 succeeded = NO;
+                [self.cacher shouldCacheObjectMarkedForDelete:post];
             }
             dispatch_group_leave(group);
         }];
@@ -152,6 +161,7 @@
            
             if (success) {
                 NSLog(@"Local post deleted!");
+                succeeded = YES;
                 
             }
             else {
@@ -190,6 +200,7 @@
                                  else {
                                      successeded = NO;
                                      NSLog(@"Remote post failure for update!");
+                                     [self.cacher shouldCacheObjectMarkedForSave:post];
                                  }
                                  dispatch_group_leave(group);
                              }];
@@ -224,6 +235,21 @@
         
     });
     
+}
+
+- (void)shouldDownloadPostsCompletionHandler:(void(^)(BOOL success))handler {
+    
+    [self.remoteManager retrievePostsWithCompletionHandler:^(NSArray<id<LSRemotePostProtocol>> *posts) {
+        for (LSRemotePost* remotePost in posts) {
+            
+            [self.adapter shouldAdaptRemoteModel:remotePost completionHandler:^(id<LSLocalPostProtocol> localPost, NSError *error) {
+                
+                [self.localManager saveLocalPostToDB:localPost completionHandler:^(BOOL success, NSError *error) {
+                    
+                }];
+            }];
+        }
+    }];
 }
 
 - (NSUInteger)countOfLocalPosts {

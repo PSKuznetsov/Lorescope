@@ -28,8 +28,6 @@
     
     MainViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    navController.navigationBarHidden = YES;
-
     self.window.rootViewController = navController;
 
     return YES;

@@ -19,20 +19,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZOZolaZoomTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>63F724FE9B368302248B4E7260415DF8</key>
+		<key>317C23A478214C80507A1021750FFF01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B10397A1A46417C8F5AD641DF2859E7</key>
+		<key>CDAE51B6A22DD9131F3BFA7A7C24ABEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBF1B56F29624DE0063747AA5866E536</key>
+		<key>E87087680DCAF69A17B939C789E422EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1DD7C94851A970D9864FBEA41A187F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

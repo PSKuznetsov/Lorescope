@@ -21,7 +21,6 @@
 @property (nonatomic, strong) PHFetchResult* fetchResult;
 @property (nonatomic, strong) UIImage* selectedImage;
 
-- (IBAction)backButton:(id)sender;
 - (IBAction)doneButton:(id)sender;
 
 @end

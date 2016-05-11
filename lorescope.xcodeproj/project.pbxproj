@@ -15,6 +15,7 @@
 		FA108C541CCE6DBA002364EA /* LSRemotePostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA108C531CCE6DBA002364EA /* LSRemotePostManager.m */; };
 		FA20A8A61BD3198B00C9FFB2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */; };
 		FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */; };
+		FA2267131CE2CA0D004E5461 /* LSDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2267121CE2CA0D004E5461 /* LSDataCacher.m */; };
 		FA2B4FF91CD5038500D56B33 /* LSPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B4FF81CD5038500D56B33 /* LSPopupView.m */; };
 		FA2B4FFB1CD504FE00D56B33 /* LSPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2B4FFA1CD504FE00D56B33 /* LSPopupView.xib */; };
 		FA2B8B2D1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = FA2B8B2C1BD46F1B00CE10B6 /* TsukushiBMaruGothic.ttc */; };
@@ -33,6 +34,7 @@
 		FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A57211BE81FAB0076986B /* TakePhotoViewController.m */; };
 		FAB0BF441CA528F00070E3FE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB0BF431CA528F00070E3FE /* CloudKit.framework */; };
 		FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */; };
+		FACF6CAC1CDAE70800B37B15 /* LSMainControllerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF6CAB1CDAE70800B37B15 /* LSMainControllerFlowLayout.m */; };
 		FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */; };
 		FAEA82ED1CB3F07D0046CD03 /* libRealm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEA82EC1CB3F07D0046CD03 /* libRealm.a */; };
 		FAEA82F01CB3FD1E0046CD03 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEA82EF1CB3FD1E0046CD03 /* PostCollectionViewCell.m */; };
@@ -61,6 +63,9 @@
 		FA20A8A51BD3198B00C9FFB2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+UICollectionView.h"; sourceTree = "<group>"; };
 		FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+UICollectionView.m"; sourceTree = "<group>"; };
+		FA2267101CE2C8BF004E5461 /* LSDataCacherProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDataCacherProtocol.h; sourceTree = "<group>"; };
+		FA2267111CE2CA0D004E5461 /* LSDataCacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDataCacher.h; sourceTree = "<group>"; };
+		FA2267121CE2CA0D004E5461 /* LSDataCacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDataCacher.m; sourceTree = "<group>"; };
 		FA2B4FF71CD5038500D56B33 /* LSPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPopupView.h; sourceTree = "<group>"; };
 		FA2B4FF81CD5038500D56B33 /* LSPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPopupView.m; sourceTree = "<group>"; };
 		FA2B4FFA1CD504FE00D56B33 /* LSPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSPopupView.xib; sourceTree = "<group>"; };
@@ -97,6 +102,9 @@
 		FAB0BF431CA528F00070E3FE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FAB0BF4A1CA537460070E3FE /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		FAB0BF4B1CA537460070E3FE /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		FACF6CAA1CDAE70800B37B15 /* LSMainControllerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMainControllerFlowLayout.h; sourceTree = "<group>"; };
+		FACF6CAB1CDAE70800B37B15 /* LSMainControllerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMainControllerFlowLayout.m; sourceTree = "<group>"; };
+		FACF6CDB1CDBCBCC00B37B15 /* LSControllerManipulatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSControllerManipulatorDelegate.h; path = Views/ControllerDelegate/LSControllerManipulatorDelegate.h; sourceTree = "<group>"; };
 		FAE66B621BD57FF800066B36 /* UIColor+LSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LSPalette.h"; path = "Extensions/UIColor+LSPalette.h"; sourceTree = "<group>"; };
 		FAE66B631BD57FF800066B36 /* UIColor+LSPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LSPalette.m"; path = "Extensions/UIColor+LSPalette.m"; sourceTree = "<group>"; };
 		FAEA82EC1CB3F07D0046CD03 /* libRealm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRealm.a; path = "../../../Library/Developer/Xcode/DerivedData/lorescope-dzrimluzngmgyxarvrsdoaqduqsz/Build/Products/Debug-iphonesimulator/Realm/libRealm.a"; sourceTree = "<group>"; };
@@ -210,6 +218,16 @@
 			path = "Main controller";
 			sourceTree = "<group>";
 		};
+		FA22670F1CE2C8A5004E5461 /* LSDataCacher */ = {
+			isa = PBXGroup;
+			children = (
+				FA2267101CE2C8BF004E5461 /* LSDataCacherProtocol.h */,
+				FA2267111CE2CA0D004E5461 /* LSDataCacher.h */,
+				FA2267121CE2CA0D004E5461 /* LSDataCacher.m */,
+			);
+			path = LSDataCacher;
+			sourceTree = "<group>";
+		};
 		FA2B4FF51CD5035800D56B33 /* PopupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +242,7 @@
 		FA2B4FF61CD5036900D56B33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FACF6CDA1CDBCB8300B37B15 /* ControllerDelegate */,
 				FA2B4FF51CD5035800D56B33 /* PopupView */,
 			);
 			name = Views;
@@ -232,6 +251,7 @@
 		FA50CAB31CCF9CF500FACD34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA22670F1CE2C8A5004E5461 /* LSDataCacher */,
 				FA2B4FF61CD5036900D56B33 /* Views */,
 				FA7AC3FD1CD2437B00399492 /* ModelAdapter */,
 				FA50CAB51CCF9D3C00FACD34 /* Synchronizer */,
@@ -396,6 +416,14 @@
 			path = KeychainWrapper;
 			sourceTree = "<group>";
 		};
+		FACF6CDA1CDBCB8300B37B15 /* ControllerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FACF6CDB1CDBCBCC00B37B15 /* LSControllerManipulatorDelegate.h */,
+			);
+			name = ControllerDelegate;
+			sourceTree = "<group>";
+		};
 		FAE66B611BD57F8100066B36 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +438,8 @@
 			children = (
 				FA20A8A71BD319BE00C9FFB2 /* MainViewController+UICollectionView.h */,
 				FA20A8A81BD319BE00C9FFB2 /* MainViewController+UICollectionView.m */,
+				FACF6CAA1CDAE70800B37B15 /* LSMainControllerFlowLayout.h */,
+				FACF6CAB1CDAE70800B37B15 /* LSMainControllerFlowLayout.m */,
 				FAEA82EE1CB3FD1E0046CD03 /* PostCollectionViewCell.h */,
 				FAEA82EF1CB3FD1E0046CD03 /* PostCollectionViewCell.m */,
 			);
@@ -644,10 +674,12 @@
 				FAEF78CB1BEB838600FF4996 /* CreatePostViewController.m in Sources */,
 				FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */,
 				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,
+				FACF6CAC1CDAE70800B37B15 /* LSMainControllerFlowLayout.m in Sources */,
 				FA108C541CCE6DBA002364EA /* LSRemotePostManager.m in Sources */,
 				FA108C4E1CCE634C002364EA /* LSRemotePost.m in Sources */,
 				FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
+				FA2267131CE2CA0D004E5461 /* LSDataCacher.m in Sources */,
 				FA20A8A91BD319BE00C9FFB2 /* MainViewController+UICollectionView.m in Sources */,
 				FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,

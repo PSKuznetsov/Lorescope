@@ -12,8 +12,11 @@
 #import "LSDataSynchronizer.h"
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
+#import "MainViewController.h"
+#import "LSControllerManipulatorDelegate.h"
 
 @interface CreatePostViewController () <UITextViewDelegate>
+@property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
 @end
 
 @implementation CreatePostViewController
@@ -23,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
+    
+    self.manipulatorDelegate = [self.navigationController.viewControllers firstObject];
     
     self.postImageView.layer.masksToBounds = YES;
     self.postImageView.layer.cornerRadius  = 5.f;
@@ -41,22 +46,21 @@
 
 - (IBAction)doneButtonAction:(id)sender {
     
-    
-    
     LSLocalPost* newPost = [[LSLocalPost alloc]init];
     newPost.content   = self.postTextView.text;
     newPost.photoPath = [self storeImageOnDisk:self.postImage];
-    
+        
     [SVProgressHUD show];
     
     [self.dataSynchronizer shouldSaveLocalPost:newPost completionHandler:^(BOOL success) {
-        
         
             if (success) {
                 
                 [SVProgressHUD dismiss];
                 
                 dispatch_async(dispatch_get_main_queue(), ^(){
+                    
+                    [self.manipulatorDelegate contorllerShouldPerformReloadData:self];
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 });
             }
@@ -67,11 +71,6 @@
             }
     }];
     
-}
-
-- (IBAction)backButtonAction:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Notifications

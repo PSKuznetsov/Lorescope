@@ -9,6 +9,7 @@
 #import <SVProgressHUD.h>
 #import <Realm/Realm.h>
 
+#import "LSDataSynchronizer.h"
 #import "MainViewController+Auth.h"
 #import "LSUser.h"
 
@@ -17,11 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    __block UIView* bluredView = [[UIView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-//    bluredView.opaque = 0.6f;
-//    bluredView.backgroundColor = [UIColor blackColor];
-//    [self.view addSubview:bluredView];
     
     [SVProgressHUD show];
     
@@ -53,7 +49,6 @@
             NSLog(@"User iCloud (saved): %@", self.user.userID);
             
             [SVProgressHUD dismiss];
-                //[bluredView removeFromSuperview];
         }
         
     }];

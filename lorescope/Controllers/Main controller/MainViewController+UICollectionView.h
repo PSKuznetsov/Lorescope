@@ -6,6 +6,7 @@
 //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
 //
 #import "MainViewController.h"
+#import <ZOZolaZoomTransition.h>
 
-@interface MainViewController (UICollectionView) <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> 
+@interface MainViewController (UICollectionView) <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,ZOZolaZoomTransitionDelegate, UINavigationControllerDelegate>
 @end

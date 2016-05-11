@@ -6,11 +6,9 @@
 //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
 //
 
+
 #import "MainViewController+UICollectionView.h"
 #import "PreviewPostViewController.h"
-#import "PostCollectionViewCell.h"
-
-#import "LSLocalPost.h"
 
 @implementation MainViewController (UICollectionView)
 
@@ -27,10 +25,10 @@
     
     PostCollectionViewCell *postCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCellID"
                                                                                  forIndexPath:indexPath];
-    postCell.postImage.image = nil;
     
     postCell.layer.shouldRasterize = YES;
     postCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    postCell.imageView.image = nil;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
@@ -39,13 +37,14 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             PostCollectionViewCell *updatedPostCell = (PostCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-            updatedPostCell.postImage.alpha = 0.0;
+            
+            updatedPostCell.imageView.alpha = 0.0;
             
             if (updatedPostCell) {
                 [self imageFromDocumentsDirectory:imagePath completionHandler:^(UIImage *image) {                    
                     [UIView animateWithDuration:0.3f animations:^{
-                        updatedPostCell.postImage.image = image;
-                        [updatedPostCell.postImage setAlpha:1.0];
+                        updatedPostCell.imageView.image = image;
+                        [updatedPostCell.imageView setAlpha:1.0];
                     }];
                 }];
                 
@@ -60,29 +59,87 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    __block LSLocalPost* loadedPost;
+    __weak typeof(self) weakSelf = self;
+    
+    self.selectedCell  = (PostCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    self.selectedImage = self.selectedCell.imageView.image;
+    
     [self.localManager postWithIndexInDB:indexPath.row
                        completionHandler:^(id<LSLocalPostProtocol> post, NSError *error) {
                            
-        if (!error) {
-            loadedPost = post;
-        }
-    }];
+                           typeof(self) strongSelf = weakSelf;
+                           
+                           if (!error) {
+                               
+                               strongSelf.loadedPost = post;
+                               
+                               [strongSelf performSegueWithIdentifier:@"previewPostSegue" sender:self];
+                           }
+                       }];
     
-    PreviewPostViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PreviewPostViewController"];
-    controller.localPost = loadedPost;
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark - UINavigationControllerDelegate
 
-#pragma mark - UICollectionViewDelegateFlowLayout
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)fromVC
+                                                  toViewController:(UIViewController *)toVC {
+    
+    if ([toVC isKindOfClass:[PreviewPostViewController class]] || [fromVC isKindOfClass:[PreviewPostViewController class]]) {
+        
+            // Determine if we're presenting or dismissing
+        ZOTransitionType type = (fromVC == self) ? ZOTransitionTypePresenting : ZOTransitionTypeDismissing;
+        
+            // Create a transition instance with the selected cell's imageView as the target view
+        ZOZolaZoomTransition *zoomTransition = [ZOZolaZoomTransition transitionFromView:self.selectedCell.imageView
+                                                                                   type:type
+                                                                               duration:0.3
+                                                                               delegate:self];
+        zoomTransition.fadeColor = [UIColor colorWithWhite:0.97 alpha:1.0];
+        
+        return zoomTransition;
+    }
+    
+    return nil;
+}
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - ZOZolaZoomTransitionDelegate
+
+- (CGRect)zolaZoomTransition:(ZOZolaZoomTransition *)zoomTransition
+        startingFrameForView:(UIView *)targetView
+              relativeToView:(UIView *)relativeView
+          fromViewController:(UIViewController *)fromViewController
+            toViewController:(UIViewController *)toViewController {
     
-    NSInteger cellWigth = ([[UIScreen mainScreen] bounds]).size.width / 3 - 8;
-    CGSize cellSize     = CGSizeMake(cellWigth, cellWigth);
+    if (fromViewController == self) {
+            // We're pushing to the detail controller. The starting frame is taken from the selected cell's imageView.
+        return [self.selectedCell.imageView convertRect:self.selectedCell.imageView.bounds toView:relativeView];
+    } else if ([fromViewController isKindOfClass:[PreviewPostViewController class]]) {
+            // We're popping back to this master controller. The starting frame is taken from the detailController's imageView.
+        PreviewPostViewController *detailController = (PreviewPostViewController *)fromViewController;
+        return [detailController.imageView convertRect:detailController.imageView.bounds toView:relativeView];
+    }
     
-    return cellSize;
+    return CGRectZero;
+}
+
+- (CGRect)zolaZoomTransition:(ZOZolaZoomTransition *)zoomTransition
+       finishingFrameForView:(UIView *)targetView
+              relativeToView:(UIView *)relativeView
+          fromViewController:(UIViewController *)fromViewComtroller
+            toViewController:(UIViewController *)toViewController {
+    
+    if (fromViewComtroller == self) {
+            // We're pushing to the detail controller. The finishing frame is taken from the detailController's imageView.
+        PreviewPostViewController *detailController = (PreviewPostViewController *)toViewController;
+        return [detailController.imageView convertRect:detailController.imageView.bounds toView:relativeView];
+    } else if ([fromViewComtroller isKindOfClass:[PreviewPostViewController class]]) {
+            // We're popping back to this master controller. The finishing frame is taken from the selected cell's imageView.
+        return [self.selectedCell.imageView convertRect:self.selectedCell.imageView.bounds toView:relativeView];
+    }
+    
+    return CGRectZero;
 }
 
 #pragma mark - Utils

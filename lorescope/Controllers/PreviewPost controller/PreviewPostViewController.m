@@ -32,17 +32,16 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1.0];
+    self.imageView.image = self.postImage;
+    self.contentTextView.text = self.localPost.content;
+    
     self.buttonState = LSUIButtonStateEdit;
     
     [self registerForKeyboardNotifications];
     
     self.popupView.delegate = self;
-    self.textView.delegate  = self;
-    
     self.dataSynchronizer = [[LSDataSynchronizer alloc]init];
-    
-    self.imageView.image   = [self imageFromDocumentsDirectory:self.localPost.photoPath];
-    self.textView.text     = self.localPost.content;
 
 }
 
@@ -51,7 +50,6 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     
     self.bluredView.hidden = YES;
     self.popupView.hidden  = YES;
-    self.deleteButton.hidden = YES;
     self.contentIsChanged  = NO;
 }
 
@@ -61,39 +59,34 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
 
 #pragma mark - Actions
 
-- (IBAction)backButtonDidPressed:(UIButton *)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)editButtonDidPressed:(UIButton *)sender {
     
     if (self.buttonState == LSUIButtonStateEdit) {
         
         self.buttonState = LSUIButtonStateSave;
-        self.deleteButton.hidden = NO;
+            //self.deleteButton.hidden = NO;
         
         [sender setBackgroundImage:[UIImage imageNamed:@"doneButton"]
                           forState:UIControlStateNormal];
         
-        self.textView.editable = YES;
+        self.contentTextView.editable = YES;
     }
     else if (self.buttonState == LSUIButtonStateSave) {
         
         self.buttonState = LSUIButtonStateEdit;
-        self.deleteButton.hidden = YES;
+            //self.deleteButton.hidden = YES;
         
         [sender setBackgroundImage:[UIImage imageNamed:@"newPost"]
                           forState:UIControlStateNormal];
         
-        self.textView.editable = NO;
+        self.contentTextView.editable = NO;
         
         if (self.contentIsChanged) {
             
             [SVProgressHUD show];
             
             [self.dataSynchronizer shouldUpdateLocalPost:self.localPost
-                                             withContent:self.textView.text
+                                             withContent:self.contentTextView.text
                                        completionHandler:^(BOOL success) {
                 
                 if (success) {
@@ -179,9 +172,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
             }];
         }];
     }];
-    
-    
-    
+        
 }
 
 #pragma mark - UITextViewDelegate
@@ -208,9 +199,9 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
     
-    if (!CGRectContainsPoint(aRect, self.textView.frame.origin)) {
+    if (!CGRectContainsPoint(aRect, self.contentTextView.frame.origin)) {
         
-        CGPoint scrollPoint = CGPointMake(0.0, self.textView.frame.origin.y - kbSize.height);
+        CGPoint scrollPoint = CGPointMake(0.0, self.contentTextView.frame.origin.y - kbSize.height);
         [self.scrollView setContentOffset:scrollPoint animated:YES];
     }
 }
@@ -235,7 +226,6 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
 }
-
 
 #pragma mark - Utils
 

@@ -10,4 +10,16 @@
 
 @implementation PostCollectionViewCell
 
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//    
+//    _imageView.frame = CGRectMake(0.0, 0.0, self.contentView.frame.size.width, self.contentView.frame.size.width);
+//    
+//}
+//
+//- (void)prepareForReuse {
+//    [super prepareForReuse];
+//    self.imageView.image = nil;
+//}
+
 @end

@@ -10,8 +10,4 @@
 
 @implementation LSLocalPost
 
-+ (NSString *)primaryKey {
-    return @"postID";
-}
-
 @end

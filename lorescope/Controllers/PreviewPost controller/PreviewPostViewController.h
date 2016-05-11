@@ -15,16 +15,15 @@
 @interface PreviewPostViewController : UIViewController <LSPopupViewDelegate, UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView* imageView;
-@property (nonatomic, weak) IBOutlet UITextView* textView;
+@property (nonatomic, weak) IBOutlet UITextView* contentTextView;
 @property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, weak) IBOutlet LSPopupView* popupView;
 @property (nonatomic, weak) IBOutlet UIVisualEffectView* bluredView;
-@property (nonatomic, weak) IBOutlet UIButton* deleteButton;
 
 @property (nonatomic, strong) id <LSLocalPostProtocol> localPost;
+@property (nonatomic, strong) UIImage* postImage;
 @property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
 
-- (IBAction)backButtonDidPressed:(UIButton *)sender;
 - (IBAction)editButtonDidPressed:(UIButton *)sender;
 - (IBAction)deleteButtonDidPressed:(UIButton *)sender;
 

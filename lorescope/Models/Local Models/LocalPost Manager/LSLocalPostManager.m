@@ -53,7 +53,7 @@
 
 - (void)postWithIndexInDB:(NSUInteger)index completionHandler:(void(^)(id<LSLocalPostProtocol> post, NSError* error))handler {
     
-    RLMResults* results = [LSLocalPost allObjects];
+    RLMResults* results = [[LSLocalPost allObjects] sortedResultsUsingProperty:@"createdAt" ascending:NO];
     
     NSError* error;
     
@@ -111,7 +111,6 @@
     
     [realm beginWriteTransaction];
     post.content = (NSString *)content;
-    [realm addOrUpdateObject:post];
     [realm commitWriteTransaction:&error];
     
     if (handler) {
@@ -134,7 +133,6 @@
     
     [realm beginWriteTransaction];
     post.postID = (NSString *)postID;
-    [realm addOrUpdateObject:post];
     [realm commitWriteTransaction:&error];
     
     if (handler) {

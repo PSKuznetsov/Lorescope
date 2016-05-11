@@ -21,10 +21,4 @@
 
 #pragma mark - Actions
 
-    ///Handle custom back button
-- (IBAction)backButton:(id)sender {
-    
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
 @end

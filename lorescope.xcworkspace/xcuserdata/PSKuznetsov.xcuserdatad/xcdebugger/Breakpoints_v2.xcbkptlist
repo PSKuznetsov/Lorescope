@@ -35,13 +35,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lorescope/Controllers/Main controller/MainViewController.m"
-            timestampString = "483860110.865849"
+            filePath = "lorescope/Controllers/Main controller/Custom Transition/LSZoomInTransitionDelegate.m"
+            timestampString = "484104304.933094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-animationControllerForPresentedController:presentingController:sourceController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lorescope/Controllers/Main controller/MainViewController+UICollectionView.m"
-            timestampString = "483859842.795346"
+            filePath = "lorescope/Controllers/Main controller/Custom Transition/LSZoomInTransitionDelegate.m"
+            timestampString = "484104306.886973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-imageFromDocumentsDirectory:completionHandler:"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-animationControllerForPresentedController:presentingController:sourceController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lorescope/Controllers/Main controller/MainViewController+UICollectionView.m"
-            timestampString = "483859842.795346"
+            filePath = "lorescope/Controllers/Main controller/Custom Transition/LSZoomInTransitionDelegate.m"
+            timestampString = "484104307.954976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-imageFromDocumentsDirectory:completionHandler:"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-animationControllerForDismissedController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lorescope/Controllers/Main controller/Custom Transition/LSZoomInTransitionDelegate.m"
+            timestampString = "484104308.814912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-animationControllerForDismissedController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lorescope/Controllers/PreviewPost controller/PreviewPostViewController.m"
+            timestampString = "484161438.05634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -19,11 +19,6 @@
 
 #pragma mark - Actions
 
-- (IBAction)backButton:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)doneButton:(id)sender {
     
     CreatePostViewController* createPost = [self.storyboard instantiateViewControllerWithIdentifier:@"CreatePostViewController"];

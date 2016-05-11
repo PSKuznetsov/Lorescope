@@ -17,8 +17,11 @@
 
 #import "SettingsViewController.h"
 #import "NewPostViewController.h"
+#import "PreviewPostViewController.h"
+#import "LSMainControllerFlowLayout.h"
 
 
+static NSString * LSCellId = @"LSCell";
 
 @interface MainViewController()
 @property (nonatomic, strong, readwrite) LSUser* user;
@@ -31,15 +34,25 @@
 - (void)loadView {
     [super loadView];
     
-    self.user = [[LSUser alloc] init];
+    self.collectionView.delegate   = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.collectionViewLayout = [[LSMainControllerFlowLayout alloc]init];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1.0];
+    
+    self.user  = [[LSUser alloc] init];
     self.cache = [[NSMutableDictionary alloc]init];
     self.localManager = [[LSLocalPostManager alloc]init];
+    
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lorescope"]];
+    self.navigationController.delegate = self;
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBarHidden = YES;
+}
+
+#pragma mark - LSControllerManipulatorDelegate
+
+- (void)contorllerShouldPerformReloadData:(UIViewController *)controller {
     [self.collectionView reloadData];
 }
 
@@ -47,14 +60,25 @@
 
 - (IBAction)newPostButton:(id)sender {
     
-    NewPostViewController* newPostController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewPostViewController"];
-    [self.navigationController pushViewController:newPostController animated:YES];
+    [self performSegueWithIdentifier:@"newPostSegue" sender:self];
 }
 
 - (IBAction)settingsButton:(id)sender {
     
     SettingsViewController* settingsController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:settingsController animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"previewPostSegue"]) {
+        
+        PreviewPostViewController* destinationController = [segue destinationViewController];
+        destinationController.localPost = self.loadedPost;
+        destinationController.postImage = self.selectedImage;
+    }
 }
 
 @end

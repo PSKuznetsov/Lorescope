@@ -13,6 +13,4 @@
 @property (nonatomic, weak) IBOutlet UIImageView* userAvatar;
 @property (nonatomic, weak) IBOutlet UILabel* usernameLabel;
 
-- (IBAction)backButton:(id)sender;
-
 @end

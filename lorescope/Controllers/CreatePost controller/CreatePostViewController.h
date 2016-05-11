@@ -20,6 +20,5 @@
 @property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
 
 - (IBAction)doneButtonAction:(id)sender;
-- (IBAction)backButtonAction:(id)sender;
 
 @end
