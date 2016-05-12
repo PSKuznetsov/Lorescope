@@ -1,5 +1,5 @@
 //
-//  LSDataSynchronizerProtocol.h
+//  LSDataSynchronizer.h
 //  lorescope
 //
 //  Created by Paul Kuznetsov on 26/04/16.
@@ -8,20 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LSRemotePostManagerProtocol;
-@protocol LSLocalPostManagerProtocol;
+@protocol LSDataManipulatorProtocol;
 @protocol LSLocalPostProtocol;
-@protocol LSRemotePostProtocol;
+@protocol LSLocalPostManagerProtocol;
+@protocol LSRemotePostManagerProtocol;
+@protocol LSDataCacherProtocol;
+@protocol LSModelAdapterProtocol;
 
-@protocol LSDataSynchronizerProtocol <NSObject>
+@interface LSDataManipulator : NSObject <LSDataManipulatorProtocol>
 
 @property (nonatomic, strong) id <LSRemotePostManagerProtocol> remoteManager;
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
 
-- (void)shouldSaveLocalPost: (id<LSLocalPostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+@property (nonatomic, strong) id <LSModelAdapterProtocol> adapter;
+@property (nonatomic, strong) id <LSDataCacherProtocol> cacher;
+
+- (void)shouldSaveLocalPost:(id<LSLocalPostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
 - (void)shouldDeleteLocalPost:(id<LSLocalPostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
 - (void)shouldUpdateLocalPost:(id<LSLocalPostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success))handler;
-- (NSUInteger)countOfLocalPosts;
+
 - (void)shouldDownloadPostsCompletionHandler:(void(^)(BOOL success))handler;
+
+- (NSUInteger)countOfLocalPosts;
 
 @end

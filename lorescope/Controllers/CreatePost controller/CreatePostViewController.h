@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LSDataSynchronizerProtocol.h"
+@protocol LSDataManipulatorProtocol;
 
 @interface CreatePostViewController : UIViewController
 
@@ -17,7 +17,7 @@
 @property (nonatomic, weak) IBOutlet UIScrollView*   scrollView;
 
 @property (nonatomic, strong) UIImage* postImage;
-@property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
+@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataSynchronizer;
 
 - (IBAction)doneButtonAction:(id)sender;
 

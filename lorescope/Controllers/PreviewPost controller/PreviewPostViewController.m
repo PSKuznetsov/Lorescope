@@ -5,12 +5,16 @@
 //  Created by Paul Kuznetsov on 15/04/16.
 //  Copyright © 2016 Paul Kuznetsov. All rights reserved.
 //
-#import <SVProgressHUD.h>
+
 #import "PreviewPostViewController.h"
+
+#import <SVProgressHUD.h>
+
 #import "LSLocalPostProtocol.h"
 #import "LSLocalPost.h"
-#import "LSDataSynchronizerProtocol.h"
-#import "LSDataSynchronizer.h"
+
+#import "LSDataManipulatorProtocol.h"
+#import "LSDataManipulator.h"
 
 typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     LSUIButtonStateEdit,
@@ -41,7 +45,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     [self registerForKeyboardNotifications];
     
     self.popupView.delegate = self;
-    self.dataSynchronizer = [[LSDataSynchronizer alloc]init];
+    self.dataSynchronizer = [[LSDataManipulator alloc]init];
 
 }
 

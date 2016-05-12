@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LSPopupView.h"
 
-@protocol LSDataSynchronizerProtocol;
+@protocol LSDataManipulatorProtocol;
 @protocol LSLocalPostProtocol;
 
 @interface PreviewPostViewController : UIViewController <LSPopupViewDelegate, UITextViewDelegate>
@@ -20,9 +20,9 @@
 @property (nonatomic, weak) IBOutlet LSPopupView* popupView;
 @property (nonatomic, weak) IBOutlet UIVisualEffectView* bluredView;
 
+@property (nonatomic, strong) id <LSDataManipulatorProtocol> dataSynchronizer;
 @property (nonatomic, strong) id <LSLocalPostProtocol> localPost;
 @property (nonatomic, strong) UIImage* postImage;
-@property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
 
 - (IBAction)editButtonDidPressed:(UIButton *)sender;
 - (IBAction)deleteButtonDidPressed:(UIButton *)sender;

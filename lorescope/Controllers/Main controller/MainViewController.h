@@ -8,23 +8,24 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 
-#import "LSUser.h"
 #import "LSLocalPost.h"
-#import "LSLocalPostManagerProtocol.h"
 #import "PostCollectionViewCell.h"
 #import "LSControllerManipulatorDelegate.h"
+
+@protocol LSLocalPostManagerProtocol;
+@protocol LSDataSynchronizerProtocol;
 
 @interface MainViewController : UIViewController <LSControllerManipulatorDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView* collectionView;
 
-@property (nonatomic, strong, readonly) LSUser* user;
 @property (nonatomic, strong) LSLocalPost* loadedPost;
 @property (nonatomic, strong) NSMutableDictionary* cache;
 @property (nonatomic, strong) PostCollectionViewCell* selectedCell;
 @property (nonatomic, strong) UIImage* selectedImage;
 
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
+@property (nonatomic, strong) id <LSDataSynchronizerProtocol> synchronizer;
 
 - (IBAction)settingsButton:(id)sender;
 - (IBAction)newPostButton:(id)sender;

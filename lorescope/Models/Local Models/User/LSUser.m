@@ -7,6 +7,7 @@
 //
 
 #import "LSUser.h"
+#import "LSUserProtocol.h"
 #import "KeychainWrapper.h"
 
 @interface LSUser ()

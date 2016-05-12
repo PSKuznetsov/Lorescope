@@ -7,7 +7,9 @@
 //
 
 #import <CloudKit/CloudKit.h>
-#import "LSDataSynchronizer.h"
+
+#import "LSDataManipulatorProtocol.h"
+#import "LSDataManipulator.h"
 
 #import "LSRemotePostManager.h"
 #import "LSLocalPostManager.h"
@@ -21,7 +23,7 @@
 #import "LSLocalPost.h"
 #import "LSRemotePost.h"
 
-@implementation LSDataSynchronizer
+@implementation LSDataManipulator
 
 - (instancetype)init
 {

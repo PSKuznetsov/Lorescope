@@ -9,11 +9,16 @@
 #import <SVProgressHUD.h>
 
 #import "LSLocalPost.h"
-#import "LSDataSynchronizer.h"
+
+#import "LSControllerManipulatorDelegate.h"
+
+#import "LSDataManipulatorProtocol.h"
+#import "LSDataManipulator.h"
+
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
 #import "MainViewController.h"
-#import "LSControllerManipulatorDelegate.h"
+
 
 @interface CreatePostViewController () <UITextViewDelegate>
 @property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
@@ -33,7 +38,7 @@
     self.postImageView.layer.cornerRadius  = 5.f;
     self.postImageView.image = self.postImage;
     
-    self.dataSynchronizer = [[LSDataSynchronizer alloc]init];
+    self.dataSynchronizer = [[LSDataManipulator alloc]init];
     
 }
 
