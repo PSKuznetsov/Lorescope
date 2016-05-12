@@ -24,6 +24,12 @@
 
 - (void)deleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
 
+- (void)deleteRemotePosts:(NSArray<id<LSRemotePostProtocol>> *)posts completionHandler:(void(^)(BOOL success))handler;
+
+- (void)deleteRemotePostWithID:(id<NSObject>)postID completionHandler:(void(^)(BOOL success))handler;
+
+- (void)deleteRemotePostsWithID:(NSArray<id<NSObject>> *)postsID completionHandler:(void(^)(BOOL success))handler;
+
 - (void)retrievePostsWithCompletionHandler:(void(^)(NSArray<id<LSRemotePostProtocol>> *posts))handler;
 
 

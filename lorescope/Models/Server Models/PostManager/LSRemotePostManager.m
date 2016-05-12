@@ -180,6 +180,127 @@
     [self.database addOperation:operation];
 }
 
+- (void)deleteRemotePosts:(NSArray<id<LSRemotePostProtocol>> *)posts completionHandler:(void(^)(BOOL success))handler {
+    
+    NSMutableArray<CKRecordID *> *recordsToDelete = [@[]mutableCopy]; //very bad practice ;)
+    
+    for (id<LSRemotePostProtocol> record in posts) {
+        CKRecordID* recordToDelete = [[CKRecordID alloc] initWithRecordName:record.postID];
+        [recordsToDelete addObject:recordToDelete];
+    }
+    
+    CKModifyRecordsOperation* operation = [[CKModifyRecordsOperation alloc]initWithRecordsToSave:nil recordIDsToDelete:recordsToDelete];
+    operation.perRecordCompletionBlock = ^(CKRecord * __nullable record, NSError * __nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    };
+    
+    operation.modifyRecordsCompletionBlock = ^(NSArray <CKRecord *> * __nullable savedRecords, NSArray <CKRecordID *> * __nullable deletedRecordIDs,
+                                               NSError * __nullable operationError) {
+        if (operationError) {
+            
+            if (operationError.code == CKErrorPartialFailure) {
+                NSLog(@"There was a problem completing the operation. The following records had problems: %@",
+                      [operationError.userInfo objectForKey:CKPartialErrorsByItemIDKey]);
+            }
+            
+            if (handler) {
+                
+                handler(NO);
+            }
+            
+        } else {
+            
+            if (handler) {
+                
+                handler(YES);
+            }
+        }
+    };
+    [self.database addOperation:operation];
+}
+
+- (void)deleteRemotePostWithID:(id<NSObject>)postID completionHandler:(void(^)(BOOL success))handler {
+    
+    CKRecordID* recordToDelete = [[CKRecordID alloc] initWithRecordName:(NSString *)postID];
+    
+    CKModifyRecordsOperation* operation = [[CKModifyRecordsOperation alloc]initWithRecordsToSave:nil recordIDsToDelete:@[recordToDelete]];
+    operation.perRecordCompletionBlock = ^(CKRecord * __nullable record, NSError * __nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    };
+    
+    operation.modifyRecordsCompletionBlock = ^(NSArray <CKRecord *> * __nullable savedRecords, NSArray <CKRecordID *> * __nullable deletedRecordIDs,
+                                               NSError * __nullable operationError) {
+        if (operationError) {
+            
+            if (operationError.code == CKErrorPartialFailure) {
+                NSLog(@"There was a problem completing the operation. The following records had problems: %@",
+                      [operationError.userInfo objectForKey:CKPartialErrorsByItemIDKey]);
+            }
+            
+            if (handler) {
+                
+                handler(NO);
+            }
+            
+        } else {
+            
+            if (handler) {
+                
+                handler(YES);
+            }
+        }
+    };
+    [self.database addOperation:operation];
+}
+
+- (void)deleteRemotePostsWithID:(NSArray<id<NSObject>> *)postsID completionHandler:(void(^)(BOOL success))handler {
+    
+    NSMutableArray<CKRecordID *> *recordsToDelete = [@[]mutableCopy]; //very bad practice ;)
+    
+    for (NSString* recordID in postsID) {
+        CKRecordID* recordToDelete = [[CKRecordID alloc] initWithRecordName:recordID];
+        [recordsToDelete addObject:recordToDelete];
+    }
+    
+    CKModifyRecordsOperation* operation = [[CKModifyRecordsOperation alloc]initWithRecordsToSave:nil recordIDsToDelete:recordsToDelete];
+    operation.perRecordCompletionBlock = ^(CKRecord * __nullable record, NSError * __nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    };
+    
+    operation.modifyRecordsCompletionBlock = ^(NSArray <CKRecord *> * __nullable savedRecords, NSArray <CKRecordID *> * __nullable deletedRecordIDs,
+                                               NSError * __nullable operationError) {
+        if (operationError) {
+            
+            if (operationError.code == CKErrorPartialFailure) {
+                NSLog(@"There was a problem completing the operation. The following records had problems: %@",
+                      [operationError.userInfo objectForKey:CKPartialErrorsByItemIDKey]);
+            }
+            
+            if (handler) {
+                
+                handler(NO);
+            }
+            
+        } else {
+            
+            if (handler) {
+                
+                handler(YES);
+            }
+        }
+    };
+    [self.database addOperation:operation];
+}
+
 - (void)retrievePostsWithCompletionHandler:(void(^)(NSArray<id<LSRemotePostProtocol>> *posts))handler {
     
     NSPredicate* predicate = [NSPredicate predicateWithValue:YES];

@@ -8,6 +8,7 @@
 
 #import "LSDataSynchronizer.h"
 #import "LSDataSynchronizerProtocol.h"
+#import "LSDataCacherProtocol.h"
 
 #import "LSUserProtocol.h"
 
@@ -50,6 +51,13 @@
             }
         }
     }];
+}
+
+- (void)shouldCheckCache:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(BOOL success, NSError* error))handler {
+    
+    if ([[cache objectsForDelete] count] > 0) {
+        
+    }
 }
 
 @end

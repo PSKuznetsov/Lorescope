@@ -272,9 +272,9 @@
 		FA50CAB51CCF9D3C00FACD34 /* Data Manipulator */ = {
 			isa = PBXGroup;
 			children = (
+				FA387A331CE417E900A7DB9E /* LSDataManipulatorProtocol.h */,
 				FA387A311CE417E900A7DB9E /* LSDataManipulator.h */,
 				FA387A321CE417E900A7DB9E /* LSDataManipulator.m */,
-				FA387A331CE417E900A7DB9E /* LSDataManipulatorProtocol.h */,
 			);
 			name = "Data Manipulator";
 			sourceTree = "<group>";
