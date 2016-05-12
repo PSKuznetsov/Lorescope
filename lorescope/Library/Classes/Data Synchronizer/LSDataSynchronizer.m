@@ -9,7 +9,7 @@
 #import "LSDataSynchronizer.h"
 #import "LSDataSynchronizerProtocol.h"
 #import "LSDataCacherProtocol.h"
-
+#import "LSLocalPostProtocol.h"
 #import "LSUserProtocol.h"
 
 #import <Realm/Realm.h>
@@ -53,10 +53,43 @@
     }];
 }
 
-- (void)shouldCheckCache:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(BOOL success, NSError* error))handler {
+- (void)shouldCheckCacheForRecordsForDelete:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(NSArray* recordsID, NSError* error))handler {
     
     if ([[cache objectsForDelete] count] > 0) {
+        NSMutableArray* recordsToDelete = [NSMutableArray arrayWithCapacity:[[cache objectsForDelete]count]];
+        for (id <LSLocalPostProtocol> post in [cache objectsForDelete]) {
+            [recordsToDelete addObject:post.postID];
+        }
         
+        if (handler) {
+            handler(recordsToDelete, nil);
+        }
+    }
+    else {
+        NSError* error;
+        if (handler) {
+            handler(nil, error);
+        }
+    }
+}
+
+- (void)shouldCheckCacheForRecordsForSave:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(NSArray* records, NSError* error))handler {
+    
+    if ([[cache objectsForSave] count] > 0) {
+        NSMutableArray* recordsToSave = [NSMutableArray array];
+        for (id <LSLocalPostProtocol> post in [cache objectsForSave]) {
+            [recordsToSave addObject:post];
+        }
+        
+        if (handler) {
+            handler(recordsToSave, nil);
+        }
+    }
+    else {
+        NSError* error;
+        if (handler) {
+            handler(nil, error);
+        }
     }
 }
 

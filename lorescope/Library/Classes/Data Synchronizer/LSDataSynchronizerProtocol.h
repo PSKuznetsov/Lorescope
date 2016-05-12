@@ -14,6 +14,7 @@
 @protocol LSDataSynchronizerProtocol <NSObject>
 
 - (void)shouldConnectWithUser:(id <LSUserProtocol>)user completionHandler:(void(^)(BOOL success, NSError* error))handler;
-- (void)shouldCheckCache:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(BOOL success, NSError* error))handler;
+- (void)shouldCheckCacheForRecordsForDelete:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(NSArray* recordsID, NSError* error))handler;
+- (void)shouldCheckCacheForRecordsForSave:(id <LSDataCacherProtocol>)cache completionHandler:(void(^)(NSArray* records, NSError* error))handler;
 
 @end
