@@ -20,6 +20,7 @@
 		FA387A2F1CE4110B00A7DB9E /* LSDataSynchronizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA387A2E1CE4110B00A7DB9E /* LSDataSynchronizer.m */; };
 		FA387A341CE417E900A7DB9E /* LSDataManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA387A321CE417E900A7DB9E /* LSDataManipulator.m */; };
 		FA54099E1CCF6CA90068D40A /* LSLocalPostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA54099D1CCF6CA90068D40A /* LSLocalPostManager.m */; };
+		FA556F561CE7CFCA0034CAB4 /* LSImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA556F551CE7CFCA0034CAB4 /* LSImageManager.m */; };
 		FA56FB091CC0D10A00D921BB /* PreviewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */; };
 		FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7195481BE6DC56004475B4 /* NewPostViewController.m */; };
 		FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AC3FF1CD2439000399492 /* LSModelAdapter.m */; };
@@ -76,6 +77,9 @@
 		FA54099C1CCF6CA90068D40A /* LSLocalPostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLocalPostManager.h; sourceTree = "<group>"; };
 		FA54099D1CCF6CA90068D40A /* LSLocalPostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLocalPostManager.m; sourceTree = "<group>"; };
 		FA54099F1CCF6CBB0068D40A /* LSLocalPostManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLocalPostManagerProtocol.h; sourceTree = "<group>"; };
+		FA556F531CE7CFBA0034CAB4 /* LSImageManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageManagerProtocol.h; sourceTree = "<group>"; };
+		FA556F541CE7CFCA0034CAB4 /* LSImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageManager.h; sourceTree = "<group>"; };
+		FA556F551CE7CFCA0034CAB4 /* LSImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSImageManager.m; sourceTree = "<group>"; };
 		FA56FB071CC0D10A00D921BB /* PreviewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewPostViewController.h; path = "PreviewPost controller/PreviewPostViewController.h"; sourceTree = "<group>"; };
 		FA56FB081CC0D10A00D921BB /* PreviewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewPostViewController.m; path = "PreviewPost controller/PreviewPostViewController.m"; sourceTree = "<group>"; };
 		FA7195471BE6DC56004475B4 /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		FA50CAB31CCF9CF500FACD34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA556F521CE7CFA70034CAB4 /* Image Manager */,
 				FA387A2B1CE410DE00A7DB9E /* Data Synchronizer */,
 				FA22670F1CE2C8A5004E5461 /* LSDataCacher */,
 				FA2B4FF61CD5036900D56B33 /* Views */,
@@ -288,6 +293,16 @@
 			);
 			name = "LocalPost Manager";
 			path = "Local Models/LocalPost Manager";
+			sourceTree = "<group>";
+		};
+		FA556F521CE7CFA70034CAB4 /* Image Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FA556F531CE7CFBA0034CAB4 /* LSImageManagerProtocol.h */,
+				FA556F541CE7CFCA0034CAB4 /* LSImageManager.h */,
+				FA556F551CE7CFCA0034CAB4 /* LSImageManager.m */,
+			);
+			path = "Image Manager";
 			sourceTree = "<group>";
 		};
 		FA56FB0A1CC0D11500D921BB /* PreviewPost controller */ = {
@@ -562,8 +577,14 @@
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = FFASSW2393;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.DataProtection = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 1;
@@ -682,6 +703,7 @@
 				FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FA2B4FF91CD5038500D56B33 /* LSPopupView.m in Sources */,
+				FA556F561CE7CFCA0034CAB4 /* LSImageManager.m in Sources */,
 				FA7195491BE6DC56004475B4 /* NewPostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,7 +823,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,7 +843,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -15,6 +15,9 @@
 #import "LSDataManipulatorProtocol.h"
 #import "LSDataManipulator.h"
 
+#import "LSImageManagerProtocol.h"
+#import "LSImageManager.h"
+
 #import "CreatePostViewController.h"
 #import "NewPostViewController.h"
 #import "MainViewController.h"
@@ -39,7 +42,7 @@
     self.postImageView.image = self.postImage;
     
     self.dataSynchronizer = [[LSDataManipulator alloc]init];
-    
+    self.imageManager = [[LSImageManager alloc]init];
 }
 
 - (void)dealloc {
@@ -53,7 +56,7 @@
     
     LSLocalPost* newPost = [[LSLocalPost alloc]init];
     newPost.content   = self.postTextView.text;
-    newPost.photoPath = [self storeImageOnDisk:self.postImage];
+    newPost.photoPath = [self.imageManager storeImageOnDisk:self.postImage];
         
     [SVProgressHUD show];
     
@@ -141,27 +144,6 @@
         textView.textColor = [UIColor lightGrayColor]; //optional
     }
     [textView resignFirstResponder];
-}
-
-#pragma mark - Utils
-
-- (NSString *)storeImageOnDisk:(UIImage *)image {
-    
-    NSData* imageData = UIImagePNGRepresentation(image);
-    NSArray *paths    = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd\'T\'HH-mm-ss"];
-    
-    NSString* dateString = [dateFormatter stringFromDate:[NSDate date]];
-    NSString* imageNameComponent  = [NSString stringWithFormat:@"cahed-%@.png", dateString];
-    
-    NSString *imagePath =[documentsDirectory stringByAppendingPathComponent: imageNameComponent];
-    
-    [imageData writeToFile:imagePath atomically:YES];
-    
-    return imageNameComponent;
 }
 
 @end

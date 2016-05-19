@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol LSDataManipulatorProtocol;
+@protocol LSImageManagerProtocol;
 
 @interface CreatePostViewController : UIViewController
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic, strong) UIImage* postImage;
 @property (nonatomic, strong) id <LSDataManipulatorProtocol> dataSynchronizer;
+@property (nonatomic, strong) id <LSImageManagerProtocol> imageManager;
 
 - (IBAction)doneButtonAction:(id)sender;
 

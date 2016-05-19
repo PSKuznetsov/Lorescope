@@ -29,6 +29,12 @@
 
 - (void)shouldUpdateLocalPost:(id<LSLocalPostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success))handler;
 
+- (void)shouldSaveRemotePost: (id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
+- (void)shouldDeleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler;
+
+- (void)shouldUpdateRemotePost:(id<LSRemotePostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success))handler;
+
 - (void)shouldDownloadPostsCompletionHandler:(void(^)(BOOL success))handler;
 
 - (NSUInteger)countOfLocalPosts;

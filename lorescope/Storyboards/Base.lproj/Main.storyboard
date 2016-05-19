@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zdp-X0-cL2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zdp-X0-cL2">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -389,14 +388,41 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAa-S8-Zfn">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="616"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4S4-2p-rrt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="616"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siR-eL-wGz" customClass="LSPopupView">
+                                                            <rect key="frame" x="150.5" y="158" width="300" height="300"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="siR-eL-wGz" secondAttribute="height" multiplier="1:1" id="AvE-wd-fWt"/>
+                                                                <constraint firstAttribute="width" constant="300" id="GWM-Xc-CiS"/>
+                                                                <constraint firstAttribute="height" constant="300" id="iBL-3W-zXc"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="siR-eL-wGz" firstAttribute="centerX" secondItem="4S4-2p-rrt" secondAttribute="centerX" id="aDO-x8-WdE"/>
+                                                        <constraint firstItem="siR-eL-wGz" firstAttribute="centerY" secondItem="4S4-2p-rrt" secondAttribute="centerY" id="oYv-DN-7GT"/>
+                                                    </constraints>
+                                                </view>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="bv4-pA-wVX" firstAttribute="top" secondItem="YAa-S8-Zfn" secondAttribute="bottom" id="EsF-jf-XvB"/>
                                             <constraint firstItem="qWW-UQ-BeJ" firstAttribute="centerX" secondItem="XBc-gz-Zdc" secondAttribute="centerX" id="F4u-y7-6N3"/>
+                                            <constraint firstItem="YAa-S8-Zfn" firstAttribute="top" secondItem="XBc-gz-Zdc" secondAttribute="top" id="GaY-wb-7kL"/>
                                             <constraint firstItem="qWW-UQ-BeJ" firstAttribute="top" secondItem="XBc-gz-Zdc" secondAttribute="top" id="H4N-F3-w4Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="YAa-S8-Zfn" secondAttribute="trailing" id="Mq9-Q3-rka"/>
                                             <constraint firstAttribute="trailing" secondItem="qWW-UQ-BeJ" secondAttribute="trailing" id="YAh-2e-I8P"/>
                                             <constraint firstItem="bv4-pA-wVX" firstAttribute="leading" secondItem="XBc-gz-Zdc" secondAttribute="leading" constant="8" id="aPi-EG-00r"/>
                                             <constraint firstAttribute="bottom" secondItem="bv4-pA-wVX" secondAttribute="bottom" constant="8" id="jew-Ig-daH"/>
+                                            <constraint firstItem="YAa-S8-Zfn" firstAttribute="leading" secondItem="XBc-gz-Zdc" secondAttribute="leading" id="jiB-5D-MGB"/>
                                             <constraint firstItem="qWW-UQ-BeJ" firstAttribute="leading" secondItem="XBc-gz-Zdc" secondAttribute="leading" id="rVO-3E-L2J"/>
                                             <constraint firstItem="bv4-pA-wVX" firstAttribute="top" secondItem="qWW-UQ-BeJ" secondAttribute="bottom" constant="16" id="xkF-zE-09w"/>
                                             <constraint firstAttribute="trailing" secondItem="bv4-pA-wVX" secondAttribute="trailing" constant="8" id="yQX-G7-wjH"/>
@@ -422,13 +448,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Preview Post" id="pz0-Je-e1h">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="mKO-qO-Ijy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="mKO-qO-Ijy">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteButtonDidPressed:" destination="cNJ-mC-RLs" id="2O1-oy-Kq5"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bluredView" destination="YAa-S8-Zfn" id="3br-3h-ctP"/>
                         <outlet property="contentTextView" destination="bv4-pA-wVX" id="WeV-hB-xph"/>
                         <outlet property="imageView" destination="qWW-UQ-BeJ" id="zAq-Qq-kyE"/>
+                        <outlet property="popupView" destination="siR-eL-wGz" id="VV5-YX-BRm"/>
                         <outlet property="scrollView" destination="T6q-Ux-xrx" id="V3T-OC-aTY"/>
                     </connections>
                 </viewController>

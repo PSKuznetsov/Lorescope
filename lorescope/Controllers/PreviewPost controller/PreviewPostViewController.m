@@ -16,6 +16,8 @@
 #import "LSDataManipulatorProtocol.h"
 #import "LSDataManipulator.h"
 
+#import "LSControllerManipulatorDelegate.h"
+
 typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     LSUIButtonStateEdit,
     LSUIButtonStateSave,
@@ -26,6 +28,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
 
 @property (nonatomic, assign) LSUIButtonState buttonState;
 @property (nonatomic, assign) BOOL contentIsChanged;
+@property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
 
 @end
 
@@ -46,7 +49,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     
     self.popupView.delegate = self;
     self.dataSynchronizer = [[LSDataManipulator alloc]init];
-
+    self.manipulatorDelegate = self.navigationController.viewControllers.firstObject;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,7 +66,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
 
 #pragma mark - Actions
 
-- (IBAction)editButtonDidPressed:(UIButton *)sender {
+- (IBAction)editButtonDidPressed:(id)sender {
     
     if (self.buttonState == LSUIButtonStateEdit) {
         
@@ -110,7 +113,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     }    
 }
 
-- (IBAction)deleteButtonDidPressed:(UIButton *)sender {
+- (IBAction)deleteButtonDidPressed:(id)sender {
     
     self.bluredView.hidden = NO;
     self.popupView.hidden  = NO;
@@ -139,6 +142,8 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     
     [SVProgressHUD show];
     
+    NSLog(@"Will delete local post with id - %@", self.localPost.postID);
+    
     [self.dataSynchronizer shouldDeleteLocalPost:self.localPost completionHandler:^(BOOL success) {
         
         typeof(self) strongSelf = weakSelf;
@@ -149,6 +154,7 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [strongSelf.navigationController popViewControllerAnimated:YES];
+                [strongSelf.manipulatorDelegate contorllerShouldPerformReloadData:nil];
             });
         }
         else {

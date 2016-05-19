@@ -144,40 +144,23 @@
 
 - (void)deleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler {
     
-        //LSRemotePost* remotePost = [[LSRemotePost alloc]initWithPost:post];
-    CKRecordID* recordToDelete = [[CKRecordID alloc] initWithRecordName:post.postID];
+    //LSRemotePost* remotePost = [[LSRemotePost alloc]initWithPost:post];
+    CKRecordID* recordIDToDelete = [[CKRecordID alloc] initWithRecordName:post.postID];
     
-    CKModifyRecordsOperation* operation = [[CKModifyRecordsOperation alloc]initWithRecordsToSave:nil recordIDsToDelete:@[recordToDelete]];
-    operation.perRecordCompletionBlock = ^(CKRecord * __nullable record, NSError * __nullable error) {
-        
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    };
-    
-    operation.modifyRecordsCompletionBlock = ^(NSArray <CKRecord *> * __nullable savedRecords, NSArray <CKRecordID *> * __nullable deletedRecordIDs,
-                                               NSError * __nullable operationError) {
-        if (operationError) {
-            
-            if (operationError.code == CKErrorPartialFailure) {
-                NSLog(@"There was a problem completing the operation. The following records had problems: %@",
-                      [operationError.userInfo objectForKey:CKPartialErrorsByItemIDKey]);
+    [self.database saveRecord:post.record completionHandler:^(CKRecord * _Nullable record, NSError * _Nullable error) {
+        [self.database deleteRecordWithID:recordIDToDelete completionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {
+            if (!error) {
+                if (handler) {
+                    handler(YES);
+                }
             }
-            
-            if (handler) {
-                
-                handler(NO);
+            else {
+                if (handler) {
+                    handler(NO);
+                }
             }
-            
-        } else {
-            
-            if (handler) {
-                
-                handler(YES);
-            }
-        }
-    };
-    [self.database addOperation:operation];
+        }];
+    }];
 }
 
 - (void)deleteRemotePosts:(NSArray<id<LSRemotePostProtocol>> *)posts completionHandler:(void(^)(BOOL success))handler {

@@ -1,8 +1,8 @@
 PODS:
-  - Realm (0.96.2):
-    - Realm/Headers (= 0.96.2)
-  - Realm/Headers (0.96.2)
-  - SVProgressHUD (2.0.2)
+  - Realm (0.102.1):
+    - Realm/Headers (= 0.102.1)
+  - Realm/Headers (0.102.1)
+  - SVProgressHUD (2.0.3)
   - ZOZolaZoomTransition (1.0.0)
 
 DEPENDENCIES:
@@ -11,10 +11,10 @@ DEPENDENCIES:
   - ZOZolaZoomTransition (~> 1.0.0)
 
 SPEC CHECKSUMS:
-  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
-  SVProgressHUD: e4020e23badbd7cc61bc4a80d3c1da57f166a978
+  Realm: 5254be610db3e5024879684717bf038990bb59ec
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   ZOZolaZoomTransition: 650b873204e4fe601334a99b49628d19c8e54cdd
 
 PODFILE CHECKSUM: 287846706803d3ba21d4dd152ac2a1d50c9d6438
 
-COCOAPODS: 1.0.0.beta.5
+COCOAPODS: 1.0.0

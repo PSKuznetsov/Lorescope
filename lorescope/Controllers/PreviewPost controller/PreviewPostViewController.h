@@ -24,7 +24,7 @@
 @property (nonatomic, strong) id <LSLocalPostProtocol> localPost;
 @property (nonatomic, strong) UIImage* postImage;
 
-- (IBAction)editButtonDidPressed:(UIButton *)sender;
-- (IBAction)deleteButtonDidPressed:(UIButton *)sender;
+- (IBAction)editButtonDidPressed:(id)sender;
+- (IBAction)deleteButtonDidPressed:(id)sender;
 
 @end

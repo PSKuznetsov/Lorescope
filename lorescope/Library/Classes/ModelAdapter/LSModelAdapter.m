@@ -10,11 +10,30 @@
 #import "LSModelAdapterProtocol.h"
 #import "LSLocalPostProtocol.h"
 #import "LSRemotePostProtocol.h"
-
+#import "LSImageManagerProtocol.h"
+#import "LSImageManager.h"
 #import "LSRemotePost.h"
 #import "LSLocalPost.h"
 
+@interface LSModelAdapter ()
+@property (nonatomic, strong) id <LSImageManagerProtocol> imageManager;
+@end
+
 @implementation LSModelAdapter
+
+#pragma mark - Root
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.imageManager = [[LSImageManager alloc]init];
+    }
+    return self;
+}
+
+#pragma mark - LSModelAdapterProtocol
+
     //Use only for creating new remote models. Do not use with update methods
 - (void)shouldAdaptLocalModel:(id<LSLocalPostProtocol>)post completionHandler:(void(^)(id<LSRemotePostProtocol> remotePost, NSError* error))handler {
     
@@ -45,10 +64,14 @@
 
 - (void)shouldAdaptRemoteModel:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(id<LSLocalPostProtocol> localPost, NSError* error))handler {
     
+    NSData* imageData = [NSData dataWithContentsOfURL:post.imageData.fileURL];
+    UIImage* imageForStore = [UIImage imageWithData:imageData];
+    NSString* imageNamePath = [self.imageManager storeImageOnDisk:imageForStore];
+    
     LSLocalPost* localPost = [[LSLocalPost alloc]init];
     
     localPost.content   = post.content;
-    localPost.photoPath = [post.imageData.fileURL path];
+    localPost.photoPath = imageNamePath;
     localPost.postID    = post.postID;
     localPost.createdAt = post.createdAt;
     localPost.lastModifiedAt = post.lastModifiedAt;

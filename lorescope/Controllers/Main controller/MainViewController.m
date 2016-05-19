@@ -15,6 +15,8 @@
 #import "LSLocalPostManagerProtocol.h"
 #import "LSDataSynchronizerProtocol.h"
 #import "LSDataSynchronizer.h"
+#import "LSImageManagerProtocol.h"
+#import "LSImageManager.h"
 
 #import "LSUser.h"
 
@@ -45,7 +47,7 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
     
     [self configureCollectionView:self.collectionView];
     [self configureDependencies];
-
+    
     [SVProgressHUD show];
     [self.synchronizer shouldConnectWithUser:self.user completionHandler:^(BOOL success, NSError *error) {
         if (success) {
@@ -59,6 +61,8 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 
 - (void)loadView {
     [super loadView];
+    
+    self.imageManager = [[LSImageManager alloc]init];
 
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lorescope"]];
     self.navigationController.delegate = self;
@@ -70,6 +74,7 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 #pragma mark - LSControllerManipulatorDelegate
 
 - (void)contorllerShouldPerformReloadData:(UIViewController *)controller {
+    NSLog(@"Reloading data!");
     [self.collectionView reloadData];
 }
 
@@ -103,25 +108,24 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
     postCell.layer.shouldRasterize = YES;
     postCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     postCell.imageView.image = nil;
+        //TODO: make image request on the background queue
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
         NSString* imagePath  = [self imagePathFromDBWithIndex:indexPath.row];
+        UIImage* requestedImage = [self.imageManager imageFromDocumentsDirectoryWithName:imagePath];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             PostCollectionViewCell *updatedPostCell = (PostCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-            
             updatedPostCell.imageView.alpha = 0.0;
             
             if (updatedPostCell) {
-                [self imageFromDocumentsDirectory:imagePath completionHandler:^(UIImage *image) {
-                    [UIView animateWithDuration:0.3f animations:^{
-                        updatedPostCell.imageView.image = image;
-                        [updatedPostCell.imageView setAlpha:1.0];
-                    }];
+                [UIView animateWithDuration:0.3f animations:^{
+                    updatedPostCell.imageView.image = requestedImage;
+                    [updatedPostCell.imageView setAlpha:1.0];
                 }];
-                
             }
         });
     });
@@ -218,35 +222,6 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 
 #pragma mark - Utils
 
-- (void)imageFromDocumentsDirectory:(NSString *)imagePath completionHandler:(void(^)(UIImage* image))handler {
-    
-    UIImage *image = [self.cache valueForKey:imagePath];
-    if (image) {
-        handler(image);
-    }
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask , YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:imagePath];
-        
-        NSData *pngData      = [[NSData alloc]initWithContentsOfFile:path];
-        UIImage *loadedImage = [[UIImage alloc]initWithData:pngData];
-        
-            //redraw image using device context
-        UIGraphicsBeginImageContextWithOptions(loadedImage.size, YES, 0);
-        [loadedImage drawAtPoint:CGPointZero];
-        loadedImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.cache setObject:loadedImage forKey:imagePath];
-            handler(loadedImage);
-        });
-    });
-}
-
 - (NSString *)imagePathFromDBWithIndex:(NSUInteger)index {
     
     __block NSString* loadedPostPath;
@@ -268,7 +243,6 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"previewPostSegue"]) {
-        
         PreviewPostViewController* destinationController = [segue destinationViewController];
         destinationController.localPost = self.loadedPost;
         destinationController.postImage = self.selectedImage;
@@ -283,7 +257,6 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 }
 
 - (void)configureDependencies {
-    
     self.user  = [[LSUser alloc]init];
     self.cache = [[NSMutableDictionary alloc]init];
     self.localManager = [[LSLocalPostManager alloc]init];

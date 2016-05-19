@@ -38,10 +38,11 @@
     [realm addObject:post];
     [realm commitWriteTransaction:&error];
     
+    [self updatePostsCount];
+
     if (handler) {
         
         if (error) {
-            
             handler(NO, error);
         }
         else {            
@@ -58,7 +59,6 @@
     NSError* error;
     
     if (index > [results count]) {
-        
         error = [NSError errorWithDomain:@"Out of Range Exc" code:404 userInfo:nil];
         
         if (handler) {
@@ -66,11 +66,9 @@
         }
         
     } else {
-        
         id <LSLocalPostProtocol> newPost = [results objectAtIndex:index];
         
         if (handler) {
-            
             handler(newPost, nil);
         }
     }
@@ -82,26 +80,54 @@
     RLMRealm* realm = [RLMRealm defaultRealm];
 //    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"postID = %@", post.postID];
 //    LSLocalPost* postToDelete = [[LSLocalPost objectsWithPredicate:predicate]firstObject];
-    
     NSError* error;
     
     [realm beginWriteTransaction];
     [realm deleteObject:post];
     [realm commitWriteTransaction:&error];
     
+    [self updatePostsCount];
+
     if (handler) {
         
         if (error) {
-            
+            NSLog(@"Error - %@", error.localizedDescription);
             handler(NO, error);
         }
         else {
-            
+            NSLog(@"Local post delete successfully!");
             handler(YES, nil);
         }
     }
-    
 }
+
+- (void)deleteLocalPostFromDBWithPostID:(id<NSObject>)postID competionHandler:(void(^)(BOOL success, NSError* error))handler {
+    
+    RLMRealm* realm = [RLMRealm defaultRealm];
+    NSLog(@"postID - %@", postID);
+//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"postID = %@", (NSString *)postID];
+//    RLMResults* resultsForDelete = [LSLocalPost objectsWithPredicate:predicate];
+//    NSLog(@"Found: %lu, %@", (unsigned long)[resultsForDelete count], resultsForDelete);
+    NSError* error;
+    
+    [realm beginWriteTransaction];
+    LSLocalPost* post = [LSLocalPost objectForPrimaryKey:postID];
+    [realm deleteObject:post];
+    [realm commitWriteTransaction:&error];
+    
+    [self updatePostsCount];
+    
+    if (handler) {
+        
+        if (error) {
+            handler(NO, error);
+        }
+        else {
+            handler(YES, nil);
+        }
+    }
+}
+
 
 - (void)updateLocalPost:(id<LSLocalPostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success, NSError* error))handler {
     

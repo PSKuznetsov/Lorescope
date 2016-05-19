@@ -9,5 +9,7 @@
 #import "LSLocalPost.h"
 
 @implementation LSLocalPost
-
++ (NSString *)primaryKey {
+    return @"postID";
+}
 @end

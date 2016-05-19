@@ -79,7 +79,7 @@
             else {
                 NSLog(@"Manager can't save post remotely!");
                 succeeded = NO;
-                [self.cacher shouldCacheObjectMarkedForSave:post];
+                    //[self.cacher shouldCacheObjectMarkedForSave:post];
             }
             
             dispatch_group_leave(group);
@@ -115,32 +115,24 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     __block BOOL succeeded = NO;
-    __block id<LSRemotePostProtocol> adaptedPost;
+    __block id<LSRemotePostProtocol> remotePost;
     
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"postID = %@", post.postID];
     
     dispatch_group_enter(group);
-    
-    [self.adapter shouldAdaptLocalModel:post completionHandler:^(id<LSRemotePostProtocol> remotePost, NSError *error) {
+    [self.remoteManager postWithID:post.postID completionHandler:^(id<LSRemotePostProtocol> post, NSError *error) {
         
         if (!error) {
-            
-            adaptedPost = remotePost;
+            remotePost = post;
             succeeded = YES;
-        }
-        else {
-            NSLog(@"Can't adapt local model!");
         }
         
         dispatch_group_leave(group);
-        
     }];
     
     dispatch_group_enter(group);
     
-    if (succeeded) {
-        
-        [self.remoteManager deleteRemotePost:adaptedPost completionHandler:^(BOOL success) {
+        [self.remoteManager deleteRemotePost:remotePost completionHandler:^(BOOL success) {
             
             if (success) {
                 succeeded = YES;
@@ -149,11 +141,10 @@
             else {
                 NSLog(@"Remote post doesn't deleted!");
                 succeeded = NO;
-                [self.cacher shouldCacheObjectMarkedForDelete:post];
+                    //[self.cacher shouldCacheObjectMarkedForDelete:post];
             }
             dispatch_group_leave(group);
         }];
-    }
     
     dispatch_group_notify(group, queue, ^{
         
@@ -202,7 +193,7 @@
                                  else {
                                      successeded = NO;
                                      NSLog(@"Remote post failure for update!");
-                                     [self.cacher shouldCacheObjectMarkedForSave:post];
+                                         //[self.cacher shouldCacheObjectMarkedForSave:post];
                                  }
                                  dispatch_group_leave(group);
                              }];
@@ -236,6 +227,72 @@
         }
         
     });
+    
+}
+
+- (void)shouldSaveRemotePost: (id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler {
+    
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    __block id <LSLocalPostProtocol> adaptedPost;
+    __block BOOL succeeded = NO;
+    
+    dispatch_group_enter(group);
+    
+    [self.adapter shouldAdaptRemoteModel:post completionHandler:^(id<LSLocalPostProtocol> localPost, NSError *error) {
+        
+        if (!error) {
+            adaptedPost = localPost;
+            succeeded = YES;
+            NSLog(@"Remote post adapted!");
+            NSLog(@"Record name - %@", localPost.postID);
+        }
+        else {
+            NSLog(@"Can't adapt remote model: %@", error.localizedDescription);
+            succeeded = NO;
+        }
+        
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_notify(group, queue, ^{
+        
+        if (succeeded) {
+            
+            [self.localManager saveLocalPostToDB:adaptedPost completionHandler:^(BOOL success, NSError *error) {
+                
+                if (success) {
+                    succeeded = YES;
+                    NSLog(@"Local post saved!");
+                }
+                else {
+                    succeeded = NO;
+                    NSLog(@"Cant save local post: %@", error.localizedDescription);
+                }
+                
+            }];
+            
+            if (handler) {
+                handler(succeeded);
+            }
+        }
+        else {
+            
+            if (handler) {
+                handler(succeeded);
+            }
+        }
+    });
+
+    
+}
+
+- (void)shouldDeleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler {
+    
+}
+
+- (void)shouldUpdateRemotePost:(id<LSRemotePostProtocol>)post withContent:(id<NSObject>)content completionHandler:(void(^)(BOOL success))handler {
     
 }
 
