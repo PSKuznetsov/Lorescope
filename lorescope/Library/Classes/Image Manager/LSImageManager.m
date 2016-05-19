@@ -50,7 +50,7 @@
     loadedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    [self.cache setObject:loadedImage forKey:imageName];
+        //[self.cache setObject:loadedImage forKey:imageName];
     
     return loadedImage;
 }

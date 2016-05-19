@@ -36,9 +36,6 @@
     [self registerForKeyboardNotifications];
     
     self.manipulatorDelegate = [self.navigationController.viewControllers firstObject];
-    
-    self.postImageView.layer.masksToBounds = YES;
-    self.postImageView.layer.cornerRadius  = 5.f;
     self.postImageView.image = self.postImage;
     
     self.dataSynchronizer = [[LSDataManipulator alloc]init];

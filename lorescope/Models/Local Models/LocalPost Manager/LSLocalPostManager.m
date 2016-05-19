@@ -35,7 +35,13 @@
     NSError* error;
     
     [realm beginWriteTransaction];
-    [realm addObject:post];
+    
+    LSLocalPost* requestForTest = [LSLocalPost objectForPrimaryKey:post.postID];
+    
+    if (!requestForTest) {
+        [realm addObject:post];
+    }
+    
     [realm commitWriteTransaction:&error];
     
     [self updatePostsCount];
@@ -57,7 +63,7 @@
     RLMResults* results = [[LSLocalPost allObjects] sortedResultsUsingProperty:@"createdAt" ascending:NO];
     
     NSError* error;
-    
+    NSLog(@"Index loaded: %lul", (unsigned long)index);
     if (index > [results count]) {
         error = [NSError errorWithDomain:@"Out of Range Exc" code:404 userInfo:nil];
         
@@ -82,9 +88,13 @@
 //    LSLocalPost* postToDelete = [[LSLocalPost objectsWithPredicate:predicate]firstObject];
     NSError* error;
     
-    [realm beginWriteTransaction];
-    [realm deleteObject:post];
-    [realm commitWriteTransaction:&error];
+    LSLocalPost* postToDelete = [LSLocalPost objectForPrimaryKey:post.postID];
+    if (postToDelete) {
+        [realm beginWriteTransaction];
+        [realm deleteObject:postToDelete];
+        [realm commitWriteTransaction:&error];
+    }
+    
     
     [self updatePostsCount];
 
@@ -112,11 +122,15 @@
     
     [realm beginWriteTransaction];
     LSLocalPost* post = [LSLocalPost objectForPrimaryKey:postID];
-    [realm deleteObject:post];
+    if (post) {
+        [realm deleteObject:post];
+    }
+    
     [realm commitWriteTransaction:&error];
     
     [self updatePostsCount];
     
+    NSLog(@"Eroro - %@", error.localizedDescription);
     if (handler) {
         
         if (error) {
@@ -176,7 +190,8 @@
 #pragma mark - Utils
 
 - (void)updatePostsCount {
-    NSLog(@"Count updated: %lu", (unsigned long)self.postsCount);
+    [[RLMRealm defaultRealm] refresh];
+    NSLog(@"Count updated: %lu", (unsigned long)[[LSLocalPost allObjects] count]);
     self.postsCount = [[LSLocalPost allObjects] count];
 }
 

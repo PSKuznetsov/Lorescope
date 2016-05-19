@@ -145,7 +145,7 @@
 - (void)deleteRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success))handler {
     
     //LSRemotePost* remotePost = [[LSRemotePost alloc]initWithPost:post];
-    CKRecordID* recordIDToDelete = [[CKRecordID alloc] initWithRecordName:post.postID];
+    CKRecordID* recordIDToDelete = [[CKRecordID alloc] initWithRecordName:post.record.recordID.recordName];
     
     [self.database saveRecord:post.record completionHandler:^(CKRecord * _Nullable record, NSError * _Nullable error) {
         [self.database deleteRecordWithID:recordIDToDelete completionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {

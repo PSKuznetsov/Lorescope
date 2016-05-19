@@ -28,7 +28,6 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
 @property (nonatomic, strong) id <LSDataManipulatorProtocol> manipulator;
 @property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
-@property (nonatomic, strong) NSMutableArray* cachedObjectsForDelete;
 @property (nonatomic, strong) CKServerChangeToken* previousChangeToken;
 @end
 
@@ -38,7 +37,6 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     
     self.localManager = [[LSLocalPostManager alloc]init];;
     self.manipulator  = [[LSDataManipulator alloc]init];
-    self.cachedObjectsForDelete = [NSMutableArray array];
     
         //push notifications setup
     UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
@@ -78,44 +76,58 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
 
 - (void)subscribeForCloudKitChanges {
     
-    BOOL isSubscribed = [[NSUserDefaults standardUserDefaults] boolForKey:@"subscribedToUpdates"];
+    CKDatabase *privateDatabase = [[CKContainer defaultContainer] privateCloudDatabase];
     
-    if (isSubscribed == NO) {
+        // Then, we check if there is an iCloud account available so we can have write permission
+    [[CKContainer defaultContainer] accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError * _Nullable error) {
         
-            //[[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"subscribedToUpdates"];
-        
-        CKDatabase *privateDatabase = [[CKContainer defaultContainer] privateCloudDatabase];
-        
-            // Then, we check if there is an iCloud account available so we can have write permission
-        [[CKContainer defaultContainer] accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError * _Nullable error) {
+        if (accountStatus == CKAccountStatusAvailable) {
             
-            if (accountStatus == CKAccountStatusAvailable) {
-                    // Then, subscribe to future updates
-                NSPredicate *predicate       = [NSPredicate predicateWithFormat:@"TRUEPREDICATE"];
-                CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Post"
-                                                                                predicate:predicate
-                                                                                  options:CKSubscriptionOptionsFiresOnRecordCreation |
-                                                                                          CKSubscriptionOptionsFiresOnRecordUpdate |
-                                                                                          CKSubscriptionOptionsFiresOnRecordDeletion];
-                CKNotificationInfo *notificationInfo = [CKNotificationInfo new];
-                notificationInfo.alertLocalizationKey = @"New post was added. Check it now!";
-                notificationInfo.shouldSendContentAvailable = YES;
-                subscription.notificationInfo = notificationInfo;
-                
-                [privateDatabase saveSubscription:subscription
-                                completionHandler:^(CKSubscription * _Nullable subscription, NSError * _Nullable error) {
-                                    if (error) {
-                                            // Handle here the error
-                                        NSLog(@"%@", error.localizedDescription);
-                                    } else {
-                                            // Save that we have subscribed successfully
-                                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"subscribedToUpdates"];
-                                        [[NSUserDefaults standardUserDefaults] synchronize];
-                                    }
-                                }];
-            }
-        }];
-    }
+            [privateDatabase fetchAllSubscriptionsWithCompletionHandler:^(NSArray<CKSubscription *> * _Nullable subscriptions, NSError * _Nullable error) {
+                if (!error) {
+                    if (subscriptions.count == 0) {
+                            // Then, subscribe to future updates
+                        
+                        NSPredicate *predicate       = [NSPredicate predicateWithFormat:@"TRUEPREDICATE"];
+                        
+                        CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Post"
+                                                                                        predicate:predicate
+                                                                                          options:CKSubscriptionOptionsFiresOnRecordCreation |
+                                                        CKSubscriptionOptionsFiresOnRecordUpdate |
+                                                        CKSubscriptionOptionsFiresOnRecordDeletion];
+                        
+                        CKNotificationInfo *notificationInfo = [CKNotificationInfo new];
+                        notificationInfo.alertLocalizationKey = @"New post was added. Check it now!";
+                        notificationInfo.shouldSendContentAvailable = YES;
+                        subscription.notificationInfo = notificationInfo;
+                        
+                        
+                        [privateDatabase saveSubscription:subscription
+                                        completionHandler:^(CKSubscription * _Nullable subscription, NSError * _Nullable error) {
+                                            if (error) {
+                                                    // Handle here the error
+                                                NSLog(@"%@", error.localizedDescription);
+                                            } else {
+                                                NSLog(@"Subscribe successfully!");
+                                            }
+                        }];
+                    }
+                    else if (subscriptions.count > 1) {
+                        for (CKSubscription* subscription in subscriptions) {
+                            [privateDatabase deleteSubscriptionWithID:subscription.subscriptionID completionHandler:^(NSString * _Nullable subscriptionID, NSError * _Nullable error) {
+                                NSLog(@"Sub deleted: %@", subscriptionID);
+                            }];
+                        }
+                    }
+                }
+                else {
+                    
+                    NSLog(@"Error - %@", error.localizedDescription);
+                }
+            }];
+            
+        }
+    }];
 }
 
 
@@ -130,7 +142,7 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     }
     else {
         
-        completionHandler(UIBackgroundFetchResultNewData);
+        completionHandler(UIBackgroundFetchResultNoData);
     }
 }
 
@@ -144,11 +156,12 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     operation.notificationChangedBlock = ^(CKNotification * notification) {
             // Process each notification received
         if (notification.notificationType == CKNotificationTypeQuery) {
+            
             CKQueryNotification *queryNotification = (CKQueryNotification *)notification;
             CKQueryNotificationReason reason = queryNotification.queryNotificationReason;
             CKRecordID *recordID = queryNotification.recordID;
             
-            NSLog(@"Record arrived - %@", recordID.recordName);
+            NSLog(@"Record has arrived - %@", recordID.recordName);
             
                 // Do process here depending on the reason of the change
             if (reason == CKQueryNotificationReasonRecordDeleted) {
@@ -157,11 +170,14 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
                 
                 __block NSString* recordName = [recordID.recordName copy];
                 
-                NSLog(@"RecordName for delete - %@", recordName);
-                
                 __weak typeof(self) weakSelf = self;
                 [self.localManager deleteLocalPostFromDBWithPostID:recordName competionHandler:^(BOOL success, NSError *error) {
-                    [weakSelf.manipulatorDelegate contorllerShouldPerformReloadData:nil];
+                    if (success) {
+                        NSLog(@"Reloading data from AppDelegate");
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [weakSelf.manipulatorDelegate contorllerShouldPerformReloadData:nil];
+                        });
+                    }
                 }];
                 
             } else {
@@ -174,7 +190,6 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
                     }
                     else {
                         LSRemotePost* downloadedPost = [[LSRemotePost alloc]initWithRecord:record];
-                        NSLog(@"downloaded RecordName - %@", downloadedPost.record.recordID.recordName);
                         if (reason == CKQueryNotificationReasonRecordUpdated) {
                                 // Use the information in the record object to modify your local data
                         }
@@ -217,7 +232,7 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
             [operationQueue addOperation:markOperation];
             
             if (weakOperation.moreComing) {
-                [self fetchNotificationChanges];
+                    //[self fetchNotificationChanges];
             }
         }
     };

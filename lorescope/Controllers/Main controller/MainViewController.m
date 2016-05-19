@@ -10,6 +10,7 @@
 
 #import <ZOZolaZoomTransition.h>
 #import <CloudKit/CloudKit.h>
+#import <RLMRealm.h>
 #import <SVProgressHUD.h>
 
 #import "LSLocalPostManagerProtocol.h"
@@ -35,7 +36,6 @@ static NSString * LSCellId = @"LSCell";
 UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) LSUser* user;
-
 @end
 
 @implementation MainViewController
@@ -94,7 +94,6 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
     [self.localManager updatePostsCount];
     return [self.localManager postsCount];
 }

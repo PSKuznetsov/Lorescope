@@ -96,7 +96,7 @@
         [self.localManager saveLocalPostToDB:post completionHandler:^(BOOL success, NSError *error) {
             
             if (success) {
-                
+                NSLog(@"Local post created!");
             }
             else {
                 succeeded = NO;
@@ -115,36 +115,36 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     __block BOOL succeeded = NO;
-    __block id<LSRemotePostProtocol> remotePost;
     
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"postID = %@", post.postID];
     
+    NSLog(@"Local post ID - %@", post.postID);
+    __block __strong NSString* postID = [post.postID copy];
+    
     dispatch_group_enter(group);
-    [self.remoteManager postWithID:post.postID completionHandler:^(id<LSRemotePostProtocol> post, NSError *error) {
+    [self.remoteManager postWithID:postID completionHandler:^(id<LSRemotePostProtocol> post, NSError *error) {
         
         if (!error) {
-            remotePost = post;
-            succeeded = YES;
+            [self.remoteManager deleteRemotePost:post completionHandler:^(BOOL success) {
+                
+                if (success) {
+                    succeeded = YES;
+                    NSLog(@"Remote post deleted!");
+                }
+                else {
+                    NSLog(@"Remote post doesn't deleted!");
+                    succeeded = NO;
+                        //[self.cacher shouldCacheObjectMarkedForDelete:post];
+                }
+            }];
+        }
+        else {
+            NSLog(@"Error - %@", error.localizedDescription);
+            succeeded = NO;
         }
         
         dispatch_group_leave(group);
     }];
-    
-    dispatch_group_enter(group);
-    
-        [self.remoteManager deleteRemotePost:remotePost completionHandler:^(BOOL success) {
-            
-            if (success) {
-                succeeded = YES;
-                NSLog(@"Remote post deleted!");
-            }
-            else {
-                NSLog(@"Remote post doesn't deleted!");
-                succeeded = NO;
-                    //[self.cacher shouldCacheObjectMarkedForDelete:post];
-            }
-            dispatch_group_leave(group);
-        }];
     
     dispatch_group_notify(group, queue, ^{
         
