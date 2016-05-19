@@ -296,21 +296,6 @@
     
 }
 
-- (void)shouldDownloadPostsCompletionHandler:(void(^)(BOOL success))handler {
-    
-    [self.remoteManager retrievePostsWithCompletionHandler:^(NSArray<id<LSRemotePostProtocol>> *posts) {
-        for (LSRemotePost* remotePost in posts) {
-            
-            [self.adapter shouldAdaptRemoteModel:remotePost completionHandler:^(id<LSLocalPostProtocol> localPost, NSError *error) {
-                
-                [self.localManager saveLocalPostToDB:localPost completionHandler:^(BOOL success, NSError *error) {
-                    
-                }];
-            }];
-        }
-    }];
-}
-
 - (NSUInteger)countOfLocalPosts {
     
     return [self.localManager postsCount];

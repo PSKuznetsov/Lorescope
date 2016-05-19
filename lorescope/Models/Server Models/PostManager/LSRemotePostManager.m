@@ -291,17 +291,14 @@
     CKQuery* query = [[CKQuery alloc]initWithRecordType:@"Post" predicate:predicate];
     CKQueryOperation* queryOperation = [[CKQueryOperation alloc]initWithQuery:query];
     
-    __block NSMutableArray <id<LSRemotePostProtocol>> *records = [NSMutableArray array];
+    __block NSMutableArray* records = [NSMutableArray array];
     queryOperation.recordFetchedBlock = ^(CKRecord *record) {
-        
-        if ([record conformsToProtocol:@protocol(LSRemotePostProtocol)]) {
-            
+                    
             [records addObject:(id<LSRemotePostProtocol>)record];
-        }
     };
     
     queryOperation.queryCompletionBlock = ^(CKQueryCursor * __nullable cursor, NSError * __nullable operationError) {
-        
+        NSLog(@"Error: - %@", operationError.localizedDescription);
         if (handler) {
             
             handler(records);

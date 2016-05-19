@@ -14,6 +14,7 @@
 
 @protocol LSLocalPostManagerProtocol;
 @protocol LSDataSynchronizerProtocol;
+@protocol LSRemotePostManagerProtocol;
 @protocol LSImageManagerProtocol;
 
 @interface MainViewController : UIViewController <LSControllerManipulatorDelegate>
@@ -27,6 +28,7 @@
 
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
 @property (nonatomic, strong) id <LSDataSynchronizerProtocol> synchronizer;
+@property (nonatomic, strong) id <LSRemotePostManagerProtocol> remoteManager;
 @property (nonatomic, strong) id <LSImageManagerProtocol> imageManager;
 
 - (IBAction)settingsButton:(id)sender;

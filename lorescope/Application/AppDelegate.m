@@ -15,6 +15,12 @@
 #import "LSDataManipulator.h"
 #import "LSLocalPostManager.h"
 
+#import "LSRemotePostManagerProtocol.h"
+#import "LSRemotePostManager.h"
+
+#import "LSDataSynchronizerProtocol.h"
+#import "LSDataSynchronizer.h"
+
 #import "LSControllerManipulatorDelegate.h"
 
 #import "LSRemotePost.h"
@@ -26,8 +32,10 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
 
 @interface AppDelegate ()
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
+@property (nonatomic, strong) id <LSRemotePostManagerProtocol> remoteManager;
 @property (nonatomic, strong) id <LSDataManipulatorProtocol> manipulator;
 @property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
+@property (nonatomic, strong) id <LSDataSynchronizerProtocol> dataSynchronizer;
 @property (nonatomic, strong) CKServerChangeToken* previousChangeToken;
 @end
 
@@ -37,7 +45,12 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     
     self.localManager = [[LSLocalPostManager alloc]init];;
     self.manipulator  = [[LSDataManipulator alloc]init];
+    self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:[[CKContainer defaultContainer] privateCloudDatabase]];
+    self.dataSynchronizer = [[LSDataSynchronizer alloc]initWithRemoteManager:self.remoteManager];
     
+    [self.dataSynchronizer shouldSynchronizeDataWithCompletionHandler:^(BOOL success, NSError *error) {
+        
+    }];
         //push notifications setup
     UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
     [application registerUserNotificationSettings:notificationSettings];

@@ -18,7 +18,8 @@
 #import "LSDataSynchronizer.h"
 #import "LSImageManagerProtocol.h"
 #import "LSImageManager.h"
-
+#import "LSRemotePostManagerProtocol.h"
+#import "LSRemotePostManager.h"
 #import "LSUser.h"
 
 #import "LSLocalPost.h"
@@ -259,7 +260,9 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
     self.user  = [[LSUser alloc]init];
     self.cache = [[NSMutableDictionary alloc]init];
     self.localManager = [[LSLocalPostManager alloc]init];
-    self.synchronizer = [[LSDataSynchronizer alloc]init];
+    CKDatabase *database = [[CKContainer defaultContainer] privateCloudDatabase];
+    self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:database];
+    self.synchronizer = [[LSDataSynchronizer alloc]initWithRemoteManager:self.remoteManager];
 }
 
 @end

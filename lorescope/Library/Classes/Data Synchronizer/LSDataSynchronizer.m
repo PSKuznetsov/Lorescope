@@ -10,13 +10,26 @@
 #import "LSDataSynchronizerProtocol.h"
 #import "LSDataCacherProtocol.h"
 #import "LSLocalPostProtocol.h"
+#import "LSRemotePostManagerProtocol.h"
 #import "LSUserProtocol.h"
 
 #import <Realm/Realm.h>
 #import <CloudKit/CloudKit.h>
 
+@interface LSDataSynchronizer ()
+@property (strong, nonatomic) id <LSRemotePostManagerProtocol> remoteManager;
+@end
 
 @implementation LSDataSynchronizer
+
+- (instancetype)initWithRemoteManager:(id<LSRemotePostManagerProtocol>)manager
+{
+    self = [super init];
+    if (self) {
+        self.remoteManager = manager;
+    }
+    return self;
+}
 
 - (void)shouldConnectWithUser:(id <LSUserProtocol>)user completionHandler:(void(^)(BOOL success, NSError* error))handler {
     
@@ -90,6 +103,18 @@
         if (handler) {
             handler(nil, error);
         }
+    }
+}
+
+- (void)shouldSynchronizeDataWithCompletionHandler:(void(^)(BOOL success, NSError* error))handler {
+    
+    [self.remoteManager retrievePostsWithCompletionHandler:^(NSArray<id<LSRemotePostProtocol>> *posts) {
+        NSLog(@"Received posts: - %lu", (unsigned long)[posts count]);
+
+    }];
+    
+    if (handler) {
+        handler(YES, nil);
     }
 }
 
