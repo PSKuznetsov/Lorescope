@@ -14,6 +14,7 @@
 
 @protocol LSLocalPostManagerProtocol;
 @protocol LSDataSynchronizerProtocol;
+@protocol LSDataManipulatorProtocol;
 @protocol LSRemotePostManagerProtocol;
 @protocol LSImageManagerProtocol;
 
@@ -28,6 +29,7 @@
 
 @property (nonatomic, strong) id <LSLocalPostManagerProtocol> localManager;
 @property (nonatomic, strong) id <LSDataSynchronizerProtocol> synchronizer;
+@property (nonatomic, strong) id <LSDataManipulatorProtocol> manipulator;
 @property (nonatomic, strong) id <LSRemotePostManagerProtocol> remoteManager;
 @property (nonatomic, strong) id <LSImageManagerProtocol> imageManager;
 

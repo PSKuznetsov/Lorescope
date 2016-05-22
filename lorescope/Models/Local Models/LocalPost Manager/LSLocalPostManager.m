@@ -55,7 +55,6 @@
             handler(YES, nil);
         }
     }
-    
 }
 
 - (void)postWithIndexInDB:(NSUInteger)index completionHandler:(void(^)(id<LSLocalPostProtocol> post, NSError* error))handler {

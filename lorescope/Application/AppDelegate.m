@@ -43,28 +43,11 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.localManager = [[LSLocalPostManager alloc]init];;
-    self.manipulator  = [[LSDataManipulator alloc]init];
-    self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:[[CKContainer defaultContainer] privateCloudDatabase]];
-    self.dataSynchronizer = [[LSDataSynchronizer alloc]initWithRemoteManager:self.remoteManager];
-    
-    [self.dataSynchronizer shouldSynchronizeDataWithCompletionHandler:^(BOOL success, NSError *error) {
-        
-    }];
-        //push notifications setup
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
-    [application registerUserNotificationSettings:notificationSettings];
-    
-        //registering for notifications
-    [self subscribeForCloudKitChanges];
+    [self configureDependencies];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"ApplicationLaunchedOnce"]) {
             //TODO:First Launch of the app. Show user story
     }
-    
-        //[self deleteAllDataFromDB];
-    
-        //[self fetchNotificationChanges];
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
@@ -72,6 +55,8 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     UINavigationController* navController  = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     self.manipulatorDelegate = mainViewController;
     self.window.rootViewController = navController;
+    
+    [self synchronizeData];
     
     return YES;
 }
@@ -88,6 +73,8 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
 }
 
 - (void)subscribeForCloudKitChanges {
+    
+    __weak typeof(self) weakSelf = self;
     
     CKDatabase *privateDatabase = [[CKContainer defaultContainer] privateCloudDatabase];
     
@@ -110,7 +97,7 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
                                                         CKSubscriptionOptionsFiresOnRecordDeletion];
                         
                         CKNotificationInfo *notificationInfo = [CKNotificationInfo new];
-                        notificationInfo.alertLocalizationKey = @"New post was added. Check it now!";
+                        notificationInfo.alertLocalizationKey = @"Something happend in Lorescope. Check it now!";
                         notificationInfo.shouldSendContentAvailable = YES;
                         subscription.notificationInfo = notificationInfo;
                         
@@ -131,6 +118,7 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
                                 NSLog(@"Sub deleted: %@", subscriptionID);
                             }];
                         }
+                        [weakSelf subscribeForCloudKitChanges];
                     }
                 }
                 else {
@@ -277,15 +265,39 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     return decodedData;
 }
 
-#pragma mark - Utilities
-//TODO: should be dismantled for release version ;)
-- (void)deleteAllDataFromDB {
+#pragma mark - Initializations
+
+- (void)configureDependencies {
     
-    RLMRealm* realm = [RLMRealm defaultRealm];
+    self.localManager = [[LSLocalPostManager alloc]init];;
+    self.manipulator  = [[LSDataManipulator alloc]init];
+    self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:[[CKContainer defaultContainer] privateCloudDatabase]];
+    self.dataSynchronizer = [[LSDataSynchronizer alloc]initWithDataManipulator:self.manipulator];
+}
+
+- (void)synchronizeData {
     
-    [realm beginWriteTransaction];
-    [realm deleteAllObjects];
-    [realm commitWriteTransaction];
+    __weak typeof(self) weakSelf = self;
+    [self.dataSynchronizer shouldSynchronizeDataWithCompletionHandler:^(BOOL success, NSError *error) {
+        if (success) {
+                //push notifications setup
+            UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+                //registering for notifications
+            NSLog(@"Boo! We have DONE IT!");
+            [weakSelf subscribeForCloudKitChanges];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.manipulatorDelegate contorllerShouldPerformReloadData:nil];
+            });
+        }
+        else {
+            
+            NSLog(@"Error with sync data: - %@", error.localizedDescription);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.manipulatorDelegate contorllerShouldPerformReloadData:nil];
+            });
+        }
+    }];
 }
 
 @end

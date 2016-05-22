@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LSControllerManipulatorDelegate;
 @protocol LSDataSynchronizerProtocol;
+@protocol LSDataManipulatorProtocol;
+@protocol LSLocalPostManagerProtocol;
 @protocol LSRemotePostManagerProtocol;
 @protocol LSDataCacherProtocol;
 @protocol LSUserProtocol;
 
 @interface LSDataSynchronizer : NSObject <LSDataSynchronizerProtocol>
+
+@property (nonatomic, strong) id <LSControllerManipulatorDelegate> manipulatorDelegate;
 
 - (void)shouldConnectWithUser:(id <LSUserProtocol>)user completionHandler:(void(^)(BOOL success, NSError* error))handler;
 
@@ -23,6 +28,6 @@
 
 - (void)shouldSynchronizeDataWithCompletionHandler:(void(^)(BOOL success, NSError* error))handler;
 
-- (instancetype)initWithRemoteManager:(id<LSRemotePostManagerProtocol>)manager;
+- (instancetype)initWithDataManipulator:(id <LSDataManipulatorProtocol>)manipulator;
 
 @end

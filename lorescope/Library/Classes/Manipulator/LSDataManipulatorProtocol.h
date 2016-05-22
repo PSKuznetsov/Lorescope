@@ -32,6 +32,4 @@
 
 - (NSUInteger)countOfLocalPosts;
 
-- (void)shouldDownloadPostsCompletionHandler:(void(^)(BOOL success))handler;
-
 @end

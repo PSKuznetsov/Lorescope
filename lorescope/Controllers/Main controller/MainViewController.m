@@ -13,6 +13,8 @@
 #import <RLMRealm.h>
 #import <SVProgressHUD.h>
 
+#import "LSDataManipulatorProtocol.h"
+#import "LSDataManipulator.h"
 #import "LSLocalPostManagerProtocol.h"
 #import "LSDataSynchronizerProtocol.h"
 #import "LSDataSynchronizer.h"
@@ -252,17 +254,23 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
 #pragma mark - Utils
 
 - (void)configureCollectionView:(UICollectionView *)collectionView {
+    
     collectionView.collectionViewLayout = [[LSMainControllerFlowLayout alloc]init];
     collectionView.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1.0];
 }
 
 - (void)configureDependencies {
+    
     self.user  = [[LSUser alloc]init];
     self.cache = [[NSMutableDictionary alloc]init];
+    
     self.localManager = [[LSLocalPostManager alloc]init];
+    self.manipulator  = [[LSDataManipulator alloc]init];
+    
     CKDatabase *database = [[CKContainer defaultContainer] privateCloudDatabase];
+    
     self.remoteManager = [[LSRemotePostManager alloc]initWithDatabase:database];
-    self.synchronizer = [[LSDataSynchronizer alloc]initWithRemoteManager:self.remoteManager];
+    self.synchronizer  = [[LSDataSynchronizer alloc]initWithDataManipulator:self.manipulator];
 }
 
 @end

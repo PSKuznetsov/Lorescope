@@ -293,8 +293,8 @@
     
     __block NSMutableArray* records = [NSMutableArray array];
     queryOperation.recordFetchedBlock = ^(CKRecord *record) {
-                    
-            [records addObject:(id<LSRemotePostProtocol>)record];
+        LSRemotePost* newPost = [[LSRemotePost alloc]initWithRecord:record];
+        [records addObject:newPost];
     };
     
     queryOperation.queryCompletionBlock = ^(CKQueryCursor * __nullable cursor, NSError * __nullable operationError) {
