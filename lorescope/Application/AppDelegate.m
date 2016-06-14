@@ -26,6 +26,8 @@
 #import "LSRemotePost.h"
 
 #import <CloudKit/CloudKit.h>
+#import <OnboardingViewController.h>
+#import <OnboardingContentViewController.h>
 #import <Realm/Realm.h>
 
 static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
@@ -46,7 +48,18 @@ static NSString* const kLastTokenUsed = @"kLastTokenUsedID";
     [self configureDependencies];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"ApplicationLaunchedOnce"]) {
-            //TODO:First Launch of the app. Show user story
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ApplicationLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        OnboardingContentViewController *firstPage = [OnboardingContentViewController contentWithTitle:@"Welcome to Lorescope" body:@"To the new way store your memmories..." image:[UIImage imageNamed:@"AppIcon"] buttonText:nil action:^{
+                // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+        }];
+        
+        OnboardingContentViewController *secondPage = [OnboardingContentViewController contentWithTitle:@"Store your memmoriese photos with thougths" body:nil image:[UIImage imageNamed:@"AppIcon"] buttonText:nil action:^{
+                // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+        }];
+        
+        OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:nil contents:@[firstPage, secondPage]];
     }
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

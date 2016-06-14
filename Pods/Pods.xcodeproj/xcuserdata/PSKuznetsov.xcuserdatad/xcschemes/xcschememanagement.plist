@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JKLLockScreenViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Onboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-lorescope.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>317C23A478214C80507A1021750FFF01</key>
+		<key>484A99D196E40E1DAB14693F79B75A58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDAE51B6A22DD9131F3BFA7A7C24ABEA</key>
+		<key>597F56C54F2050BEE2BF6BC5DE49D44C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E87087680DCAF69A17B939C789E422EC</key>
+		<key>6FCAF8CF0C6C121E569537ED8D831C9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F1DD7C94851A970D9864FBEA41A187F3</key>
+		<key>8165761603EC964081918A7A04D647F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A29549B864B18F0E6AF00CE8AF7D8408</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7A3BEB18F466D9F6FF8D3B302F8AADF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,7 +6,7 @@
     //  Copyright © 2015 Paul Kuznetsov. All rights reserved.
     //
 #import <Realm/Realm.h>
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 
 #import "LSLocalPost.h"
 
@@ -37,6 +37,10 @@
     
     self.manipulatorDelegate = [self.navigationController.viewControllers firstObject];
     self.postImageView.image = self.postImage;
+    
+    self.postTextView.delegate = self;
+    self.postTextView.text = @"Enter your comment...";
+    self.postTextView.textColor = [UIColor lightGrayColor];
     
     self.dataSynchronizer = [[LSDataManipulator alloc]init];
     self.imageManager = [[LSImageManager alloc]init];
@@ -127,7 +131,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     
-    if ([textView.text isEqualToString:@"placeholder text here..."]) {
+    if ([textView.text isEqualToString:@"Enter your comment..."]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
     }
@@ -137,7 +141,7 @@
 - (void)textViewDidEndEditing:(UITextView *)textView {
     
     if ([textView.text isEqualToString:@""]) {
-        textView.text = @"placeholder text here...";
+        textView.text = @"Enter your comment...";
         textView.textColor = [UIColor lightGrayColor]; //optional
     }
     [textView resignFirstResponder];

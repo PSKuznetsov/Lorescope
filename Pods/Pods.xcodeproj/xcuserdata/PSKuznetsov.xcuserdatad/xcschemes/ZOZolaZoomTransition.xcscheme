@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CDAE51B6A22DD9131F3BFA7A7C24ABEA'
+               BlueprintIdentifier = 'A7A3BEB18F466D9F6FF8D3B302F8AADF'
                BlueprintName = 'ZOZolaZoomTransition'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libZOZolaZoomTransition.a'>

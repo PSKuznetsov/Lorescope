@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7BFCE462F0BC5E1FB24A4D /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85ABAD8F9F5011EA8F0A1323 /* libPods-lorescope.a */; };
+		5C376D06C1BAE69E2626CDF9 /* libPods-lorescope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4537AAF5C622254AAA3D02EA /* libPods-lorescope.a */; };
 		FA0AB35B1BD65CDA00F91A38 /* LSUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */; };
 		FA108C4A1CCE630B002364EA /* LSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA108C491CCE630B002364EA /* LSUser.m */; };
 		FA108C4E1CCE634C002364EA /* LSRemotePost.m in Sources */ = {isa = PBXBuildFile; fileRef = FA108C4D1CCE634C002364EA /* LSRemotePost.m */; };
@@ -26,6 +26,12 @@
 		FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AC3FF1CD2439000399492 /* LSModelAdapter.m */; };
 		FA8997B21BE3B39600DA11CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8997B11BE3B39600DA11CB /* Assets.xcassets */; };
 		FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8997B61BE3B72500DA11CB /* SettingsViewController.m */; };
+		FA8C52B91CF2A34600F7F70B /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52AE1CF2A34600F7F70B /* JTSAnimatedGIFUtility.m */; };
+		FA8C52BA1CF2A34600F7F70B /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52B01CF2A34600F7F70B /* JTSImageInfo.m */; };
+		FA8C52BB1CF2A34600F7F70B /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52B21CF2A34600F7F70B /* JTSImageViewController.m */; };
+		FA8C52BC1CF2A34600F7F70B /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52B41CF2A34600F7F70B /* JTSSimpleImageDownloader.m */; };
+		FA8C52BD1CF2A34600F7F70B /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52B61CF2A34600F7F70B /* UIApplication+JTSImageViewController.m */; };
+		FA8C52BE1CF2A34600F7F70B /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C52B81CF2A34600F7F70B /* UIImage+JTSImageEffects.m */; };
 		FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269731BD2E0270055FDE9 /* AppDelegate.m */; };
 		FA9269781BD2E0270055FDE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9269751BD2E0270055FDE9 /* main.m */; };
 		FA92698F1BD2E05B0055FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92698B1BD2E05B0055FDE9 /* LaunchScreen.storyboard */; };
@@ -45,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1CED280A06F4DE3EBF86FE8E /* Pods-lorescope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.release.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.release.xcconfig"; sourceTree = "<group>"; };
-		85ABAD8F9F5011EA8F0A1323 /* libPods-lorescope.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lorescope.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4537AAF5C622254AAA3D02EA /* libPods-lorescope.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lorescope.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73D9B1EC220A0F31B3C03C2 /* Pods-lorescope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lorescope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lorescope/Pods-lorescope.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0AB3591BD65CDA00F91A38 /* LSUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUILabel.h; path = Classes/LSUILabel.h; sourceTree = "<group>"; };
 		FA0AB35A1BD65CDA00F91A38 /* LSUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUILabel.m; path = Classes/LSUILabel.m; sourceTree = "<group>"; };
@@ -90,6 +96,18 @@
 		FA8997B11BE3B39600DA11CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8997B51BE3B72500DA11CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FA8997B61BE3B72500DA11CB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FA8C52AD1CF2A34600F7F70B /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		FA8C52AE1CF2A34600F7F70B /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		FA8C52AF1CF2A34600F7F70B /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		FA8C52B01CF2A34600F7F70B /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		FA8C52B11CF2A34600F7F70B /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		FA8C52B21CF2A34600F7F70B /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		FA8C52B31CF2A34600F7F70B /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		FA8C52B41CF2A34600F7F70B /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		FA8C52B51CF2A34600F7F70B /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		FA8C52B61CF2A34600F7F70B /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		FA8C52B71CF2A34600F7F70B /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		FA8C52B81CF2A34600F7F70B /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		FA9269721BD2E0270055FDE9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA9269731BD2E0270055FDE9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA9269741BD2E0270055FDE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +147,7 @@
 			files = (
 				FAEA82ED1CB3F07D0046CD03 /* libRealm.a in Frameworks */,
 				FAB0BF441CA528F00070E3FE /* CloudKit.framework in Frameworks */,
-				7D7BFCE462F0BC5E1FB24A4D /* libPods-lorescope.a in Frameworks */,
+				5C376D06C1BAE69E2626CDF9 /* libPods-lorescope.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +168,7 @@
 			children = (
 				FAEA82EC1CB3F07D0046CD03 /* libRealm.a */,
 				FAB0BF431CA528F00070E3FE /* CloudKit.framework */,
-				85ABAD8F9F5011EA8F0A1323 /* libPods-lorescope.a */,
+				4537AAF5C622254AAA3D02EA /* libPods-lorescope.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -352,6 +370,25 @@
 			path = "Settings controller";
 			sourceTree = "<group>";
 		};
+		FA8C52AC1CF2A32D00F7F70B /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				FA8C52AD1CF2A34600F7F70B /* JTSAnimatedGIFUtility.h */,
+				FA8C52AE1CF2A34600F7F70B /* JTSAnimatedGIFUtility.m */,
+				FA8C52AF1CF2A34600F7F70B /* JTSImageInfo.h */,
+				FA8C52B01CF2A34600F7F70B /* JTSImageInfo.m */,
+				FA8C52B11CF2A34600F7F70B /* JTSImageViewController.h */,
+				FA8C52B21CF2A34600F7F70B /* JTSImageViewController.m */,
+				FA8C52B31CF2A34600F7F70B /* JTSSimpleImageDownloader.h */,
+				FA8C52B41CF2A34600F7F70B /* JTSSimpleImageDownloader.m */,
+				FA8C52B51CF2A34600F7F70B /* UIApplication+JTSImageViewController.h */,
+				FA8C52B61CF2A34600F7F70B /* UIApplication+JTSImageViewController.m */,
+				FA8C52B71CF2A34600F7F70B /* UIImage+JTSImageEffects.h */,
+				FA8C52B81CF2A34600F7F70B /* UIImage+JTSImageEffects.m */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
 		FA9269711BD2E0270055FDE9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +417,7 @@
 		FA9269821BD2E0410055FDE9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FA8C52AC1CF2A32D00F7F70B /* Vendors */,
 				FA50CAB31CCF9CF500FACD34 /* Classes */,
 				FAE66B611BD57F8100066B36 /* Extensions */,
 				FA20A8951BD2FFE700C9FFB2 /* System */,
@@ -687,6 +725,9 @@
 				FA9269761BD2E0270055FDE9 /* AppDelegate.m in Sources */,
 				FA54099E1CCF6CA90068D40A /* LSLocalPostManager.m in Sources */,
 				FA8997B71BE3B72500DA11CB /* SettingsViewController.m in Sources */,
+				FA8C52BC1CF2A34600F7F70B /* JTSSimpleImageDownloader.m in Sources */,
+				FA8C52B91CF2A34600F7F70B /* JTSAnimatedGIFUtility.m in Sources */,
+				FA8C52BA1CF2A34600F7F70B /* JTSImageInfo.m in Sources */,
 				FA9A571F1BE81ADD0076986B /* PhotoPickerCollectionViewCell.m in Sources */,
 				FAEA82F51CB3FF0F0046CD03 /* LSLocalPost.m in Sources */,
 				FA108C4A1CCE630B002364EA /* LSUser.m in Sources */,
@@ -696,10 +737,13 @@
 				FAEA82FA1CB4011E0046CD03 /* NewPostViewController+UICollectionView.m in Sources */,
 				FACF6CAC1CDAE70800B37B15 /* LSMainControllerFlowLayout.m in Sources */,
 				FA108C541CCE6DBA002364EA /* LSRemotePostManager.m in Sources */,
+				FA8C52BE1CF2A34600F7F70B /* UIImage+JTSImageEffects.m in Sources */,
 				FA108C4E1CCE634C002364EA /* LSRemotePost.m in Sources */,
 				FA7AC4001CD2439000399492 /* LSModelAdapter.m in Sources */,
 				FA9A57221BE81FAB0076986B /* TakePhotoViewController.m in Sources */,
+				FA8C52BB1CF2A34600F7F70B /* JTSImageViewController.m in Sources */,
 				FA2267131CE2CA0D004E5461 /* LSDataCacher.m in Sources */,
+				FA8C52BD1CF2A34600F7F70B /* UIApplication+JTSImageViewController.m in Sources */,
 				FAB0BF4C1CA537460070E3FE /* KeychainWrapper.m in Sources */,
 				FAE66B641BD57FF800066B36 /* UIColor+LSPalette.m in Sources */,
 				FA2B4FF91CD5038500D56B33 /* LSPopupView.m in Sources */,
@@ -823,7 +867,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -843,7 +887,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/lorescope/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/lorescope/Application/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pskuznetsov.lorescope;
 				PRODUCT_NAME = "$(TARGET_NAME)";

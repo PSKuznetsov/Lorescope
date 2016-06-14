@@ -8,7 +8,10 @@
 
 #import "PreviewPostViewController.h"
 
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
+
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
 
 #import "LSLocalPostProtocol.h"
 #import "LSLocalPost.h"
@@ -43,6 +46,11 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
     self.imageView.image = self.postImage;
     self.contentTextView.text = self.localPost.content;
     
+    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewDidTapped)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:tapGestureRecognizer];
+    
     self.buttonState = LSUIButtonStateEdit;
     
     [self registerForKeyboardNotifications];
@@ -65,6 +73,26 @@ typedef NS_ENUM(NSUInteger, LSUIButtonState) {
 }
 
 #pragma mark - Actions
+
+- (void)imageViewDidTapped {
+        // Create image info
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    
+    imageInfo.image = self.imageView.image;
+    imageInfo.referenceRect = self.imageView.frame;
+    imageInfo.referenceView = self.imageView.superview;
+    imageInfo.referenceContentMode = self.imageView.contentMode;
+    imageInfo.referenceCornerRadius = self.imageView.layer.cornerRadius;
+    
+        // Setup view controller
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled];
+    
+        // Present the view controller.
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+}
 
 - (IBAction)editButtonDidPressed:(id)sender {
     

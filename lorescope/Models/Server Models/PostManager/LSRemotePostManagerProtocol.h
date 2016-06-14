@@ -11,7 +11,7 @@
 
 @protocol LSRemotePostManagerProtocol <NSObject>
 
-#pragma mark - Creat
+#pragma mark - Create
 
 - (void)createRemotePost:(id<LSRemotePostProtocol>)post completionHandler:(void(^)(BOOL success, id<LSRemotePostProtocol> post))handler;
 

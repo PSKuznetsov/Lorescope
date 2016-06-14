@@ -1,4 +1,6 @@
 PODS:
+  - JKLLockScreenViewController (1.0.0)
+  - Onboard (2.2.0)
   - Realm (0.102.1):
     - Realm/Headers (= 0.102.1)
   - Realm/Headers (0.102.1)
@@ -6,15 +8,28 @@ PODS:
   - ZOZolaZoomTransition (1.0.0)
 
 DEPENDENCIES:
+  - JKLLockScreenViewController (from `https://github.com/tiny2n/JKLLockScreenViewController.git`)
+  - Onboard
   - Realm
   - SVProgressHUD
   - ZOZolaZoomTransition (~> 1.0.0)
 
+EXTERNAL SOURCES:
+  JKLLockScreenViewController:
+    :git: https://github.com/tiny2n/JKLLockScreenViewController.git
+
+CHECKOUT OPTIONS:
+  JKLLockScreenViewController:
+    :commit: db6450e0302091412e30c520561932df4551f0b0
+    :git: https://github.com/tiny2n/JKLLockScreenViewController.git
+
 SPEC CHECKSUMS:
+  JKLLockScreenViewController: 60e81c27244c5576bcfee074ba671a1b388f0de4
+  Onboard: c46261255c0bcbe26ab2823782764c96fca7a33e
   Realm: 5254be610db3e5024879684717bf038990bb59ec
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   ZOZolaZoomTransition: 650b873204e4fe601334a99b49628d19c8e54cdd
 
-PODFILE CHECKSUM: 287846706803d3ba21d4dd152ac2a1d50c9d6438
+PODFILE CHECKSUM: 0a4de1e0c1c165717bc6c82a9a6372d1e826d2db
 
 COCOAPODS: 1.0.0

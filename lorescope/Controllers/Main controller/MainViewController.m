@@ -8,10 +8,10 @@
 
 #import "MainViewController.h"
 
-#import <ZOZolaZoomTransition.h>
+#import "ZOZolaZoomTransition.h"
 #import <CloudKit/CloudKit.h>
-#import <RLMRealm.h>
-#import <SVProgressHUD.h>
+#import "RLMRealm.h"
+#import "SVProgressHUD.h"
 
 #import "LSDataManipulatorProtocol.h"
 #import "LSDataManipulator.h"
@@ -50,6 +50,16 @@ UICollectionViewDelegateFlowLayout, ZOZolaZoomTransitionDelegate, UINavigationCo
     
     [self configureCollectionView:self.collectionView];
     [self configureDependencies];
+    
+    [self.navigationController.navigationBar setBackIndicatorImage:
+     [UIImage imageNamed:@"backButtonImg"]];
+    [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:
+     [UIImage imageNamed:@"backButtonImg"]];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     
     [SVProgressHUD show];
     [self.synchronizer shouldConnectWithUser:self.user completionHandler:^(BOOL success, NSError *error) {
